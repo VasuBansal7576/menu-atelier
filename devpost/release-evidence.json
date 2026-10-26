@@ -1,0 +1,31 @@
+{
+  "deployed_software_commit": "b64de60d7df71559bedaf62a1736155f787e176c",
+  "deployment_id": "appgdep_6adfa37b7cc8819184d669915e6eb4a9",
+  "status": "succeeded",
+  "studio": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/",
+  "gallery": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/grading/",
+  "audience": "Existing owner-private audience preserved",
+  "mechanical_tests": 40,
+  "source_exports": 12,
+  "export_pages": 15,
+  "actual_saved_gallery_text_runs_matched": 596,
+  "demo_duration_seconds": 93.5,
+  "demo_sha256": "1d77426699a982244971962156c2b95243bca70707e7666ff03682a178626645",
+  "hosted_browser_checks": [
+    "mandatory source review with10dishes",
+    "Vegetable Samosas7.90to9.25",
+    "Herbarium illustration and composition switch",
+    "PDF exported completed feedback",
+    "9.25 survived reload",
+    "gallery12exports15pages",
+    "each source has2A5tablecardpages",
+    "no browser errors or warnings observed"
+  ],
+  "limits": [
+    "Physical phone not tested",
+    "Repeated physical browser file saving not independently observed",
+    "Unsupported scripts require additional fonts",
+    "User taste acceptance pending",
+    "Public YouTube/Vimeo upload and entrant-authored submission pending"
+  ]
+}

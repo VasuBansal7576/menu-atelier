@@ -64,7 +64,7 @@ Activity mode: Reference-only handoff under the autonomy grant.
 
 - Repeated interview and approval pauses are adapted to the user's explicit request to complete the whole build autonomously. Their specific menu workflow and quality criteria remain the product requirements. No learner interviews, approvals or learning outcomes are fabricated.
 
-- Agent verification passed26 tests after independent review repairs. The12 final PDFs and154.52-second actual browser demo are prepared. User grading remains pending.
+- Agent verification passed26 tests after independent review repairs. The 12 final PDFs and 154.52-second actual browser demo are prepared. User grading remains pending.
 
 ## Design recovery after user rejection
 
@@ -107,7 +107,7 @@ The user rejected the redesigned appearance as well. Its passing29 tests and fav
   Commit: `Build an art-directed restaurant identity and direct-editing studio`
 
 
-- [ ] **7. Integrate the selected creative workspace and curated compositions**
+- [x] **7. Integrate the selected creative workspace and curated compositions**
   Becomes usable: Owners import their actual menus, edit a price beside the printed dish, choose a coherent composition and export the same measured document.
   Why now: The refined pilot resolves the concrete visual and interaction defects before generalizing the product.
   PRD ref: `prd.md > Screens and Layout`, `prd.md > Look and Feel`, `prd.md > Source import and review`
@@ -116,3 +116,5 @@ The user rejected the redesigned appearance as well. Its passing29 tests and fav
   Verify (mechanical): Exercise all three sources, reordered/missing categories, added dishes, long content, dense pagination, invalid input, undo, reload, JSON restore and phone editing. Inspect actual exported PDFs and independently review the final product. Refresh the real demo, approved repository and existing private deployment.
   Learner check: Grade the final studio and actual restaurant menus. No agent inspection replaces the user's taste judgment.
   Commit: `Integrate direct paper editing and art-directed menu compositions`
+
+Current slice 7 mechanical release is complete. All 40 tests pass. The 12 exports contain 15 verified pages. Software commit `b64de60d7df71559bedaf62a1736155f787e176c` is deployed to the existing owner-private Site and was exercised after deployment. Both prior design failures remain failed. Current user taste grading, learner Final Review, public YouTube/Vimeo upload and entrant-authored submission remain pending.
