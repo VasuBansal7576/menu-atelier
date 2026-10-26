@@ -30,3 +30,7 @@ User-supplied entry facts are India, Sangrur, Punjab, solo, team name Newgen Lab
 The local compiler combines four measured architectures with supported palettes, motifs and spacing. It interprets a bounded vocabulary and cannot invent arbitrary layouts or provide Gamma's conversational model agent. External AI recipe import remains constrained to the same grammar. Repeated generation reports when a constrained brief produces unchanged design choices. It does not imply unlimited new structures. No provider inference is claimed.
 
 OCR is English and must be reviewed. Arbitrary PDF columns may need correction. Unsupported scripts fail preflight without overwriting valid work. Examples are unofficial source snapshots, including Bianco's linked April 2023 menu. No performance benchmark or physical-phone test is claimed. Final deployment and hosted-browser results are recorded separately in release-evidence.json.
+
+## Final hosted release
+
+Site version 6 deployed successfully from software commit fa448068312dd55ea90e54093934b3e101472726 with the owner-private audience preserved. The final environment restored the previous Dishoom draft, generated and applied a saffron landscape direction, retained the edited £9.75 amount and recipe through reload, and produced a physical browser PDF download containing selectable £9.75 text. The seven-study gallery loaded. No browser errors or warnings were observed in this bounded check. Release-evidence.json contains the exact deployment receipt.

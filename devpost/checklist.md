@@ -149,3 +149,7 @@ Final software publication and destination evidence are recorded with the curren
 - [ ] Gamma-style runtime model generation is not implemented. Local generation is labeled procedural.
 - [ ] Public YouTube or Vimeo requirement is unmet under the user's later Keep the video local instruction.
 - [ ] Devpost project creation and final entry remain incomplete. No CAPTCHA bypass.
+
+- [x] Publish software version 6 to the existing owner-private Site and approved public source repository.
+- [x] Verify the final hosted app, actual PDF download, selected recipe and price persistence.
+- [x] Keep all new video/audio files local and preserve removal of previous generated-image assets from the effective release.

@@ -1,47 +1,44 @@
 {
-  "record_kind": "publication preparation snapshot",
-  "previous_release": {
-    "deployed_software_commit": "b64de60d7df71559bedaf62a1736155f787e176c",
-    "deployment_id": "appgdep_6adfa37b7cc8819184d669915e6eb4a9",
-    "status": "succeeded",
-    "studio": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/",
-    "gallery": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/grading/",
-    "audience": "Existing owner-private audience preserved",
-    "mechanical_tests": 40,
-    "source_exports": 12,
-    "export_pages": 15,
-    "actual_saved_gallery_text_runs_matched": 596,
-    "demo_duration_seconds": 93.5,
-    "demo_sha256": "1d77426699a982244971962156c2b95243bca70707e7666ff03682a178626645",
-    "hosted_browser_checks": [
-      "mandatory source review with10dishes",
-      "Vegetable Samosas7.90to9.25",
-      "Herbarium illustration and composition switch",
-      "PDF exported completed feedback",
-      "9.25 survived reload",
-      "gallery12exports15pages",
-      "each source has2A5tablecardpages",
-      "no browser errors or warnings observed"
-    ],
-    "limits": [
-      "Physical phone not tested",
-      "Repeated physical browser file saving not independently observed",
-      "Unsupported scripts require additional fonts",
-      "User taste acceptance pending",
-      "Public YouTube/Vimeo upload and entrant-authored submission pending"
-    ]
+  "deployed_software_commit": "fa448068312dd55ea90e54093934b3e101472726",
+  "site_version": 6,
+  "deployment_id": "appgdep_6adfb5524eec81918e583bfedafb8a56",
+  "status": "succeeded",
+  "studio": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/",
+  "generated_gallery": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/generated/",
+  "base_gallery": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/grading/",
+  "audience": "Existing owner-private audience preserved. One allowed user, zero external visitors.",
+  "public_repository": "https://github.com/VasuBansal7576/menu-atelier",
+  "mechanical_tests": 43,
+  "source_exports": 19,
+  "restaurant_export_pages": 19,
+  "generation": "Bounded local procedural grammar. No runtime model inference or image generation.",
+  "local_demo": {
+    "seconds": 98.2,
+    "sha256": "683ce69b0b5841e94ceb26813eaa313dab3ef427a616fe7b2679eac7325f625d",
+    "public_upload": false,
+    "method": "Edited actual browser screenshots with audible narration. Not continuous capture."
   },
-  "candidate": {
-    "mechanical_tests": 43,
-    "restaurant_base_exports": 12,
-    "restaurant_generated_exports": 7,
-    "restaurant_pages": 19,
-    "local_demo_seconds": 98.2,
-    "local_demo_public": false,
-    "generation": "bounded procedural grammar, no runtime AI",
-    "browser_downloads_verified": 2,
-    "taste_acceptance": "unverified",
-    "entry_submitted": false
+  "hosted_browser_checks": [
+    "Previous Dishoom draft restored without content loss",
+    "Brief generated two measured landscape directions using all ten dishes",
+    "Repeated constrained generation explicitly reported unchanged choices",
+    "Generated Saffron Supper Broadsheet applied without rewriting prices",
+    "Vegetable Samosas changed from GBP9.25 to GBP9.75 on paper and committed",
+    "Recipe and GBP9.75 survived reload",
+    "Physical PDF downloaded from the final v6 release; saved selectable text contains GBP9.75",
+    "Generated gallery contains seven attributed actual PDFs and editable backups",
+    "No browser errors or warnings observed in bounded final check"
+  ],
+  "submission": {
+    "submitted": false,
+    "public_video_requirement": "Unmet under the user Keep the video local instruction",
+    "draft_creation": "Earlier reCAPTCHA Timeout, no visible challenge, no bypass"
   },
-  "new_publication": "Recorded after deployment in the subsequent evidence commit."
+  "limits": [
+    "Current user taste acceptance remains unverified after prior failed appearances",
+    "Runtime conversational AI and arbitrary layout generation remain absent",
+    "Mobile viewport checked, physical phone not tested",
+    "OCR and source prices require owner review",
+    "No performance benchmark claimed"
+  ]
 }
