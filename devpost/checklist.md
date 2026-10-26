@@ -9,7 +9,7 @@ Build mode: fast, adapted to the user's express autonomy grant. Agent verificati
 
 ## Slices
 
-- [ ] **1. Edit a dish price and download the updated designed PDF**
+- [x] **1. Edit a dish price and download the updated designed PDF**
   Becomes usable: The owner edits a menu, chooses a template and downloads the current PDF.
   Why now: Proves the user's unique kernel before expanding imports.
   PRD ref: `prd.md > The Core Journey`, `prd.md > Edit menu content`, `prd.md > Export`
@@ -19,7 +19,7 @@ Build mode: fast, adapted to the user's express autonomy grant. Agent verificati
   Learner check: Open the studio, change a price and grade whether the designed result is usable.
   Commit: `Build editable menu studio with shared preview and PDF layout`
 
-- [ ] **2. Import a menu without losing correctness or draft work**
+- [x] **2. Import a menu without losing correctness or draft work**
   Becomes usable: The owner uploads or pastes a menu, reviews the candidate and confirms it.
   Why now: Tests the highest-risk external data boundary on a working edit/export loop.
   PRD ref: `prd.md > Source import and review`, `prd.md > States and Boundaries`
@@ -29,7 +29,7 @@ Build mode: fast, adapted to the user's express autonomy grant. Agent verificati
   Learner check: Import one of your own menus and check the recognized dishes and prices before accepting it.
   Commit: `Add reviewed menu imports and durable local drafts`
 
-- [ ] **3. Grade three sourced restaurant redesigns**
+- [x] **3. Grade three sourced restaurant redesigns**
   Becomes usable: The owner loads official restaurant excerpts and compares distinct designs and usable PDFs.
   Why now: Demonstrates visual quality with real input and preserves source evidence.
   PRD ref: `prd.md > Real restaurant examples`, `prd.md > Choose a design`
@@ -52,10 +52,10 @@ Build mode: fast, adapted to the user's express autonomy grant. Agent verificati
 
 - [ ] Learning activity complete. No learner activity or reflection is claimed.
 - [ ] Optional edit and transfer reflection addressed. Not yet offered during user grading.
-- [ ] `devpost/app-map.html` generated from finished code, checked, and shown.
+- [x] `devpost/app-map.html` generated from finished code and checked. The reference map is provided for user review.
 
 Activity and evidence: Agent will provide a reference-only app map and actual verification artifacts. User activity remains pending.
-Route and stops: To be filled from final implementation paths.
+Route and stops: Reference route through app.js updateItem/commit, model.js parsePrice, layout.js layoutMenu/renderSVG, and export.js renderPDF. No live learner tour is claimed.
 Edit outcome: No learner edit yet.
 Reflection: No answer supplied. Do not invent one.
 Activity mode: Reference-only handoff under the autonomy grant.
@@ -63,3 +63,5 @@ Activity mode: Reference-only handoff under the autonomy grant.
 ## Revisions
 
 - Repeated interview and approval pauses are adapted to the user's explicit request to complete the whole build autonomously. Their specific menu workflow and quality criteria remain the product requirements. No learner interviews, approvals or learning outcomes are fabricated.
+
+- Agent verification passed26 tests after independent review repairs. The12 final PDFs and154.52-second actual browser demo are prepared. User grading remains pending.

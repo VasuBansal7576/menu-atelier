@@ -9,9 +9,9 @@ The stated submission deadline is October 26, 2026 at 5 pm Eastern Time. This co
 | New project during submission period | Recorded | New menu-studio folder created on 2026-10-26. No old app source reused. |
 | Required skill pack | Installed and consulted | skills-lock.json and .agents/skills. |
 | Planning documents | Created before application code | scope.md, prd.md, spec.md and devpost/checklist.md. |
-| End-to-end working app | In progress | Browser and PDF verification pending. |
+| End-to-end working app | Verified locally | Genuine source PDF import, live editing, design switching and actual PDF price propagation. See verification.md. |
 | Public repository URL | Not published | Source can be prepared privately. Public creation or visibility needs explicit authorization under Devpost 6-ship. |
-| 1 to 3 minute demo | Pending capture | A local recording can be prepared. Public YouTube or Vimeo upload remains separate. |
+| 1 to 3 minute demo | Local video ready |154.52-second actual browser recording in outputs/menu-atelier-demo.mp4. Public YouTube or Vimeo upload remains separate. |
 | Entrant's submission fields and exit survey | Pending user authorship | Do not invent personal learning reflections. |
 | Devpost entry submitted | Not submitted | No submission action has been taken. |
 

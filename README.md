@@ -19,7 +19,7 @@ Open the localhost address printed by the server. The core editing and PDF workf
 4. Switch to another design and check that the edit remains.
 5. Download the PDF and find the changed price in its selectable text.
 
-Run `npm test` for parser and model checks. Integrated browser and PDF evidence is recorded in `devpost/verification.md` after the delivery run.
+Run `npm test` for26 behavior and integration checks. Run `node scripts/grade.mjs` to reproduce all12 grading PDFs and editable backups. Integrated browser and PDF evidence is recorded in `devpost/verification.md`. The private deployment includes a `/grading/` gallery and a154.52-second actual browser demo.
 
 ## Understand the files
 
