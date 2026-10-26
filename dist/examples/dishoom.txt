@@ -1,0 +1,17 @@
+Dishoom
+
+## Small Plates
+Vegetable Samosas — Pea and potato pastries, warmly spiced with cinnamon, with chutneys. 7.90
+Chilli Cheese Toast — Cheddar toast with green chillies, capsicum and garlic. 7.50
+Dishoom House Chaat — Fried sweet potato, yoghurt, pomegranate, vegetables and tangy chutneys. 10.90
+Bhel — Puffed rice, peanuts and Bombay Mix with fruit, vegetables and chutneys. 8.50
+
+## Grills
+Dishoom Chicken Tikka — Chicken in sweet vinegar, ginger, turmeric, garlic and green chilli marinade. 15.50
+Makhmali Paneer — Gently spiced, charred paneer with fried cashews and pomegranate. 14.70
+Gunpowder Potatoes — Smoky grilled potatoes tossed with butter, aromatic seeds and herbs. 10.70
+
+## House Favourites
+Chicken Ruby — Tender chicken in a rich, spiced makhani sauce. 18.90
+House Black Daal — Rich, dark daal cooked for more than 24 hours. 11.50
+Mattar Paneer — A vegetarian curry described as a Bombay family favourite. 17.90

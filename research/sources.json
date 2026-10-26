@@ -1,0 +1,326 @@
+[
+  {
+    "id": "dishoom",
+    "name": "Dishoom",
+    "tagline": "Bombay comfort food",
+    "currency": "GBP",
+    "locale": "en-GB",
+    "source": {
+      "url": "https://www.dishoom.com/menu/all-day-main/",
+      "label": "Official all-day menu",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens."
+    },
+    "sections": [
+      {
+        "id": "small-plates",
+        "name": "Small Plates",
+        "items": [
+          {
+            "id": "vegetable-samosas",
+            "name": "Vegetable Samosas",
+            "description": "Pea and potato pastries, warmly spiced with cinnamon, with chutneys.",
+            "price": 7.9,
+            "tags": [
+              "vegan",
+              "vegetarian"
+            ]
+          },
+          {
+            "id": "chilli-cheese-toast",
+            "name": "Chilli Cheese Toast",
+            "description": "Cheddar toast with green chillies, capsicum and garlic.",
+            "price": 7.5,
+            "tags": [
+              "vegetarian",
+              "spicy"
+            ]
+          },
+          {
+            "id": "dishoom-house-chaat",
+            "name": "Dishoom House Chaat",
+            "description": "Fried sweet potato, yoghurt, pomegranate, vegetables and tangy chutneys.",
+            "price": 10.9,
+            "tags": [
+              "vegetarian"
+            ]
+          },
+          {
+            "id": "bhel",
+            "name": "Bhel",
+            "description": "Puffed rice, peanuts and Bombay Mix with fruit, vegetables and chutneys.",
+            "price": 8.5,
+            "tags": [
+              "vegan",
+              "vegetarian"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "grills",
+        "name": "Grills",
+        "items": [
+          {
+            "id": "dishoom-chicken-tikka",
+            "name": "Dishoom Chicken Tikka",
+            "description": "Chicken in sweet vinegar, ginger, turmeric, garlic and green chilli marinade.",
+            "price": 15.5,
+            "tags": [
+              "spicy"
+            ]
+          },
+          {
+            "id": "makhmali-paneer",
+            "name": "Makhmali Paneer",
+            "description": "Gently spiced, charred paneer with fried cashews and pomegranate.",
+            "price": 14.7,
+            "tags": [
+              "vegetarian"
+            ]
+          },
+          {
+            "id": "gunpowder-potatoes",
+            "name": "Gunpowder Potatoes",
+            "description": "Smoky grilled potatoes tossed with butter, aromatic seeds and herbs.",
+            "price": 10.7,
+            "tags": [
+              "vegetarian"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "house-favourites",
+        "name": "House Favourites",
+        "items": [
+          {
+            "id": "chicken-ruby",
+            "name": "Chicken Ruby",
+            "description": "Tender chicken in a rich, spiced makhani sauce.",
+            "price": 18.9,
+            "tags": []
+          },
+          {
+            "id": "house-black-daal",
+            "name": "House Black Daal",
+            "description": "Rich, dark daal cooked for more than 24 hours.",
+            "price": 11.5,
+            "tags": [
+              "vegetarian"
+            ]
+          },
+          {
+            "id": "mattar-paneer",
+            "name": "Mattar Paneer",
+            "description": "A vegetarian curry described as a Bombay family favourite.",
+            "price": 17.9,
+            "tags": [
+              "vegetarian"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "balthazar",
+    "name": "Balthazar",
+    "tagline": "French fare in New York",
+    "currency": "USD",
+    "locale": "en-US",
+    "source": {
+      "url": "https://balthazarny.com/menus/dinner-menu/",
+      "label": "Official New York dinner menu",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Balthazar. Names and prices follow the official dinner menu retrieved on this date. Ingredient descriptions are condensed paraphrases. Prices and availability may change. No dietary or allergen claims are inferred."
+    },
+    "sections": [
+      {
+        "id": "hors-doeuvres",
+        "name": "Hors D’œuvres",
+        "items": [
+          {
+            "id": "balthazar-salad",
+            "name": "Balthazar Salad",
+            "description": "Haricots verts, asparagus, fennel, avocado and ricotta salata with truffle vinaigrette.",
+            "price": 24,
+            "tags": []
+          },
+          {
+            "id": "escargots",
+            "name": "Escargots",
+            "description": "Served in garlic butter.",
+            "price": 26,
+            "tags": []
+          },
+          {
+            "id": "bibb-lettuce-salad",
+            "name": "Bibb Lettuce Salad",
+            "description": "Croutons and chervil with Champagne tarragon vinaigrette.",
+            "price": 22,
+            "tags": []
+          },
+          {
+            "id": "salmon-crudo",
+            "name": "Salmon Crudo",
+            "description": "Citrus miso cream, crispy quinoa, chili and ponzu dressing.",
+            "price": 33,
+            "tags": []
+          },
+          {
+            "id": "chicken-liver-mousse",
+            "name": "Chicken Liver Mousse",
+            "description": "Ruby Port, crispy onion, greens and grilled baguette.",
+            "price": 28,
+            "tags": []
+          }
+        ]
+      },
+      {
+        "id": "entrees",
+        "name": "Entrées",
+        "items": [
+          {
+            "id": "seared-salmon",
+            "name": "Seared Salmon",
+            "description": "Broccolini and toasted hazelnuts with whole grain mustard sauce.",
+            "price": 46,
+            "tags": []
+          },
+          {
+            "id": "sweet-pea-ravioli",
+            "name": "Sweet Pea Ravioli",
+            "description": "Toasted pistachios and radish with brown butter mint sauce.",
+            "price": 38,
+            "tags": []
+          },
+          {
+            "id": "pesto-casarecce",
+            "name": "Pesto Casarecce",
+            "description": "Shrimp, cherry tomatoes and basil.",
+            "price": 45,
+            "tags": []
+          },
+          {
+            "id": "roasted-chicken-marsala",
+            "name": "Roasted Chicken \"Marsala\"",
+            "description": "Wild mushrooms and roasted potato millefeuille.",
+            "price": 38,
+            "tags": []
+          },
+          {
+            "id": "duck-a-lorange",
+            "name": "Duck À L'Orange",
+            "description": "Wild rice, orange segments, candied orange and duck jus.",
+            "price": 49,
+            "tags": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pizzeria-bianco",
+    "name": "Pizzeria Bianco",
+    "tagline": "Heritage Square, Phoenix",
+    "currency": "USD",
+    "locale": "en-US",
+    "source": {
+      "url": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+      "label": "Official Heritage Square menu PDF",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred."
+    },
+    "sections": [
+      {
+        "id": "small-plates",
+        "name": "Small Plates",
+        "items": [
+          {
+            "id": "spiedini",
+            "name": "Spiedini",
+            "description": "Italian fontina wrapped in Prosciutto di Parma.",
+            "price": 15,
+            "tags": []
+          },
+          {
+            "id": "antipasto",
+            "name": "Antipasto",
+            "description": "Wood-roasted vegetables, sopressata and a bite of cheese. After 4pm.",
+            "price": 16,
+            "tags": []
+          }
+        ]
+      },
+      {
+        "id": "salads",
+        "name": "Salads",
+        "items": [
+          {
+            "id": "local-organic-greens",
+            "name": "Local Organic Greens",
+            "description": "With balsamic vinaigrette.",
+            "price": 8,
+            "tags": []
+          },
+          {
+            "id": "handmade-mozzarella",
+            "name": "Handmade Mozzarella",
+            "description": "Local market vegetable, basil and extra virgin olive oil.",
+            "price": 13,
+            "tags": []
+          }
+        ]
+      },
+      {
+        "id": "pizza",
+        "name": "Pizza",
+        "items": [
+          {
+            "id": "marinara",
+            "name": "Marinara",
+            "description": "Tomato sauce, oregano and garlic. No cheese.",
+            "price": 18,
+            "tags": []
+          },
+          {
+            "id": "margherita",
+            "name": "Margherita",
+            "description": "Tomato sauce, fresh mozzarella and basil.",
+            "price": 22,
+            "tags": []
+          },
+          {
+            "id": "sonny-boy",
+            "name": "Sonny Boy",
+            "description": "Tomato sauce, fresh mozzarella, salami and Gaeta olives.",
+            "price": 26,
+            "tags": []
+          },
+          {
+            "id": "rosa",
+            "name": "Rosa",
+            "description": "Red onion, Parmigiano Reggiano, rosemary and Arizona pistachios.",
+            "price": 23,
+            "tags": []
+          },
+          {
+            "id": "biancoverde",
+            "name": "Biancoverde",
+            "description": "Fresh mozzarella, Parmigiano Reggiano, ricotta and arugula.",
+            "price": 24,
+            "tags": []
+          },
+          {
+            "id": "wiseguy",
+            "name": "Wiseguy",
+            "description": "Wood-roasted onion, house-smoked mozzarella and fennel sausage.",
+            "price": 26,
+            "tags": []
+          }
+        ]
+      }
+    ]
+  }
+]

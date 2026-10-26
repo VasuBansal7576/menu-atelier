@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f5ee">
+  <meta name="description" content="Give your menu a beautiful new chapter. Import, edit and export a print-ready menu in your browser.">
+  <title>Menu Atelier — a little more à la carte</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="./" aria-label="Menu Atelier home"><span class="brand-mark">m<span>✳</span></span><span>menu<span class="brand-atelier">atelier</span></span></a>
+    <div class="header-divider"></div><div class="project-label"><span id="project-name">Olive & Ember</span><span class="draft-status" id="save-status">Saved in this browser</span></div>
+    <div class="header-actions"><div class="history-controls"><button id="undo" class="icon-button" aria-label="Undo" title="Undo (Ctrl/⌘ Z)">↶</button><button id="redo" class="icon-button" aria-label="Redo" title="Redo (Ctrl/⌘ Shift Z)">↷</button></div><button id="open-examples" class="button text-button">Try an example <span>↗</span></button><button id="open-import" class="button secondary"><span>↥</span> Import menu</button><button id="export-pdf" class="button primary">Export PDF <span>↓</span></button></div>
+  </header>
+  <div class="workspace">
+    <aside class="content-panel" aria-label="Menu content editor">
+      <div class="panel-title"><div><p class="eyebrow">THE INGREDIENTS</p><h1>Your menu</h1></div><span class="count-badge" id="dish-count">9 dishes</span></div>
+      <div class="content-scroll">
+        <details class="restaurant-details" open><summary>Restaurant details <span>⌄</span></summary><div class="fields"><label>Restaurant name<input id="menu-name" maxlength="120" autocomplete="off"></label><label>A line to set the mood<input id="menu-subtitle" maxlength="240" autocomplete="off" placeholder="Seasonal food. Good company."></label><div class="field-row"><label>Currency<select id="menu-currency"><option value="USD">USD · $</option><option value="GBP">GBP · £</option><option value="EUR">EUR · €</option><option value="INR">INR · ₹</option><option value="CAD">CAD · CA$</option><option value="AUD">AUD · A$</option><option value="JPY">JPY · ¥</option></select></label><button id="edit-footer" class="footer-button">Edit footer ↗</button></div></div></details>
+        <div id="item-editor"></div>
+        <div class="section-list-head"><span class="eyebrow">ON THE MENU</span><button id="add-section" class="small-link">+ Category</button></div>
+        <div id="section-list"></div>
+        <button id="add-dish" class="add-dish">+ Add a dish</button><button id="content-examples" class="examples-entry">Or explore a real restaurant menu <span>↗</span></button>
+        <div id="source-info"></div>
+        <div class="browser-note"><span>◉</span><p>Your work stays in this browser.<br><button id="export-json" class="inline-link">Download a JSON backup</button></p></div>
+      </div>
+      <div class="panel-bottom"><span class="tiny-flower">✳</span> A little care, in every detail.</div>
+    </aside>
+    <main class="canvas-panel">
+      <div class="canvas-heading"><div><p class="eyebrow">FROM YOUR KITCHEN, WITH CHARACTER</p><h2>Set a beautiful table.</h2></div><span class="live-badge"><i></i> Live preview</span><button id="jump-designs" class="jump-designs">Designs ↓</button></div>
+      <div class="canvas-area" id="canvas-area"><div id="pages" class="pages"></div></div>
+      <div class="canvas-bottom"><span id="page-status">A4 · 1 page</span><span class="preview-hint">Click any dish to make it yours <span>↖</span></span><div class="zoom-controls"><button id="zoom-out" aria-label="Zoom out">−</button><span id="zoom-label">Fit</span><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-fit" aria-label="Fit menu to preview">⌗</button></div></div>
+    </main>
+    <aside class="design-panel" aria-label="Menu design settings"><p class="eyebrow">THE FINISHING TOUCH</p><h2>Find your flavour.</h2><p class="panel-description">Four distinct characters.<br>One menu, entirely yours.</p><div id="template-grid" class="template-grid"></div><div class="design-options"><label class="eyebrow" for="page-size">PAPER SIZE</label><select id="page-size"><option value="a4">A4 · 210 × 297 mm</option><option value="letter">US Letter · 8.5 × 11 in</option></select><p class="eyebrow density-label">ROOM TO BREATHE</p><div class="segmented" aria-label="Menu density"><button data-density="compact">Cosy</button><button data-density="balanced" class="active">Just right</button><button data-density="spacious">Airy</button></div><p class="print-note">Vector text. Crisp at every size.<br>Ready for your next service.</p></div><div class="design-signoff"><span>✳</span><p>Good food deserves<br>a lovely introduction.</p></div></aside>
+  </div>
+  <dialog id="import-dialog" class="import-dialog"><div class="dialog-top"><div><p class="eyebrow">A FRESH START</p><h2>Bring your menu to the table.</h2></div><button class="close-dialog icon-button" aria-label="Close import">×</button></div><p class="dialog-lead">From a file or a little copy and paste. You’ll review everything before it becomes your menu.</p><div id="import-entry"><div class="import-tabs"><button data-import-tab="file" class="active">Upload a file</button><button data-import-tab="text">Paste menu text</button></div><div id="file-pane"><label class="dropzone" id="dropzone"><input type="file" id="import-file" accept=".txt,.csv,.json,.pdf,.png,.jpg,.jpeg,.webp"><span class="upload-icon">↥</span><strong>Drop your menu here</strong><span>or <u>choose a file</u> to get started</span><small>TXT, CSV, JSON, PDF, PNG or JPG · up to 20 MB</small></label></div><div id="text-pane" hidden><label class="paste-label" for="import-text">Restaurant name, categories and dishes with prices</label><textarea id="import-text" rows="10" placeholder="The Garden Table&#10;&#10;## Small plates&#10;Whipped ricotta — Lemon, honey, sourdough 12.00&#10;Heirloom tomatoes — Basil, sherry vinegar 14.50"></textarea></div><div class="import-options"><label>Currency in your source<select id="import-currency"><option value="USD">USD · $</option><option value="GBP">GBP · £</option><option value="EUR">EUR · €</option><option value="INR">INR · ₹</option><option value="CAD">CAD · CA$</option><option value="AUD">AUD · A$</option><option value="JPY">JPY · ¥</option></select></label><p>Prices stay exactly as supplied.<br>No dishes or dietary claims are invented.</p></div><div class="format-help"><strong>A tip for perfect imports</strong><span>Use CSV columns <code>category,name,description,price,tags</code>. Put each dish and its price on one line in plain text. JSON backups restore exact data.</span></div><div class="dialog-footer"><span>Files stay in your browser. <button id="import-examples" class="inline-link">Try a sourced example ↗</button></span><button id="parse-text" class="button primary" hidden>Review menu <span>→</span></button></div></div><div id="import-progress" hidden><span class="loading-flower">✳</span><h3>Reading your menu…</h3><p id="progress-text">Preparing the import</p><small>OCR can misread prices. You will review the result before applying it.</small></div><div id="import-review" hidden></div><p id="import-error" class="error-message" role="alert" hidden></p></dialog>
+  <dialog id="examples-dialog"><div class="dialog-top"><div><p class="eyebrow">A LITTLE INSPIRATION</p><h2>Real menus. A fresh perspective.</h2></div><button class="close-dialog icon-button" aria-label="Close examples">×</button></div><p class="dialog-lead">Explore excerpts from three restaurants. Choose one, review the source, then make a design your own.</p><div id="example-cards" class="example-cards"></div><p class="examples-disclaimer">Unofficial demonstrations. Not affiliated with or endorsed by the restaurants. Prices are source snapshots, not live quotations.</p></dialog>
+  <dialog id="footer-dialog" class="small-dialog"><div class="dialog-top"><h2>The last word.</h2><button class="close-dialog icon-button" aria-label="Close footer editor">×</button></div><label>Menu footer<textarea id="menu-footer" maxlength="500" rows="5"></textarea></label><p class="field-help">A short note, opening hours or an allergy reminder. Your full note appears on the printed menu.</p><button id="save-footer" class="button primary">Save footer</button></dialog>
+  <dialog id="category-dialog" class="small-dialog"><div class="dialog-top"><h2 id="category-dialog-title">A new chapter.</h2><button class="close-dialog icon-button" aria-label="Close category editor">×</button></div><label>Category name<input id="category-name" maxlength="120" placeholder="From the garden"></label><div class="dialog-footer"><button id="delete-category" class="button danger" hidden>Delete category & dishes</button><button id="save-category" class="button primary">Save category</button></div><p id="category-error" class="error-message" hidden></p></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

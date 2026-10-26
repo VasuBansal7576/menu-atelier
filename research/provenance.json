@@ -1,0 +1,71 @@
+{
+  "accessedAt": "2026-10-26",
+  "tool": "TinyFish search and fetch_content",
+  "results": [
+    {
+      "url": "https://www.dishoom.com/menu/all-day-main/",
+      "final_url": "https://www.dishoom.com/menu/all-day-main/",
+      "title": "Dishoom All Day Menu | Lunch, Afternoon & Dinner | Dishoom",
+      "published_date": null,
+      "fetchError": null
+    },
+    {
+      "url": "https://balthazarny.com/menus/dinner-menu/",
+      "final_url": "https://balthazarny.com/menus/dinner-menu/",
+      "title": "Dinner Menu - Balthazar New York",
+      "published_date": "2021-03-20T01:11:47+00:00",
+      "fetchError": null
+    },
+    {
+      "url": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+      "final_url": "https://static1.squarespace.com/static/6099bdee28fc4e72bd84675b/t/6435b52c5d98ba2ca676f525/1681241388459/PHXPBMenu_Apr2023.pdf",
+      "title": "Pane Lunch Menu Large 4.7.23",
+      "published_date": null,
+      "fetchError": null
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://ilovebuvette.com/menus-newyork-location",
+      "reason": "Fetched successfully but returned no menu dishes or prices in extracted text."
+    }
+  ],
+  "sources_reviewed": 35,
+  "reviewedUrls": [
+    "https://www.dishoom.com/menu/all-day-main/",
+    "https://www.dishoom.com/food-drink/",
+    "https://www.dishoom.com/menu/edinburgh-all-day/",
+    "https://www.dishoom.com/covent-garden/",
+    "https://www.dishoom.com/menu/breakfast/",
+    "https://www.dishoom.com/menu/lunch-set-menu/",
+    "https://www.dishoom.com/kensington/",
+    "https://www.dishoom.com/",
+    "https://www.dishoom.com/allergens/",
+    "https://www.dishoom.com/group-feasts/",
+    "https://ilovebuvette.com/menus-newyork-location",
+    "https://ilovebuvette.com/",
+    "https://ilovebuvette.com/eat-drink-newyork-location",
+    "https://ilovebuvette.com/eat-drink",
+    "https://ilovebuvette.com/eat-drink-tokyo-location",
+    "https://www.pizzeriabianco.com/",
+    "https://www.pizzeriabianco.com/pizzeria-bianco-heritage-square",
+    "https://www.pizzeriabianco.com/pizzeria-bianco-town-country",
+    "https://www.pizzeriabianco.com/pane-bianco",
+    "https://www.pizzeriabianco.com/chris-bianco-1",
+    "https://www.pizzeriabianco.com/los-angeles",
+    "https://www.pizzeriabianco.com/bar-bianco-heritage-square",
+    "https://www.pizzeriabianco.com/collaborations",
+    "https://balthazarny.com/menus/dinner-menu/",
+    "https://balthazarny.com/menus/",
+    "https://balthazarny.com/",
+    "https://balthazarny.com/menus/balthazar-dinner-menu/",
+    "https://balthazarny.com/menus/lunch-menu/",
+    "https://balthazarny.com/menus/brunch-menu/",
+    "https://balthazarny.com/make-booking/",
+    "https://balthazarny.com/menus/cocktail-menu/",
+    "https://balthazarny.com/menus/breakfast-menu/",
+    "https://balthazarny.com/wp-content/uploads/2013/10/Balthazar-Private-Dining.pdf",
+    "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+    "https://static1.squarespace.com/static/6099bdee28fc4e72bd84675b/t/6435b52c5d98ba2ca676f525/1681241388459/PHXPBMenu_Apr2023.pdf"
+  ]
+}

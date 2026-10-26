@@ -1,0 +1,17 @@
+{
+  "name": "menu-atelier",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An editable menu studio with reviewable imports and vector PDF export.",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "vendor": "node scripts/vendor.mjs"
+  },
+  "dependencies": {
+    "jspdf": "^4.2.0",
+    "pdfjs-dist": "^6.2.108",
+    "tesseract.js": "^6.0.1"
+  }
+}

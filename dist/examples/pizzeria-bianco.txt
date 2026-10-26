@@ -1,0 +1,17 @@
+Pizzeria Bianco
+
+## Small Plates
+Spiedini — Italian fontina wrapped in Prosciutto di Parma. 15.00
+Antipasto — Wood-roasted vegetables, sopressata and a bite of cheese. After 4pm. 16.00
+
+## Salads
+Local Organic Greens — With balsamic vinaigrette. 8.00
+Handmade Mozzarella — Local market vegetable, basil and extra virgin olive oil. 13.00
+
+## Pizza
+Marinara — Tomato sauce, oregano and garlic. No cheese. 18.00
+Margherita — Tomato sauce, fresh mozzarella and basil. 22.00
+Sonny Boy — Tomato sauce, fresh mozzarella, salami and Gaeta olives. 26.00
+Rosa — Red onion, Parmigiano Reggiano, rosemary and Arizona pistachios. 23.00
+Biancoverde — Fresh mozzarella, Parmigiano Reggiano, ricotta and arugula. 24.00
+Wiseguy — Wood-roasted onion, house-smoked mozzarella and fennel sausage. 26.00

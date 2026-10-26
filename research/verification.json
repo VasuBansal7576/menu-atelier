@@ -1,0 +1,159 @@
+{
+  "verifiedAt": "2026-10-26",
+  "scope": "Research dataset only. No application runtime acceptance was performed.",
+  "command": "python3 /Users/vasu/Desktop/Threads/menu-studio/research/verify-sources.py",
+  "exitCode": 0,
+  "result": "PASS: 3 official menu excerpts, 30 priced dishes, unique IDs, schema, source price lines, and URL count.",
+  "directTinyFishContentComparison": [
+    {
+      "id": "vegetable-samosas",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "chilli-cheese-toast",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "dishoom-house-chaat",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "bhel",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "dishoom-chicken-tikka",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "makhmali-paneer",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "gunpowder-potatoes",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "chicken-ruby",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "house-black-daal",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "mattar-paneer",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "balthazar-salad",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "escargots",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "bibb-lettuce-salad",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "salmon-crudo",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "chicken-liver-mousse",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "seared-salmon",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "sweet-pea-ravioli",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "pesto-casarecce",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "roasted-chicken-marsala",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "duck-a-lorange",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "spiedini",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "antipasto",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "local-organic-greens",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "handmade-mozzarella",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "marinara",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "margherita",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "sonny-boy",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "rosa",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "biancoverde",
+      "foundName": true,
+      "foundPrice": true
+    },
+    {
+      "id": "wiseguy",
+      "foundName": true,
+      "foundPrice": true
+    }
+  ]
+}
