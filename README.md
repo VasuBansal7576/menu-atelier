@@ -2,7 +2,16 @@
 
 An editable restaurant menu studio. Import a menu, review its dishes and prices, choose a design, edit the content, and download a PDF.
 
+## Project links
+
+- [Public source repository](https://github.com/VasuBansal7576/menu-atelier).
+- [Recorded browser demo](dist/grading/demo.mp4), 2 minutes 35 seconds.
+- [Twelve menu PDFs and editable backups](dist/grading/).
+- [Private studio](https://menu-atelier-vasu-oct26.zippy17.chatgpt.site) and [grading gallery](https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/grading/). Sign in with the owner account.
+
 ## Run the studio
+
+Use Node.js 22.13 or newer.
 
 ```sh
 npm install
@@ -19,7 +28,7 @@ Open the localhost address printed by the server. The core editing and PDF workf
 4. Switch to another design and check that the edit remains.
 5. Download the PDF and find the changed price in its selectable text.
 
-Run `npm test` for26 behavior and integration checks. Run `node scripts/grade.mjs` to reproduce all12 grading PDFs and editable backups. Integrated browser and PDF evidence is recorded in `devpost/verification.md`. The private deployment includes a `/grading/` gallery and a154.52-second actual browser demo.
+Run `npm test` for 26 behavior and integration checks. Run `node scripts/grade.mjs` to reproduce all 12 grading PDFs and editable backups. Integrated browser and PDF evidence is recorded in `devpost/verification.md`. The private deployment includes a `/grading/` gallery and a 154.52-second actual browser demo.
 
 ## Understand the files
 
@@ -35,7 +44,7 @@ AI helped plan, write, design and verify this software using the Devpost Learn S
 
 Built from an empty project folder on 2026-10-26 for [Build With AI Basics](https://learn-ai-basics.devpost.com/). The required [Devpost Learn Skill Pack](https://github.com/challengepost/learn-ai-basics) is installed locally and its six stages were consulted. The user's explicit autonomous-build instruction adapted the repeated conversational approval checkpoints. The records do not claim unperformed interviews, learner testing or reflection.
 
-A public code repository and a publicly accessible 1 to 3 minute video are separate submission requirements. A private app deployment alone does not complete a hackathon submission. The entrant writes their own submission answers and learning reflections.
+The public repository includes the source, planning files, menu PDFs, and recorded demo. The hackathon separately requires the demo on public YouTube or Vimeo. That upload, the entrant-written submission answers, the exit survey, and the final Devpost entry remain pending. The private app audience is unchanged.
 
 ## License
 

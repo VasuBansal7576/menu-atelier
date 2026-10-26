@@ -56,3 +56,7 @@ Local draft storage avoids accounts. A small template registry replaces unconstr
 
 ## Decisions and Open Issues
 No learner uncertainty was stated, so none is invented. The main engineering uncertainty is whether preview and PDF stay consistent after edits and pagination. Verify actual downloaded PDF text and rendered pages. The user's final grading and public submission steps remain separate from agent verification.
+
+## Public source and demonstration
+
+The user approved public repository publication under VasuBansal7576. Source and planning files are at [https://github.com/VasuBansal7576/menu-atelier](https://github.com/VasuBansal7576/menu-atelier). The recorded demo is at `dist/grading/demo.mp4` in the repository. The owner-private website retains its current audience. A public YouTube or Vimeo upload and the final entrant submission remain separate steps.
