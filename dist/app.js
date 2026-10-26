@@ -83,7 +83,7 @@ function renderTemplates() {
 function renderDirectionSummary() {
   const { settings } = state(), recipe = settings.recipe;
   $('#direction-name').textContent = recipe?.name || templates[settings.template].name;
-  $('#direction-description').textContent = recipe ? `${templates[settings.template].mood}. ${dishCount(state().menu)} editable dishes · ${settings.density} spacing.` : templates[settings.template].mood;
+  $('#direction-description').textContent = recipe ? `${recipe.rationale[0]} ${dishCount(state().menu)} editable dishes · ${settings.density} spacing.` : templates[settings.template].mood;
   const palette = recipe?.palette;
   $('#direction-colors').innerHTML = palette ? ['paper','ink','accent'].map(key => `<span style="background:${palette[key]}" title="${key}: ${palette[key]}"></span>`).join('') : '';
 }

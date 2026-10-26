@@ -115,7 +115,7 @@ export function generateDirections(input, brief, { seed = 0, pageSize = 'a4' } =
       const color = colorFor(c, results.length, entropy), colorName = color[0].toUpperCase() + color.slice(1);
       const treatment = `${c.dark ? 'Dark' : c.cream ? 'Cream' : 'Light'} paper, ${color} accents and ${density === 'spacious' ? 'airy' : density} spacing.`;
       const motif = c.quiet || template === 'atelier' ? 'none' : c.motif || architecture.motif;
-      const rationale = [architecture.description, `${count} dishes fit across ${pages.length} ${pageSize === 'letter' ? 'Letter' : 'A4'} ${architecture.orientation} page${pages.length === 1 ? '' : 's'}.`, `${treatment}${c.quiet ? ' No illustration.' : motif === 'none' ? ' A purely typographic treatment.' : ''}`];
+      const rationale = [motif === 'none' && template === 'trattoria' ? 'A generous typographic masthead and independent category lanes.' : architecture.description, `${count} dishes fit across ${pages.length} ${pageSize === 'letter' ? 'Letter' : 'A4'} ${architecture.orientation} page${pages.length === 1 ? '' : 's'}.`, `${treatment}${c.quiet ? ' No illustration.' : motif === 'none' ? ' A purely typographic treatment.' : ''}`];
       const recipe = validateRecipe({ version: 1, id: `direction-${template}-${directionSeed.toString(36)}`, name: `${colorName} ${architecture.title}`, brief, seed: directionSeed, template, palette: paletteFor(c, results.length, entropy), motif, type: architecture.type, density, rationale });
       applyRecipe(pages, recipe);
       results.push(recipe);
