@@ -1,13 +1,14 @@
 # Submission status
 
-The Menu Atelier draft has been created for Build With AI: Basics. Final submission is in progress and is not yet claimed.
+Menu Atelier is submitted to Build With AI: Basics. The signed-in Devpost finalization page was refreshed and verified on October 26, 2026 at approximately 20:55 UTC (October 27, 02:25 IST), before the 21:00 UTC deadline. It displayed **SUBMITTED**, **5/5 steps done**, a checked disabled agreement checkbox, and **Project submitted!**
 
-- Draft project is Menu Atelier, submission 1266423, software 1511944.
-- Public source is https://github.com/VasuBansal7576/menu-atelier with the complete MIT LICENSE and planning documents.
-- Public demo is https://www.youtube.com/watch?v=2v9OsLtVy4Y . YouTube confirms publication, and anonymous oEmbed retrieval succeeds.
-- The 94.893-second demo depicts the latest editorial print system using actual browser captures and synthetic narration.
-- The user explicitly authorized public video publication and accepted the YouTube upload terms. This supersedes the earlier Keep the video local choice for the new demo.
-- The user completed the Devpost browser check, allowing draft creation after the earlier reCAPTCHA service failure.
-- Overview and project details are saved. Required personal exit-survey answers and final legal confirmation remain pending.
+- Project: https://devpost.com/software/menu-atelier
+- Submission ID: 1266423; software ID: 1511944.
+- Public source and MIT license: https://github.com/VasuBansal7576/menu-atelier
+- Public narrated demo: https://www.youtube.com/watch?v=2v9OsLtVy4Y
+- The 94.893-second demo uses actual browser captures of the current editorial system and synthetic narration.
+- The entrant confirmed eligibility and approved the Devpost binding agreement and public YouTube publication.
+- The entrant supplied the personal survey answers; the remaining value field was completed under their instruction.
+- Local screenshot proof: outputs/submission/devpost-submitted.png (excluded from the repository).
 
-No personal survey answers are invented. Current visual taste remains unverified. Runtime AI remains a stated limitation, not an application claim.
+Visual taste has not passed user acceptance. Runtime generation is a bounded local grammar; no runtime language model or image generation is claimed.
