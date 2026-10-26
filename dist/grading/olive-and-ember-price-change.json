@@ -1,0 +1,99 @@
+{
+  "menu": {
+    "schemaVersion": 1,
+    "id": "f34b793c-967a-4d7a-b512-049263d51726",
+    "name": "Olive & Ember",
+    "subtitle": "A seasonal table, a little closer to nature.",
+    "currency": "USD",
+    "footer": "",
+    "source": null,
+    "sections": [
+      {
+        "id": "86c3805c-78c9-4c2f-b69d-b97f8f5f764e",
+        "name": "TO BEGIN",
+        "items": [
+          {
+            "id": "189d6869-eff0-44a4-84d5-7dddda3d6d13",
+            "name": "Whipped ricotta",
+            "description": "Hot honey, lemon zest, toasted sourdough",
+            "price": 1450,
+            "tags": []
+          },
+          {
+            "id": "d8989ac6-e64c-4d43-9266-998f8b1f6f91",
+            "name": "Heirloom tomatoes",
+            "description": "Peach, basil oil, aged sherry vinegar",
+            "price": 1450,
+            "tags": []
+          },
+          {
+            "id": "1d840672-448a-4c02-87c3-dea4c6c06bda",
+            "name": "Crispy artichokes",
+            "description": "Preserved lemon aioli, garden herbs",
+            "price": 1300,
+            "tags": []
+          }
+        ]
+      },
+      {
+        "id": "7b83a3c3-d9d0-413f-8d14-8bfba65f3e49",
+        "name": "FROM THE KITCHEN",
+        "items": [
+          {
+            "id": "b937c0bb-f04d-43af-970d-62a90c5ca11e",
+            "name": "Wild mushroom pappardelle",
+            "description": "Hand-cut pasta, woodland mushrooms, thyme",
+            "price": 2400,
+            "tags": []
+          },
+          {
+            "id": "e4abe988-9895-4298-9b8e-13552b4501c9",
+            "name": "Wood-fired sea bass",
+            "description": "White beans, fennel, salsa verde",
+            "price": 2850,
+            "tags": []
+          },
+          {
+            "id": "819203cd-14f9-430c-b98a-d4d4bd5cb672",
+            "name": "Slow-roasted aubergine",
+            "description": "Tahini yoghurt, pomegranate, warm flatbread",
+            "price": 2150,
+            "tags": []
+          },
+          {
+            "id": "14be2130-c05b-4992-983a-0c7ee362b071",
+            "name": "Steak frites",
+            "description": "Bavette, rosemary fries, peppercorn butter",
+            "price": 3200,
+            "tags": []
+          }
+        ]
+      },
+      {
+        "id": "75b014ee-0536-45c1-bf7e-293bc6b8cb80",
+        "name": "A LITTLE SWEETNESS",
+        "items": [
+          {
+            "id": "744d6170-cafa-42b1-820c-902e94fbac98",
+            "name": "Olive oil cake",
+            "description": "Roasted apricot, crème fraîche",
+            "price": 950,
+            "tags": []
+          },
+          {
+            "id": "599f52c5-9083-4941-8792-70b784878b46",
+            "name": "Dark chocolate crémeux",
+            "description": "Sea salt, hazelnut, a spoon of espresso cream",
+            "price": 1100,
+            "tags": []
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "template": "midnight",
+    "pageSize": "a4",
+    "density": "balanced"
+  }
+}

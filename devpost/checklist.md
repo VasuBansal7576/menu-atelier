@@ -65,3 +65,29 @@ Activity mode: Reference-only handoff under the autonomy grant.
 - Repeated interview and approval pauses are adapted to the user's explicit request to complete the whole build autonomously. Their specific menu workflow and quality criteria remain the product requirements. No learner interviews, approvals or learning outcomes are fabricated.
 
 - Agent verification passed26 tests after independent review repairs. The12 final PDFs and154.52-second actual browser demo are prepared. User grading remains pending.
+
+## Design recovery after user rejection
+
+Previous mechanical checks remain historical evidence. The user rejected the original studio and menu appearance on 2026-10-26. Final review remains incomplete.
+
+- [x] **4. Replace studio and prove one embedded-font menu**
+  Becomes usable: A larger canvas and one task rail expose direct editing and a materially redesigned printable menu.
+  Why now: The existing visual result failed the user's grading.
+  PRD ref: `prd.md > Screens and Layout`, `prd.md > Look and Feel`
+  Spec ref: `spec.md > Look and Feel`, `spec.md > Design recovery on 2026-10-26`
+  Build: Preserve data/import/history. Add licensed font measurement and a shared vector scene consumed by SVG and pdf-lib.
+  Verify (mechanical): Render the first PDF, inspect its actual typography, extract exact source names, currency and an edited price.
+  Learner check: Pending the user's final design grading. No approval is invented.
+  Commit: `Redesign studio and embed measured menu typography`
+
+- [ ] **5. Complete four compositions and verify release**
+  Becomes usable: Owners can import, edit, switch among four distinct designs and export dependable PDFs.
+  Why now: The first print pilot establishes the typography contract before expanding the collection.
+  PRD ref: `prd.md > Choose a design`, `prd.md > Export`, `prd.md > Real restaurant examples`
+  Spec ref: `spec.md > Layout registry and page engine`, `spec.md > Browser studio`
+  Build: Complete adaptive compositions and mobile editing. Refresh grading artifacts, documentation and demo.
+  Verify (mechanical): Test source PDF and image imports, malformed input, history, persistence and JSON roundtrip. Render all final PDFs. Obtain independent adversarial and scoped source reviews. Verify the existing private deployment.
+  Learner check: Grade the updated studio and actual PDF collection. Final acceptance remains pending.
+  Commit: `Complete redesigned collection and verified grading release`
+
+- Redesign mechanical verification passes29 tests. Independent review verified12 saved PDFs and571 text runs. The original design remains recorded as failed. The new143.50-second original-brand demo is prepared. User grading and learner-authored submission remain pending.

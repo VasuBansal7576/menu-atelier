@@ -1,0 +1,238 @@
+{
+  "repository": "https://github.com/google/fonts",
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "families": {
+    "cormorantgaramond": {
+      "inventory_url": "https://api.github.com/repos/google/fonts/contents/ofl/cormorantgaramond?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "files": [
+        {
+          "name": "CormorantGaramond-Italic[wght].ttf",
+          "path": "sources/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantgaramond/CormorantGaramond-Italic%5Bwght%5D.ttf",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/0d914e7663b7a1429d06ec60a5c5bb026031a2ef",
+          "git_blob_sha": "0d914e7663b7a1429d06ec60a5c5bb026031a2ef",
+          "sha256": "0f48ea6abb2084537854f7174c470991a463b13036309e3b50a81511611c530d",
+          "bytes": 715644
+        },
+        {
+          "name": "CormorantGaramond[wght].ttf",
+          "path": "sources/cormorantgaramond/CormorantGaramond[wght].ttf",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantgaramond/CormorantGaramond%5Bwght%5D.ttf",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/d992a83ce525c330fad3a19087746bcb2dc038ee",
+          "git_blob_sha": "d992a83ce525c330fad3a19087746bcb2dc038ee",
+          "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+          "bytes": 1195560
+        },
+        {
+          "name": "METADATA.pb",
+          "path": "sources/cormorantgaramond/METADATA.pb",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantgaramond/METADATA.pb",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/f013f7293318fe0b84fd8f72c2ec7a1c3e402966",
+          "git_blob_sha": "f013f7293318fe0b84fd8f72c2ec7a1c3e402966",
+          "sha256": "faa16a5e79613ca7cadd599ada1f4cf6891f3cb6731631fbed2a0b18a342e556",
+          "bytes": 1426
+        },
+        {
+          "name": "OFL.txt",
+          "path": "sources/cormorantgaramond/OFL.txt",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantgaramond/OFL.txt",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/507d70f4565352dbfcf2dfc9b42eb092b57c0be8",
+          "git_blob_sha": "507d70f4565352dbfcf2dfc9b42eb092b57c0be8",
+          "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+          "bytes": 4387
+        },
+        {
+          "name": "upstream_info.md",
+          "path": "sources/cormorantgaramond/upstream_info.md",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantgaramond/upstream_info.md",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/679b0ffa4784af0379e416b39c262145d59b8e57",
+          "git_blob_sha": "679b0ffa4784af0379e416b39c262145d59b8e57",
+          "sha256": "d5f0740f7c92d3731f9a922f7bde51cc89cc356956007a7a8a00d2ccc6877754",
+          "bytes": 5528
+        }
+      ]
+    },
+    "sourcesans3": {
+      "inventory_url": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "files": [
+        {
+          "name": "METADATA.pb",
+          "path": "sources/sourcesans3/METADATA.pb",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/METADATA.pb",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/9d8d06d028559f18a184188558ca52e067c267b1",
+          "git_blob_sha": "9d8d06d028559f18a184188558ca52e067c267b1",
+          "sha256": "f855c7833e0c780c90e5a797a003f86e1201990c0af65b9c75d0a04c9be05ed7",
+          "bytes": 995
+        },
+        {
+          "name": "OFL.txt",
+          "path": "sources/sourcesans3/OFL.txt",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/OFL.txt",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/50ee76cf00fbfe42fb7c74a9b95c9508dec5bb8f",
+          "git_blob_sha": "50ee76cf00fbfe42fb7c74a9b95c9508dec5bb8f",
+          "sha256": "09746787287a289323b0ec3cff4d1a4a801331b82b7207c1e186f5d26619a392",
+          "bytes": 4579
+        },
+        {
+          "name": "SourceSans3-Italic[wght].ttf",
+          "path": "sources/sourcesans3/SourceSans3-Italic[wght].ttf",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3-Italic%5Bwght%5D.ttf",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/ee54b36fd07749f63466845ae14d533be06f3c22",
+          "git_blob_sha": "ee54b36fd07749f63466845ae14d533be06f3c22",
+          "sha256": "39e3ab05ccd7cb94907c31005bb5bec1d5432f0b096a2b782976e217a540eb6c",
+          "bytes": 395372
+        },
+        {
+          "name": "SourceSans3[wght].ttf",
+          "path": "sources/sourcesans3/SourceSans3[wght].ttf",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3%5Bwght%5D.ttf",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/d259aa494fe7117141a2752a998a52c172bbd42b",
+          "git_blob_sha": "d259aa494fe7117141a2752a998a52c172bbd42b",
+          "sha256": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+          "bytes": 646340
+        },
+        {
+          "name": "upstream_info.md",
+          "path": "sources/sourcesans3/upstream_info.md",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/upstream_info.md",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/5c82b3f8e3577b4aeaa365ed0979bf2486bddb47",
+          "git_blob_sha": "5c82b3f8e3577b4aeaa365ed0979bf2486bddb47",
+          "sha256": "1e49c55bb11a663684a8cd086affa663bd051e8a1d9a31062e779d1a7c5c8c75",
+          "bytes": 1905
+        }
+      ]
+    },
+    "archivoblack": {
+      "inventory_url": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "files": [
+        {
+          "name": "ArchivoBlack-Regular.ttf",
+          "path": "sources/archivoblack/ArchivoBlack-Regular.ttf",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/ArchivoBlack-Regular.ttf",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/82d07de3b84ed4428f6a302b70f4b555148dfeb0",
+          "git_blob_sha": "82d07de3b84ed4428f6a302b70f4b555148dfeb0",
+          "sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+          "bytes": 90988
+        },
+        {
+          "name": "METADATA.pb",
+          "path": "sources/archivoblack/METADATA.pb",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/METADATA.pb",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/8cde51d534cc5b0329be8ecf75b9d3d7def3a151",
+          "git_blob_sha": "8cde51d534cc5b0329be8ecf75b9d3d7def3a151",
+          "sha256": "def0eb81b3f0d8739a25566ce484cac9e396ad46108a02a809dd8a04c26bfdc5",
+          "bytes": 637
+        },
+        {
+          "name": "OFL.txt",
+          "path": "sources/archivoblack/OFL.txt",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/OFL.txt",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/8894736938f94c6c7a81f27501f26151c412fcbc",
+          "git_blob_sha": "8894736938f94c6c7a81f27501f26151c412fcbc",
+          "sha256": "3173acd82f8c6159b5b1037b539fcbd4edff68e65c2ea8b9412b5a5ca97b08ff",
+          "bytes": 4492
+        },
+        {
+          "name": "upstream_info.md",
+          "path": "sources/archivoblack/upstream_info.md",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/upstream_info.md",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/89608861ede0fd9e5cd77ed44cf53f36fbe24f35",
+          "git_blob_sha": "89608861ede0fd9e5cd77ed44cf53f36fbe24f35",
+          "sha256": "215be61572c0dda22e15149342b6e64c4178f002b50416c3e1e516f16e54ddcf",
+          "bytes": 1725
+        }
+      ]
+    },
+    "bebasneue": {
+      "inventory_url": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "files": [
+        {
+          "name": "BebasNeue-Regular.ttf",
+          "path": "sources/bebasneue/BebasNeue-Regular.ttf",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/BebasNeue-Regular.ttf",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/c328c6e08b20a20a1de47d823e007ee73812a438",
+          "git_blob_sha": "c328c6e08b20a20a1de47d823e007ee73812a438",
+          "sha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+          "bytes": 61400
+        },
+        {
+          "name": "METADATA.pb",
+          "path": "sources/bebasneue/METADATA.pb",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/METADATA.pb",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/39d2d33992ac61c98d520e38aa7ed8425f4cb15d",
+          "git_blob_sha": "39d2d33992ac61c98d520e38aa7ed8425f4cb15d",
+          "sha256": "180da4f2ee7757e589eb5cb82f32c58b64c49f015e504ccab6b21401e7f5d43a",
+          "bytes": 636
+        },
+        {
+          "name": "OFL.txt",
+          "path": "sources/bebasneue/OFL.txt",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/OFL.txt",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/da9571488f44176ef90d7f10c0f402c8be74db67",
+          "git_blob_sha": "da9571488f44176ef90d7f10c0f402c8be74db67",
+          "sha256": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+          "bytes": 4337
+        },
+        {
+          "name": "upstream_info.md",
+          "path": "sources/bebasneue/upstream_info.md",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/upstream_info.md",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/94a9229d71b6a984e8f38d67cb4f603214a62661",
+          "git_blob_sha": "94a9229d71b6a984e8f38d67cb4f603214a62661",
+          "sha256": "236db4a1448733a447e6777b28d0fe7a4ca70cac6afcd217ca36d5b7cc26ed70",
+          "bytes": 3590
+        }
+      ]
+    },
+    "fraunces": {
+      "inventory_url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "files": [
+        {
+          "name": "Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+          "path": "sources/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces-Italic%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/2ddf59a11b89a3d6b2816ea6ae7965026c08143a",
+          "git_blob_sha": "2ddf59a11b89a3d6b2816ea6ae7965026c08143a",
+          "sha256": "b24448c43702fac4ee856781d461a0dfba8d8e594b6e8e190234b75fed2c0e01",
+          "bytes": 414904
+        },
+        {
+          "name": "Fraunces[SOFT,WONK,opsz,wght].ttf",
+          "path": "sources/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/8210f9488d3c732359a9292dd09aca3f2bae830e",
+          "git_blob_sha": "8210f9488d3c732359a9292dd09aca3f2bae830e",
+          "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+          "bytes": 360440
+        },
+        {
+          "name": "METADATA.pb",
+          "path": "sources/fraunces/METADATA.pb",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/METADATA.pb",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/3bbdb646ce7ae89e2b4c5593c313b4f139a59940",
+          "git_blob_sha": "3bbdb646ce7ae89e2b4c5593c313b4f139a59940",
+          "sha256": "812aeaea90af8021a306b8fbb5490e0a861c27a5291d2253b403d9fc9f37afd5",
+          "bytes": 1197
+        },
+        {
+          "name": "OFL.txt",
+          "path": "sources/fraunces/OFL.txt",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/OFL.txt",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/22fa7ce5733434d0c634f6e55116f410858e938c",
+          "git_blob_sha": "22fa7ce5733434d0c634f6e55116f410858e938c",
+          "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+          "bytes": 4391
+        },
+        {
+          "name": "upstream_info.md",
+          "path": "sources/fraunces/upstream_info.md",
+          "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/upstream_info.md",
+          "blob_url": "https://api.github.com/repos/google/fonts/git/blobs/d66b9c391e6ed7b16516cff327bc6ee5a155c4c3",
+          "git_blob_sha": "d66b9c391e6ed7b16516cff327bc6ee5a155c4c3",
+          "sha256": "f4a03e7330376e0753792ecb96d1300ba770eefbc87de1ae0a49262e0feca0c8",
+          "bytes": 7213
+        }
+      ]
+    }
+  }
+}

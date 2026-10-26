@@ -3,8 +3,10 @@ import path from 'node:path';
 
 await mkdir('dist/vendor', { recursive: true });
 const files = [
-  ['jspdf/dist/jspdf.umd.min.js', 'jspdf.umd.min.js'],
-  ['jspdf/LICENSE', 'jspdf.LICENSE'],
+  ['pdf-lib/dist/pdf-lib.min.js', 'pdf-lib.min.js'],
+  ['pdf-lib/LICENSE.md', 'pdf-lib.LICENSE.md'],
+  ['@pdf-lib/fontkit/dist/fontkit.umd.min.js', 'fontkit.umd.min.js'],
+  ['@pdf-lib/fontkit/README.md', 'fontkit.README.md'],
   ['pdfjs-dist/build/pdf.mjs', 'pdf.mjs'],
   ['pdfjs-dist/build/pdf.worker.mjs', 'pdf.worker.mjs'],
   ['pdfjs-dist/LICENSE', 'pdfjs.LICENSE'],

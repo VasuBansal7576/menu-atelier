@@ -1,29 +1,66 @@
-let ready;
-async function loadPDF() {
-  if(!ready) ready=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='./vendor/jspdf.umd.min.js';script.onload=()=>resolve(globalThis.jspdf.jsPDF);script.onerror=()=>{ready=null;reject(new Error('The PDF library could not load. Please try again.'));};document.head.append(script);});
-  return ready;
+import { getFont, missingCharacters, fontFeatures } from './document-fonts.js';
+let pdfLibrary;
+async function loadPDFLibrary() {
+  if (!pdfLibrary) pdfLibrary = (async () => {
+    if (typeof process !== 'undefined' && process.versions?.node) return { library: await import('pdf-lib'), fontkit: (await import('@pdf-lib/fontkit')).default };
+    await new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = new URL('./vendor/pdf-lib.min.js', import.meta.url).href;
+      script.onload = resolve;
+      script.onerror = () => reject(new Error('The PDF library could not load. Please try again.'));
+      document.head.append(script);
+    });
+    return { library: globalThis.PDFLib, fontkit: globalThis.fontkit };
+  })().catch(error => { pdfLibrary = null; throw error; });
+  return pdfLibrary;
 }
-const supportedText = value => value.replace(/[✦✧]/g,'*').replace(/₹/g,'INR ').replace(/[—–]/g,'-').replace(/[’‘]/g,"'").replace(/[“”]/g,'"').replace(/\u202f/g,' ');
 export function unsupportedCharacters(menu) {
-  const content=[menu.name,menu.subtitle,menu.footer,...menu.sections.flatMap(s=>[s.name,...s.items.flatMap(i=>[i.name,i.description,...i.tags])])].join('');
-  return [...new Set([...content].filter(c=>!/[\u0020-\u007e\u00a0-\u00ff\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u20ac\u20b9\u2013\u2014\u2018\u2019\u201c\u201d\u2022\u2026\u202f\n\r\t]/.test(c)))];
+  return missingCharacters([menu.name, menu.subtitle, menu.footer, ...menu.sections.flatMap(section => [section.name, ...section.items.flatMap(item => [item.name, item.description, ...item.tags])])].join('\n'));
 }
-export async function createPDF(pages, title='Menu') {
-  const jsPDF=await loadPDF();
-  return renderPDF(jsPDF,pages,title);
-}
-export function renderPDF(jsPDF,pages,title='Menu') {
-  const doc=new jsPDF({unit:'pt',format:[pages[0].width,pages[0].height],compress:true,putOnlyUsedFonts:true});
-  doc.setProperties({title,subject:'Editable menu designed with Menu Atelier',creator:'Menu Atelier'});
-  pages.forEach((page,index)=>{
-    if(index)doc.addPage([page.width,page.height]);
-    for(const e of page.elements) {
-      if(e.type==='text') {doc.setFont(e.font==='sans'?'helvetica':'times',e.style||'normal');doc.setFontSize(e.size);doc.setTextColor(e.color);doc.text(supportedText(e.value),e.x,e.y,{align:e.align||'left'});}
-      else if(e.type==='line'){doc.setDrawColor(e.color);doc.setLineWidth(e.width);doc.line(e.x1,e.y1,e.x2,e.y2);}
-      else if(e.type==='rect'){if(e.fill)doc.setFillColor(e.fill);if(e.stroke)doc.setDrawColor(e.stroke);doc.setLineWidth(.7);if(e.radius)doc.roundedRect(e.x,e.y,e.width,e.height,e.radius,e.radius,e.fill&&e.stroke?'FD':e.fill?'F':'S');else doc.rect(e.x,e.y,e.width,e.height,e.fill&&e.stroke?'FD':e.fill?'F':'S');}
-      else if(e.type==='ellipse'){if(e.fill)doc.setFillColor(e.fill);if(e.stroke)doc.setDrawColor(e.stroke);doc.setLineWidth(.6);doc.ellipse(e.cx,e.cy,e.rx,e.ry,e.fill&&e.stroke?'FD':e.fill?'F':'S');}
+export async function pdfBytes(pages, title = 'Menu') {
+  if (!pages?.length) throw new Error('There is no menu page to export.');
+  const { library: { PDFDocument, rgb }, fontkit } = await loadPDFLibrary();
+  const document = await PDFDocument.create();
+  document.registerFontkit(fontkit);
+  document.setTitle(title);
+  document.setSubject('Editable menu designed with Menu Atelier');
+  document.setCreator('Menu Atelier');
+  const fonts = new Map();
+  for (const id of new Set(pages.flatMap(page => page.elements.filter(e => e.type === 'text').map(e => e.font)))) {
+    fonts.set(id, await document.embedFont(getFont(id).bytes, { subset: false, features: fontFeatures }));
+  }
+  const color = hex => {
+    const value = hex.replace('#', '');
+    return rgb(parseInt(value.slice(0, 2), 16) / 255, parseInt(value.slice(2, 4), 16) / 255, parseInt(value.slice(4, 6), 16) / 255);
+  };
+  for (const scene of pages) {
+    const page = document.addPage([scene.width, scene.height]);
+    for (const e of scene.elements) {
+      if (e.type === 'text') {
+        const x = e.x - (e.align === 'right' ? e.advance : e.align === 'center' ? e.advance / 2 : 0);
+        page.drawText(e.value, { x, y: scene.height - e.y, size: e.size, font: fonts.get(e.font), color: color(e.color) });
+      } else if (e.type === 'line') page.drawLine({ start: { x: e.x1, y: scene.height - e.y1 }, end: { x: e.x2, y: scene.height - e.y2 }, thickness: e.width, color: color(e.color) });
+      else if (e.type === 'rect') page.drawRectangle({ x: e.x, y: scene.height - e.y - e.height, width: e.width, height: e.height, color: e.fill ? color(e.fill) : undefined, borderColor: e.stroke ? color(e.stroke) : undefined, borderWidth: e.stroke ? .7 : 0 });
+      else if (e.type === 'ellipse') page.drawEllipse({ x: e.cx, y: scene.height - e.cy, xScale: e.rx, yScale: e.ry, color: e.fill ? color(e.fill) : undefined, borderColor: e.stroke ? color(e.stroke) : undefined, borderWidth: e.stroke ? .6 : 0 });
     }
-  });
-  return doc;
+  }
+  return document.save();
 }
-export function downloadBlob(blob,name) {const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}
+export async function createPDF(pages, title = 'Menu') {
+  const bytes = await pdfBytes(pages, title);
+  return {
+    output(type = 'arraybuffer') {
+      if (type === 'arraybuffer') return bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
+      if (type === 'blob') return new Blob([bytes], { type: 'application/pdf' });
+      throw new Error('Choose arraybuffer or blob PDF output.');
+    },
+    save(filename) { downloadBlob(new Blob([bytes], { type: 'application/pdf' }), filename); }
+  };
+}
+export function downloadBlob(blob, name) {
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url; link.download = name;
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 30000);
+}

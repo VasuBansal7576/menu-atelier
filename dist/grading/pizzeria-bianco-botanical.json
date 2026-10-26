@@ -106,6 +106,6 @@
   "settings": {
     "template": "botanical",
     "pageSize": "a4",
-    "density": "compact"
+    "density": "balanced"
   }
 }

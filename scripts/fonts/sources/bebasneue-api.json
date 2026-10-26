@@ -1,0 +1,98 @@
+[
+  {
+    "name": "BebasNeue-Regular.ttf",
+    "path": "ofl/bebasneue/BebasNeue-Regular.ttf",
+    "sha": "c328c6e08b20a20a1de47d823e007ee73812a438",
+    "size": 61400,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/BebasNeue-Regular.ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/BebasNeue-Regular.ttf",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/c328c6e08b20a20a1de47d823e007ee73812a438",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/BebasNeue-Regular.ttf",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/BebasNeue-Regular.ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/c328c6e08b20a20a1de47d823e007ee73812a438",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/BebasNeue-Regular.ttf"
+    }
+  },
+  {
+    "name": "DESCRIPTION.en_us.html",
+    "path": "ofl/bebasneue/DESCRIPTION.en_us.html",
+    "sha": "48c9863fbadbd258bdb507c7d553d052f320cfa0",
+    "size": 449,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/DESCRIPTION.en_us.html?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/DESCRIPTION.en_us.html",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/48c9863fbadbd258bdb507c7d553d052f320cfa0",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/DESCRIPTION.en_us.html",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/DESCRIPTION.en_us.html?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/48c9863fbadbd258bdb507c7d553d052f320cfa0",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/DESCRIPTION.en_us.html"
+    }
+  },
+  {
+    "name": "METADATA.pb",
+    "path": "ofl/bebasneue/METADATA.pb",
+    "sha": "39d2d33992ac61c98d520e38aa7ed8425f4cb15d",
+    "size": 636,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/METADATA.pb?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/METADATA.pb",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/39d2d33992ac61c98d520e38aa7ed8425f4cb15d",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/METADATA.pb",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/METADATA.pb?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/39d2d33992ac61c98d520e38aa7ed8425f4cb15d",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/METADATA.pb"
+    }
+  },
+  {
+    "name": "OFL.txt",
+    "path": "ofl/bebasneue/OFL.txt",
+    "sha": "da9571488f44176ef90d7f10c0f402c8be74db67",
+    "size": 4337,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/OFL.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/OFL.txt",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/da9571488f44176ef90d7f10c0f402c8be74db67",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/OFL.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/OFL.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/da9571488f44176ef90d7f10c0f402c8be74db67",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/OFL.txt"
+    }
+  },
+  {
+    "name": "config.yaml",
+    "path": "ofl/bebasneue/config.yaml",
+    "sha": "50cc8dd87c4f5b6bcd581775443a203e5d4a9dcd",
+    "size": 48,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/config.yaml?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/config.yaml",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/50cc8dd87c4f5b6bcd581775443a203e5d4a9dcd",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/config.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/config.yaml?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/50cc8dd87c4f5b6bcd581775443a203e5d4a9dcd",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/config.yaml"
+    }
+  },
+  {
+    "name": "upstream_info.md",
+    "path": "ofl/bebasneue/upstream_info.md",
+    "sha": "94a9229d71b6a984e8f38d67cb4f603214a62661",
+    "size": 3590,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/upstream_info.md?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/upstream_info.md",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/94a9229d71b6a984e8f38d67cb4f603214a62661",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/upstream_info.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/bebasneue/upstream_info.md?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/94a9229d71b6a984e8f38d67cb4f603214a62661",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/upstream_info.md"
+    }
+  }
+]

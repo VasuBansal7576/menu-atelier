@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "id": "olive-and-ember-demo",
+  "name": "Olive & Ember",
+  "subtitle": "A seasonal table, a little closer to nature.",
+  "currency": "USD",
+  "footer": "Made with the season. Meant to be shared.\nPlease tell us about any allergies before ordering.",
+  "source": null,
+  "sections": [
+    {
+      "id": "demo-section-0",
+      "name": "To begin",
+      "items": [
+        {
+          "id": "demo-dish-0-0",
+          "name": "Whipped ricotta",
+          "description": "Hot honey, lemon zest, toasted sourdough",
+          "price": 1200,
+          "tags": [
+            "vegetarian"
+          ]
+        },
+        {
+          "id": "demo-dish-0-1",
+          "name": "Heirloom tomatoes",
+          "description": "Peach, basil oil, aged sherry vinegar",
+          "price": 1450,
+          "tags": [
+            "vegan"
+          ]
+        },
+        {
+          "id": "demo-dish-0-2",
+          "name": "Crispy artichokes",
+          "description": "Preserved lemon aioli, garden herbs",
+          "price": 1300,
+          "tags": [
+            "vegetarian"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "demo-section-1",
+      "name": "From the kitchen",
+      "items": [
+        {
+          "id": "demo-dish-1-0",
+          "name": "Wild mushroom pappardelle",
+          "description": "Hand-cut pasta, woodland mushrooms, thyme",
+          "price": 2400,
+          "tags": [
+            "vegetarian"
+          ]
+        },
+        {
+          "id": "demo-dish-1-1",
+          "name": "Wood-fired sea bass",
+          "description": "White beans, fennel, salsa verde",
+          "price": 2850,
+          "tags": []
+        },
+        {
+          "id": "demo-dish-1-2",
+          "name": "Slow-roasted aubergine",
+          "description": "Tahini yoghurt, pomegranate, warm flatbread",
+          "price": 2150,
+          "tags": [
+            "vegetarian"
+          ]
+        },
+        {
+          "id": "demo-dish-1-3",
+          "name": "Steak frites",
+          "description": "Bavette, rosemary fries, peppercorn butter",
+          "price": 3200,
+          "tags": []
+        }
+      ]
+    },
+    {
+      "id": "demo-section-2",
+      "name": "A little sweetness",
+      "items": [
+        {
+          "id": "demo-dish-2-0",
+          "name": "Olive oil cake",
+          "description": "Roasted apricot, crème fraîche",
+          "price": 950,
+          "tags": [
+            "vegetarian"
+          ]
+        },
+        {
+          "id": "demo-dish-2-1",
+          "name": "Dark chocolate crémeux",
+          "description": "Sea salt, hazelnut, a spoon of espresso cream",
+          "price": 1100,
+          "tags": [
+            "vegetarian"
+          ]
+        }
+      ]
+    }
+  ]
+}

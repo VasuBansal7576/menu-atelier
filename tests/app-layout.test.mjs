@@ -5,11 +5,11 @@ import { demoMenu } from '../dist/model.js';
 function studioEnvironment(saved) {
   const nodes=new Map(),stored=new Map(saved?[['menu-atelier-v1',JSON.stringify(saved)]]:[]);let writes=0;
   const node=selector=>{
-    if(!nodes.has(selector))nodes.set(selector,{value:'',textContent:'',innerHTML:'',validity:{valid:true},listeners:{},classList:{add(){},remove(){},toggle(){}},style:{setProperty(){}},addEventListener(name,callback){this.listeners[name]=callback;},setCustomValidity(message){this.validity.valid=!message;this.validationMessage=message;},reportValidity(){this.validityReported=true;},showModal(){this.open=true;},close(){this.open=false;}});
+    if(!nodes.has(selector))nodes.set(selector,{value:'',textContent:'',innerHTML:'',required:selector==='#menu-name',validationMessage:'',get validity(){return {valid:!this.validationMessage&&(!this.required||this.value.trim().length>0)};},listeners:{},classList:{add(){},remove(){},toggle(){}},style:{setProperty(){}},addEventListener(name,callback){this.listeners[name]=callback;},setCustomValidity(message){this.validationMessage=message;},reportValidity(){this.validityReported=true;},removeAttribute(){},showModal(){this.open=true;},close(){this.open=false;}});
     return nodes.get(selector);
   };
   const previous=Object.fromEntries(['document','localStorage','fetch','setTimeout','clearTimeout','menuAtelier'].map(key=>[key,Object.getOwnPropertyDescriptor(globalThis,key)]));
-  globalThis.document={querySelector:node,querySelectorAll:()=>[],addEventListener(){}};
+  globalThis.document={querySelector:node,querySelectorAll:selector=>selector==='.content-panel input,.content-panel textarea'?[...nodes.values()]:[],addEventListener(){}};
   globalThis.localStorage={getItem:key=>stored.get(key)||null,setItem(key,value){writes++;stored.set(key,value);}};
   globalThis.fetch=async()=>({ok:true,json:async()=>[]});globalThis.setTimeout=()=>0;globalThis.clearTimeout=()=>{};
   return {node,stored,get writes(){return writes;},restore(){for(const [key,descriptor] of Object.entries(previous)){if(descriptor===undefined)delete globalThis[key];else Object.defineProperty(globalThis,key,descriptor);}}};
@@ -41,5 +41,50 @@ test('an imported multiline heading cannot replace the active menu or close revi
     await env.node('#import-file').onchange({target:{files:[{name:'menu.json',size:2000,text:async()=>JSON.stringify(menu)}]}});
     env.node('#apply-import').onclick();
     assert.deepEqual(globalThis.menuAtelier.getMenu(),before);assert.deepEqual(globalThis.menuAtelier.getPages(),pages);assert.equal(env.writes,0);assert.equal(env.node('#import-dialog').open,true);assert.equal(env.node('#review-error').hidden,false);assert.match(env.node('#review-error').textContent,/Shorten those fields/);
+  } finally {env.restore();}
+});
+
+test('a required restaurant name is hydrated and undo restores an unfinished edit',async()=>{
+  const env=studioEnvironment();
+  try {
+    await import(`../dist/app.js?hydration-regression=${Date.now()}`);
+    const name=env.node('#menu-name'),initial=globalThis.menuAtelier.getMenu().name;
+    assert.equal(name.value,initial);assert.equal(name.validity.valid,true);
+    env.node('#edit-footer').onclick();env.node('#menu-footer').value='A new footer';env.node('#save-footer').onclick();
+    name.value='';name.listeners.input({target:name});
+    assert.equal(name.validity.valid,false);assert.equal(globalThis.menuAtelier.getMenu().name,initial);
+    env.node('#undo').onclick();
+    assert.equal(name.value,initial);assert.equal(name.validity.valid,true);
+  } finally {env.restore();}
+});
+
+test('an older file read cannot replace a newer import review',async()=>{
+  const env=studioEnvironment();
+  try {
+    await import(`../dist/app.js?import-generation=${Date.now()}`);
+    env.node('#open-import').onclick();env.node('#import-currency').value='USD';
+    let resolveOld;const oldText=new Promise(resolve=>resolveOld=resolve);
+    const oldRead=env.node('#import-file').onchange({target:{files:[{name:'old.txt',size:100,text:()=>oldText}]}});
+    env.node('#open-import').onclick();env.node('#import-currency').value='GBP';
+    await env.node('#import-file').onchange({target:{files:[{name:'new.txt',size:100,text:async()=> 'New menu\n## Mains\nNew dish 12.50'}]}});
+    const review=env.node('#import-review').innerHTML;assert.match(review,/New menu/);assert.match(review,/GBP/);
+    resolveOld('Old menu\n## Mains\nOld dish 8.00');await oldRead;
+    assert.equal(env.node('#import-review').innerHTML,review);
+  } finally {env.restore();}
+});
+test('a file read captures source currency and cancellation invalidates its completion',async()=>{
+  const env=studioEnvironment();
+  try {
+    await import(`../dist/app.js?import-currency=${Date.now()}`);
+    env.node('#open-import').onclick();env.node('#import-currency').value='USD';
+    let resolveText;const text=new Promise(resolve=>resolveText=resolve);
+    const read=env.node('#import-file').onchange({target:{files:[{name:'menu.txt',size:100,text:()=>text}]}});
+    env.node('#import-currency').value='GBP';resolveText('A table\n## Mains\nDish 12.50');await read;
+    assert.match(env.node('#import-review').innerHTML,/Price \(USD\)/);
+    env.node('#open-import').onclick();let resolveCancelled;const cancelled=new Promise(resolve=>resolveCancelled=resolve);
+    const old=env.node('#import-file').onchange({target:{files:[{name:'cancelled.txt',size:100,text:()=>cancelled}]}});
+    env.node('#import-dialog').listeners.cancel();const before=env.node('#import-review').innerHTML;
+    resolveCancelled('Cancelled menu\n## Mains\nDish 5.00');await old;
+    assert.equal(env.node('#import-review').innerHTML,before);
   } finally {env.restore();}
 });

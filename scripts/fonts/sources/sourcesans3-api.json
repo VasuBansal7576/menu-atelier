@@ -1,0 +1,114 @@
+[
+  {
+    "name": "DESCRIPTION.en_us.html",
+    "path": "ofl/sourcesans3/DESCRIPTION.en_us.html",
+    "sha": "68b7229ea7b7f335599e22eb3be2f2e179f5fc32",
+    "size": 292,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/DESCRIPTION.en_us.html?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/DESCRIPTION.en_us.html",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/68b7229ea7b7f335599e22eb3be2f2e179f5fc32",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/DESCRIPTION.en_us.html",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/DESCRIPTION.en_us.html?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/68b7229ea7b7f335599e22eb3be2f2e179f5fc32",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/DESCRIPTION.en_us.html"
+    }
+  },
+  {
+    "name": "METADATA.pb",
+    "path": "ofl/sourcesans3/METADATA.pb",
+    "sha": "9d8d06d028559f18a184188558ca52e067c267b1",
+    "size": 995,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/METADATA.pb?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/METADATA.pb",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/9d8d06d028559f18a184188558ca52e067c267b1",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/METADATA.pb",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/METADATA.pb?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/9d8d06d028559f18a184188558ca52e067c267b1",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/METADATA.pb"
+    }
+  },
+  {
+    "name": "OFL.txt",
+    "path": "ofl/sourcesans3/OFL.txt",
+    "sha": "50ee76cf00fbfe42fb7c74a9b95c9508dec5bb8f",
+    "size": 4579,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/OFL.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/OFL.txt",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/50ee76cf00fbfe42fb7c74a9b95c9508dec5bb8f",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/OFL.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/OFL.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/50ee76cf00fbfe42fb7c74a9b95c9508dec5bb8f",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/OFL.txt"
+    }
+  },
+  {
+    "name": "SourceSans3-Italic[wght].ttf",
+    "path": "ofl/sourcesans3/SourceSans3-Italic[wght].ttf",
+    "sha": "ee54b36fd07749f63466845ae14d533be06f3c22",
+    "size": 395372,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/SourceSans3-Italic[wght].ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3-Italic[wght].ttf",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/ee54b36fd07749f63466845ae14d533be06f3c22",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3-Italic%5Bwght%5D.ttf",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/SourceSans3-Italic[wght].ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/ee54b36fd07749f63466845ae14d533be06f3c22",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3-Italic[wght].ttf"
+    }
+  },
+  {
+    "name": "SourceSans3[wght].ttf",
+    "path": "ofl/sourcesans3/SourceSans3[wght].ttf",
+    "sha": "d259aa494fe7117141a2752a998a52c172bbd42b",
+    "size": 646340,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/SourceSans3[wght].ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3[wght].ttf",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/d259aa494fe7117141a2752a998a52c172bbd42b",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3%5Bwght%5D.ttf",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/SourceSans3[wght].ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/d259aa494fe7117141a2752a998a52c172bbd42b",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3[wght].ttf"
+    }
+  },
+  {
+    "name": "config.yaml",
+    "path": "ofl/sourcesans3/config.yaml",
+    "sha": "fa3dcfeabd2476208ce123f2ee66bbb5da8f7088",
+    "size": 147,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/config.yaml?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/config.yaml",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/fa3dcfeabd2476208ce123f2ee66bbb5da8f7088",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/config.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/config.yaml?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/fa3dcfeabd2476208ce123f2ee66bbb5da8f7088",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/config.yaml"
+    }
+  },
+  {
+    "name": "upstream_info.md",
+    "path": "ofl/sourcesans3/upstream_info.md",
+    "sha": "5c82b3f8e3577b4aeaa365ed0979bf2486bddb47",
+    "size": 1905,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/upstream_info.md?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/upstream_info.md",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/5c82b3f8e3577b4aeaa365ed0979bf2486bddb47",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/upstream_info.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/sourcesans3/upstream_info.md?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/5c82b3f8e3577b4aeaa365ed0979bf2486bddb47",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/upstream_info.md"
+    }
+  }
+]

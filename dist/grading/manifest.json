@@ -1,7 +1,8 @@
 [
   {
     "restaurant": "Dishoom",
-    "template": "The Atelier",
+    "template": "Maison",
+    "templateId": "atelier",
     "filename": "dishoom-atelier",
     "pages": 1,
     "dishes": 10,
@@ -9,7 +10,17 @@
   },
   {
     "restaurant": "Dishoom",
-    "template": "Casa Rosso",
+    "template": "Edition",
+    "templateId": "midnight",
+    "filename": "dishoom-midnight",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://www.dishoom.com/menu/all-day-main/"
+  },
+  {
+    "restaurant": "Dishoom",
+    "template": "Mercato",
+    "templateId": "trattoria",
     "filename": "dishoom-trattoria",
     "pages": 1,
     "dishes": 10,
@@ -17,23 +28,17 @@
   },
   {
     "restaurant": "Dishoom",
-    "template": "The Herbarium",
+    "template": "Broadside",
+    "templateId": "botanical",
     "filename": "dishoom-botanical",
-    "pages": 2,
-    "dishes": 10,
-    "source": "https://www.dishoom.com/menu/all-day-main/"
-  },
-  {
-    "restaurant": "Dishoom",
-    "template": "After Hours",
-    "filename": "dishoom-midnight",
     "pages": 1,
     "dishes": 10,
     "source": "https://www.dishoom.com/menu/all-day-main/"
   },
   {
     "restaurant": "Balthazar",
-    "template": "The Atelier",
+    "template": "Maison",
+    "templateId": "atelier",
     "filename": "balthazar-atelier",
     "pages": 1,
     "dishes": 10,
@@ -41,7 +46,17 @@
   },
   {
     "restaurant": "Balthazar",
-    "template": "Casa Rosso",
+    "template": "Edition",
+    "templateId": "midnight",
+    "filename": "balthazar-midnight",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://balthazarny.com/menus/dinner-menu/"
+  },
+  {
+    "restaurant": "Balthazar",
+    "template": "Mercato",
+    "templateId": "trattoria",
     "filename": "balthazar-trattoria",
     "pages": 1,
     "dishes": 10,
@@ -49,23 +64,17 @@
   },
   {
     "restaurant": "Balthazar",
-    "template": "The Herbarium",
+    "template": "Broadside",
+    "templateId": "botanical",
     "filename": "balthazar-botanical",
     "pages": 1,
     "dishes": 10,
     "source": "https://balthazarny.com/menus/dinner-menu/"
   },
   {
-    "restaurant": "Balthazar",
-    "template": "After Hours",
-    "filename": "balthazar-midnight",
-    "pages": 1,
-    "dishes": 10,
-    "source": "https://balthazarny.com/menus/dinner-menu/"
-  },
-  {
     "restaurant": "Pizzeria Bianco",
-    "template": "The Atelier",
+    "template": "Maison",
+    "templateId": "atelier",
     "filename": "pizzeria-bianco-atelier",
     "pages": 1,
     "dishes": 10,
@@ -73,7 +82,17 @@
   },
   {
     "restaurant": "Pizzeria Bianco",
-    "template": "Casa Rosso",
+    "template": "Edition",
+    "templateId": "midnight",
+    "filename": "pizzeria-bianco-midnight",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
+  },
+  {
+    "restaurant": "Pizzeria Bianco",
+    "template": "Mercato",
+    "templateId": "trattoria",
     "filename": "pizzeria-bianco-trattoria",
     "pages": 1,
     "dishes": 10,
@@ -81,16 +100,9 @@
   },
   {
     "restaurant": "Pizzeria Bianco",
-    "template": "The Herbarium",
+    "template": "Broadside",
+    "templateId": "botanical",
     "filename": "pizzeria-bianco-botanical",
-    "pages": 1,
-    "dishes": 10,
-    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
-  },
-  {
-    "restaurant": "Pizzeria Bianco",
-    "template": "After Hours",
-    "filename": "pizzeria-bianco-midnight",
     "pages": 1,
     "dishes": 10,
     "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"

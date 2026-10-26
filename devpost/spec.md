@@ -12,15 +12,15 @@ The app reads a menu into categories and dishes. The editor changes that data. O
 Implements `prd.md > The Core Journey`. An import adapter extracts text or reads structured input. A parser creates a reviewable candidate. Confirmation replaces the menu model. Edits update the model and page layout. Export draws the laid-out menu into a PDF. Draft storage reloads the validated model.
 
 ## Stack
-Agent-selected under the autonomy grant. Buildless HTML, CSS and browser JavaScript keep startup and deployment simple. jsPDF produces real vector PDF files. PDF.js extracts PDF text. Tesseract.js performs optional OCR in a worker. Heavy import libraries load only when required. Vendor dependencies locally where practical and include their license notices. Use Node's built-in tests for pure parser and validation behavior. Use a real browser for integrated verification.
+Agent-selected under the autonomy grant. Buildless HTML, CSS and browser JavaScript keep startup and deployment simple. pdf-lib with @pdf-lib/fontkit produces real vector PDF files with embedded licensed fonts. Fontkit measures the same static font bytes used by the SVG preview and PDF. PDF.js extracts PDF text. Tesseract.js performs optional OCR in a worker. Heavy import libraries load only when required. Vendor dependencies locally where practical and include their license notices. Use Node's built-in tests for pure parser and validation behavior. Use a real browser for integrated verification.
 
-Official dependency documentation must be checked when integrated. Main sources are https://github.com/parallax/jsPDF, https://mozilla.github.io/pdf.js/, and https://github.com/naptha/tesseract.js.
+Official dependency documentation must be checked when integrated. Main sources are https://github.com/Hopding/pdf-lib, https://mozilla.github.io/pdf.js/, and https://github.com/naptha/tesseract.js.
 
 ## Where It Runs and How Someone Tries It
 Run `npm start` from the project. Open the printed localhost URL. No API key is required for the core journey. A private Sites deployment gives the owner a grading link. Public repository and public demo video are separate hackathon requirements and are not replaced by deployment.
 
 ## Look and Feel
-Implements `prd.md > Look and Feel`. Use warm paper, near-black text and a green studio accent. Template-specific type, border, spacing and ornament must alter real output composition. Preview and PDF consume the same page layout. Respect reduced motion and readable focus indicators.
+Implements `prd.md > Look and Feel`. Use a neutral studio with a single task rail and a large document canvas. Keep template identifiers atelier, trattoria, botanical and midnight to preserve existing preferences. Their new display names and compositions are Maison, Mercato, Broadside and Edition. Use vendored static fonts and their OFL notices. The layout engine emits immutable pages with final text lines, font IDs, measured widths and positions in points. Preview and PDF consume those exact pages. Export does not reflow or transliterate source text. Coverage and fit errors reject a candidate before history or persistence. Respect reduced motion and readable focus indicators.
 
 ## Components
 
@@ -59,4 +59,8 @@ No learner uncertainty was stated, so none is invented. The main engineering unc
 
 ## Public source and demonstration
 
-The user approved public repository publication under VasuBansal7576. Source and planning files are at [https://github.com/VasuBansal7576/menu-atelier](https://github.com/VasuBansal7576/menu-atelier). The recorded demo is at `dist/grading/demo.mp4` in the repository. The owner-private website retains its current audience. A public YouTube or Vimeo upload and the final entrant submission remain separate steps.
+The user approved public repository publication under VasuBansal7576. Source and planning files are at [https://github.com/VasuBansal7576/menu-atelier](https://github.com/VasuBansal7576/menu-atelier). The redesigned143.50-second actual browser demo is at `dist/grading/demo.mp4` in the repository. The owner-private website retains its current audience. A public YouTube or Vimeo upload and the final entrant submission remain separate steps.
+
+## Design recovery on 2026-10-26
+
+The user rejected the original appearance. Two runnable alternatives and an independent cross-judge selected the single-rail editorial studio. The selected architecture preserves model/import/history and replaces typography, composition and the PDF adapter. Functional tests are regression evidence, not visual acceptance. A first real embedded-font PDF precedes expansion to all designs. Final verification includes actual source imports, rendered PDFs, source-price extraction, responsive editing and independent adversarial review.

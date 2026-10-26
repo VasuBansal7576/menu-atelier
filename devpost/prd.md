@@ -17,10 +17,10 @@ Implements `scope.md > The Core Loop` and `scope.md > The Unique Kernel`.
 7. The draft survives a reload on the same browser.
 
 ## Screens and Layout
-One main studio with a slim application header, source and content controls on the left, a large paper preview in the center, and design controls. Import and export use focused dialogs. On a phone, controls stack and the preview remains usable. This arrangement is agent-selected under the autonomy grant.
+One main studio with a compact toolbar, one task rail, and a large document canvas. The rail switches among design, content and document settings. Selecting a dish opens its fields in that rail. Import and export use focused dialogs. Phone navigation preserves access to every editing task. This revised arrangement is agent-selected under the autonomy grant after the user rejected the previous studio.
 
 ## Look and Feel
-Agent-selected visual direction. Warm off-white studio, deep olive accents, crisp typography, fine rules and generous space. The menu library includes an editorial serif design, a red trattoria design, a botanical design, and a dark evening design. Each changes composition and ornament as well as color. Actual PDF output must preserve legibility and hierarchy.
+The previous warm olive studio failed user design acceptance. Recovery uses a quiet neutral publishing workspace, a larger paper canvas and readable controls. Four independent compositions use licensed local fonts. Maison is a wine-ink brasserie with balanced columns. Edition has bold sans typography and a category rail. Mercato uses expressive Italian display type, full-width category groups and paired dishes. Broadside uses condensed headlines and section bands. Composition must adapt to restaurant names, long dishes and dense menus. It must never hardcode a restaurant title split. Actual selectable PDFs use the same font bytes, measured line breaks and positions as the preview. Final appearance remains for the user to grade.
 
 ## Features and Behavior
 

@@ -1,0 +1,114 @@
+[
+  {
+    "name": "ArchivoBlack-Regular.ttf",
+    "path": "ofl/archivoblack/ArchivoBlack-Regular.ttf",
+    "sha": "82d07de3b84ed4428f6a302b70f4b555148dfeb0",
+    "size": 90988,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/ArchivoBlack-Regular.ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/ArchivoBlack-Regular.ttf",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/82d07de3b84ed4428f6a302b70f4b555148dfeb0",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/ArchivoBlack-Regular.ttf",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/ArchivoBlack-Regular.ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/82d07de3b84ed4428f6a302b70f4b555148dfeb0",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/ArchivoBlack-Regular.ttf"
+    }
+  },
+  {
+    "name": "DESCRIPTION.en_us.html",
+    "path": "ofl/archivoblack/DESCRIPTION.en_us.html",
+    "sha": "234e1942dfbe9a472380f283c527736621d82677",
+    "size": 882,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/DESCRIPTION.en_us.html?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/DESCRIPTION.en_us.html",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/234e1942dfbe9a472380f283c527736621d82677",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/DESCRIPTION.en_us.html",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/DESCRIPTION.en_us.html?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/234e1942dfbe9a472380f283c527736621d82677",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/DESCRIPTION.en_us.html"
+    }
+  },
+  {
+    "name": "FONTLOG.txt",
+    "path": "ofl/archivoblack/FONTLOG.txt",
+    "sha": "7d7e12905e2c7bcbc35585464c1be3b97e0e74fa",
+    "size": 1828,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/FONTLOG.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/FONTLOG.txt",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/7d7e12905e2c7bcbc35585464c1be3b97e0e74fa",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/FONTLOG.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/FONTLOG.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/7d7e12905e2c7bcbc35585464c1be3b97e0e74fa",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/FONTLOG.txt"
+    }
+  },
+  {
+    "name": "METADATA.pb",
+    "path": "ofl/archivoblack/METADATA.pb",
+    "sha": "8cde51d534cc5b0329be8ecf75b9d3d7def3a151",
+    "size": 637,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/METADATA.pb?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/METADATA.pb",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/8cde51d534cc5b0329be8ecf75b9d3d7def3a151",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/METADATA.pb",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/METADATA.pb?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/8cde51d534cc5b0329be8ecf75b9d3d7def3a151",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/METADATA.pb"
+    }
+  },
+  {
+    "name": "OFL.txt",
+    "path": "ofl/archivoblack/OFL.txt",
+    "sha": "8894736938f94c6c7a81f27501f26151c412fcbc",
+    "size": 4492,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/OFL.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/OFL.txt",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/8894736938f94c6c7a81f27501f26151c412fcbc",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/OFL.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/OFL.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/8894736938f94c6c7a81f27501f26151c412fcbc",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/OFL.txt"
+    }
+  },
+  {
+    "name": "config.yaml",
+    "path": "ofl/archivoblack/config.yaml",
+    "sha": "58d1c884fb586ce1a8936e7a2266999e00e48b55",
+    "size": 59,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/config.yaml?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/config.yaml",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/58d1c884fb586ce1a8936e7a2266999e00e48b55",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/config.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/config.yaml?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/58d1c884fb586ce1a8936e7a2266999e00e48b55",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/config.yaml"
+    }
+  },
+  {
+    "name": "upstream_info.md",
+    "path": "ofl/archivoblack/upstream_info.md",
+    "sha": "89608861ede0fd9e5cd77ed44cf53f36fbe24f35",
+    "size": 1725,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/upstream_info.md?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/upstream_info.md",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/89608861ede0fd9e5cd77ed44cf53f36fbe24f35",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/upstream_info.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/archivoblack/upstream_info.md?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/89608861ede0fd9e5cd77ed44cf53f36fbe24f35",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/upstream_info.md"
+    }
+  }
+]

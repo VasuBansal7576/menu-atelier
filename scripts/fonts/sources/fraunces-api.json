@@ -1,0 +1,146 @@
+[
+  {
+    "name": "DESCRIPTION.en_us.html",
+    "path": "ofl/fraunces/DESCRIPTION.en_us.html",
+    "sha": "fc52b32ecfff6d791d412281d0bcb497f655ec30",
+    "size": 1117,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/DESCRIPTION.en_us.html?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/DESCRIPTION.en_us.html",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/fc52b32ecfff6d791d412281d0bcb497f655ec30",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/DESCRIPTION.en_us.html",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/DESCRIPTION.en_us.html?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/fc52b32ecfff6d791d412281d0bcb497f655ec30",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/DESCRIPTION.en_us.html"
+    }
+  },
+  {
+    "name": "DOWNLOAD_ZIP_METADATA.textproto",
+    "path": "ofl/fraunces/DOWNLOAD_ZIP_METADATA.textproto",
+    "sha": "b164e49d372eec940421fae937105ba306804024",
+    "size": 399,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/DOWNLOAD_ZIP_METADATA.textproto?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/DOWNLOAD_ZIP_METADATA.textproto",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/b164e49d372eec940421fae937105ba306804024",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/DOWNLOAD_ZIP_METADATA.textproto",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/DOWNLOAD_ZIP_METADATA.textproto?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/b164e49d372eec940421fae937105ba306804024",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/DOWNLOAD_ZIP_METADATA.textproto"
+    }
+  },
+  {
+    "name": "Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+    "path": "ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+    "sha": "2ddf59a11b89a3d6b2816ea6ae7965026c08143a",
+    "size": 414904,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/2ddf59a11b89a3d6b2816ea6ae7965026c08143a",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces-Italic%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/2ddf59a11b89a3d6b2816ea6ae7965026c08143a",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf"
+    }
+  },
+  {
+    "name": "Fraunces[SOFT,WONK,opsz,wght].ttf",
+    "path": "ofl/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf",
+    "sha": "8210f9488d3c732359a9292dd09aca3f2bae830e",
+    "size": 360440,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/8210f9488d3c732359a9292dd09aca3f2bae830e",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/8210f9488d3c732359a9292dd09aca3f2bae830e",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf"
+    }
+  },
+  {
+    "name": "METADATA.pb",
+    "path": "ofl/fraunces/METADATA.pb",
+    "sha": "3bbdb646ce7ae89e2b4c5593c313b4f139a59940",
+    "size": 1197,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/METADATA.pb?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/METADATA.pb",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/3bbdb646ce7ae89e2b4c5593c313b4f139a59940",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/METADATA.pb",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/METADATA.pb?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/3bbdb646ce7ae89e2b4c5593c313b4f139a59940",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/METADATA.pb"
+    }
+  },
+  {
+    "name": "OFL.txt",
+    "path": "ofl/fraunces/OFL.txt",
+    "sha": "22fa7ce5733434d0c634f6e55116f410858e938c",
+    "size": 4391,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/OFL.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/OFL.txt",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/22fa7ce5733434d0c634f6e55116f410858e938c",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/OFL.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/OFL.txt?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/22fa7ce5733434d0c634f6e55116f410858e938c",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/OFL.txt"
+    }
+  },
+  {
+    "name": "article",
+    "path": "ofl/fraunces/article",
+    "sha": "1dcd1b0977bdc23fc2683bbeab189117fe9fd83a",
+    "size": 0,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/article?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/tree/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/article",
+    "git_url": "https://api.github.com/repos/google/fonts/git/trees/1dcd1b0977bdc23fc2683bbeab189117fe9fd83a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/article?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/trees/1dcd1b0977bdc23fc2683bbeab189117fe9fd83a",
+      "html": "https://github.com/google/fonts/tree/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/article"
+    }
+  },
+  {
+    "name": "config.yaml",
+    "path": "ofl/fraunces/config.yaml",
+    "sha": "bf3b72453900c573c5b86b2f0a4dd54e42723557",
+    "size": 94,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/config.yaml?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/config.yaml",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/bf3b72453900c573c5b86b2f0a4dd54e42723557",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/config.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/config.yaml?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/bf3b72453900c573c5b86b2f0a4dd54e42723557",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/config.yaml"
+    }
+  },
+  {
+    "name": "upstream_info.md",
+    "path": "ofl/fraunces/upstream_info.md",
+    "sha": "d66b9c391e6ed7b16516cff327bc6ee5a155c4c3",
+    "size": 7213,
+    "url": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/upstream_info.md?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "html_url": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/upstream_info.md",
+    "git_url": "https://api.github.com/repos/google/fonts/git/blobs/d66b9c391e6ed7b16516cff327bc6ee5a155c4c3",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/upstream_info.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/google/fonts/contents/ofl/fraunces/upstream_info.md?ref=e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "git": "https://api.github.com/repos/google/fonts/git/blobs/d66b9c391e6ed7b16516cff327bc6ee5a155c4c3",
+      "html": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/upstream_info.md"
+    }
+  }
+]

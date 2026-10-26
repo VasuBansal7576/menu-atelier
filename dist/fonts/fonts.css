@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "MenuAtelier Cormorant Garamond";
+  src: url("MenuAtelier-CormorantGaramond-SemiBold.woff2") format("woff2"), url("MenuAtelier-CormorantGaramond-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MenuAtelier Cormorant Garamond";
+  src: url("MenuAtelier-CormorantGaramond-MediumItalic.woff2") format("woff2"), url("MenuAtelier-CormorantGaramond-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MenuAtelier Source Sans 3";
+  src: url("MenuAtelier-SourceSans3-Regular.woff2") format("woff2"), url("MenuAtelier-SourceSans3-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MenuAtelier Source Sans 3";
+  src: url("MenuAtelier-SourceSans3-SemiBold.woff2") format("woff2"), url("MenuAtelier-SourceSans3-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MenuAtelier Archivo Black";
+  src: url("MenuAtelier-ArchivoBlack-Regular.woff2") format("woff2"), url("MenuAtelier-ArchivoBlack-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MenuAtelier Bebas Neue";
+  src: url("MenuAtelier-BebasNeue-Regular.woff2") format("woff2"), url("MenuAtelier-BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MenuAtelier Fraunces";
+  src: url("MenuAtelier-Fraunces-SemiBold.woff2") format("woff2"), url("MenuAtelier-Fraunces-SemiBold.ttf") format("truetype");
+  font-weight: 650;
+  font-style: normal;
+  font-display: swap;
+}

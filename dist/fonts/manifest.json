@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://github.com/google/fonts",
+  "source_revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "fonttools_version": "4.60.2",
+  "faces": [
+    {
+      "key": "cormorant-semibold",
+      "family": "MenuAtelier Cormorant Garamond",
+      "original_family": "Cormorant Garamond",
+      "postscript_name": "MenuAtelier-CormorantGaramond-SemiBold",
+      "weight": 600,
+      "style": "normal",
+      "ttf_path": "MenuAtelier-CormorantGaramond-SemiBold.ttf",
+      "woff2_path": "MenuAtelier-CormorantGaramond-SemiBold.woff2",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantgaramond/CormorantGaramond%5Bwght%5D.ttf",
+      "source_blob_url": "https://api.github.com/repos/google/fonts/git/blobs/d992a83ce525c330fad3a19087746bcb2dc038ee",
+      "source_sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+      "source_git_blob_sha": "d992a83ce525c330fad3a19087746bcb2dc038ee",
+      "license_path": "licenses/cormorantgaramond.OFL.txt",
+      "license": "OFL-1.1",
+      "static_transform": {
+        "axes": {
+          "wght": 600
+        },
+        "subset_ranges": [
+          "U+0000-024F",
+          "U+1E00-1EFF",
+          "U+2000-206F",
+          "U+20A0-20CF",
+          "U+2100-214F",
+          "U+2190-21FF",
+          "U+2200-22FF",
+          "U+25A0-25FF"
+        ],
+        "renamed_family": "MenuAtelier Cormorant Garamond",
+        "retained_layout_features": "all",
+        "hinting": "retained"
+      },
+      "bytes": {
+        "ttf": 444576,
+        "woff2": 72276
+      },
+      "sha256": {
+        "ttf": "66c665f621ece651203bcba210442641b8ee2cee0e6302de685755eee8fc2591",
+        "woff2": "df122ec65a3f1399b5abd332de99d654b32ce55aee2739db7e9f6269cdc829c4"
+      },
+      "encoded_codepoints": 644,
+      "glyphs": 1946,
+      "required_glyphs": {
+        "£": true,
+        "€": true,
+        "₹": true,
+        "œ": true
+      },
+      "layout_tables": [
+        "GDEF",
+        "GPOS",
+        "GSUB"
+      ]
+    },
+    {
+      "key": "cormorant-medium-italic",
+      "family": "MenuAtelier Cormorant Garamond",
+      "original_family": "Cormorant Garamond",
+      "postscript_name": "MenuAtelier-CormorantGaramond-MediumItalic",
+      "weight": 500,
+      "style": "italic",
+      "ttf_path": "MenuAtelier-CormorantGaramond-MediumItalic.ttf",
+      "woff2_path": "MenuAtelier-CormorantGaramond-MediumItalic.woff2",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantgaramond/CormorantGaramond-Italic%5Bwght%5D.ttf",
+      "source_blob_url": "https://api.github.com/repos/google/fonts/git/blobs/0d914e7663b7a1429d06ec60a5c5bb026031a2ef",
+      "source_sha256": "0f48ea6abb2084537854f7174c470991a463b13036309e3b50a81511611c530d",
+      "source_git_blob_sha": "0d914e7663b7a1429d06ec60a5c5bb026031a2ef",
+      "license_path": "licenses/cormorantgaramond.OFL.txt",
+      "license": "OFL-1.1",
+      "static_transform": {
+        "axes": {
+          "wght": 500
+        },
+        "subset_ranges": [
+          "U+0000-024F",
+          "U+1E00-1EFF",
+          "U+2000-206F",
+          "U+20A0-20CF",
+          "U+2100-214F",
+          "U+2190-21FF",
+          "U+2200-22FF",
+          "U+25A0-25FF"
+        ],
+        "renamed_family": "MenuAtelier Cormorant Garamond",
+        "retained_layout_features": "all",
+        "hinting": "retained"
+      },
+      "bytes": {
+        "ttf": 272584,
+        "woff2": 51108
+      },
+      "sha256": {
+        "ttf": "a508b6da861fb3a7423f79c1e7c7ef8d9e1bd1321d93fca089cc9cbdff1859b9",
+        "woff2": "c62c45e6d0cfa3c32c4cdab03b37128c353b9e452c5125530b032aa4c5da7fef"
+      },
+      "encoded_codepoints": 645,
+      "glyphs": 1168,
+      "required_glyphs": {
+        "£": true,
+        "€": true,
+        "₹": true,
+        "œ": true
+      },
+      "layout_tables": [
+        "GDEF",
+        "GPOS",
+        "GSUB"
+      ]
+    },
+    {
+      "key": "source-sans-regular",
+      "family": "MenuAtelier Source Sans 3",
+      "original_family": "Source Sans 3",
+      "postscript_name": "MenuAtelier-SourceSans3-Regular",
+      "weight": 400,
+      "style": "normal",
+      "ttf_path": "MenuAtelier-SourceSans3-Regular.ttf",
+      "woff2_path": "MenuAtelier-SourceSans3-Regular.woff2",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3%5Bwght%5D.ttf",
+      "source_blob_url": "https://api.github.com/repos/google/fonts/git/blobs/d259aa494fe7117141a2752a998a52c172bbd42b",
+      "source_sha256": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+      "source_git_blob_sha": "d259aa494fe7117141a2752a998a52c172bbd42b",
+      "license_path": "licenses/sourcesans3.OFL.txt",
+      "license": "OFL-1.1",
+      "static_transform": {
+        "axes": {
+          "wght": 400
+        },
+        "subset_ranges": [
+          "U+0000-024F",
+          "U+1E00-1EFF",
+          "U+2000-206F",
+          "U+20A0-20CF",
+          "U+2100-214F",
+          "U+2190-21FF",
+          "U+2200-22FF",
+          "U+25A0-25FF"
+        ],
+        "renamed_family": "MenuAtelier Source Sans 3",
+        "retained_layout_features": "all",
+        "hinting": "retained"
+      },
+      "bytes": {
+        "ttf": 143964,
+        "woff2": 47872
+      },
+      "sha256": {
+        "ttf": "bb5487fb6f2aa8defbf50eab4ebd42a42dd1a353a1ce4f8ac173596a02c1f1f9",
+        "woff2": "f98544f51d519c264d25d587f05480e6d273b512b0e0bbd6588112387acbfcca"
+      },
+      "encoded_codepoints": 741,
+      "glyphs": 1432,
+      "required_glyphs": {
+        "£": true,
+        "€": true,
+        "₹": true,
+        "œ": true
+      },
+      "layout_tables": [
+        "GDEF",
+        "GPOS",
+        "GSUB"
+      ]
+    },
+    {
+      "key": "source-sans-semibold",
+      "family": "MenuAtelier Source Sans 3",
+      "original_family": "Source Sans 3",
+      "postscript_name": "MenuAtelier-SourceSans3-SemiBold",
+      "weight": 600,
+      "style": "normal",
+      "ttf_path": "MenuAtelier-SourceSans3-SemiBold.ttf",
+      "woff2_path": "MenuAtelier-SourceSans3-SemiBold.woff2",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcesans3/SourceSans3%5Bwght%5D.ttf",
+      "source_blob_url": "https://api.github.com/repos/google/fonts/git/blobs/d259aa494fe7117141a2752a998a52c172bbd42b",
+      "source_sha256": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+      "source_git_blob_sha": "d259aa494fe7117141a2752a998a52c172bbd42b",
+      "license_path": "licenses/sourcesans3.OFL.txt",
+      "license": "OFL-1.1",
+      "static_transform": {
+        "axes": {
+          "wght": 600
+        },
+        "subset_ranges": [
+          "U+0000-024F",
+          "U+1E00-1EFF",
+          "U+2000-206F",
+          "U+20A0-20CF",
+          "U+2100-214F",
+          "U+2190-21FF",
+          "U+2200-22FF",
+          "U+25A0-25FF"
+        ],
+        "renamed_family": "MenuAtelier Source Sans 3",
+        "retained_layout_features": "all",
+        "hinting": "retained"
+      },
+      "bytes": {
+        "ttf": 144052,
+        "woff2": 47440
+      },
+      "sha256": {
+        "ttf": "e522757575b4ed2cd4ebc8543af64059a5788d48b9a3104c3b9b64e3c459b79d",
+        "woff2": "8604bb8b1f52902a0faf3369797c083b5f5d25f8dee8c1b447560f1c067bbf2a"
+      },
+      "encoded_codepoints": 741,
+      "glyphs": 1432,
+      "required_glyphs": {
+        "£": true,
+        "€": true,
+        "₹": true,
+        "œ": true
+      },
+      "layout_tables": [
+        "GDEF",
+        "GPOS",
+        "GSUB"
+      ]
+    },
+    {
+      "key": "archivo-black",
+      "family": "MenuAtelier Archivo Black",
+      "original_family": "Archivo Black",
+      "postscript_name": "MenuAtelier-ArchivoBlack-Regular",
+      "weight": 400,
+      "style": "normal",
+      "ttf_path": "MenuAtelier-ArchivoBlack-Regular.ttf",
+      "woff2_path": "MenuAtelier-ArchivoBlack-Regular.woff2",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivoblack/ArchivoBlack-Regular.ttf",
+      "source_blob_url": "https://api.github.com/repos/google/fonts/git/blobs/82d07de3b84ed4428f6a302b70f4b555148dfeb0",
+      "source_sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+      "source_git_blob_sha": "82d07de3b84ed4428f6a302b70f4b555148dfeb0",
+      "license_path": "licenses/archivoblack.OFL.txt",
+      "license": "OFL-1.1",
+      "static_transform": {
+        "axes": {},
+        "subset_ranges": [
+          "U+0000-024F",
+          "U+1E00-1EFF",
+          "U+2000-206F",
+          "U+20A0-20CF",
+          "U+2100-214F",
+          "U+2190-21FF",
+          "U+2200-22FF",
+          "U+25A0-25FF"
+        ],
+        "renamed_family": "MenuAtelier Archivo Black",
+        "retained_layout_features": "all",
+        "hinting": "retained"
+      },
+      "bytes": {
+        "ttf": 87800,
+        "woff2": 30180
+      },
+      "sha256": {
+        "ttf": "aabfbdcfddaf0a83db4a1762c92bc757445f8069718a3373c0f7936bebacf5c6",
+        "woff2": "179c0d089695930f4b69a6e3953cc3e7de8a159fad77384e5144ce012b128104"
+      },
+      "encoded_codepoints": 398,
+      "glyphs": 411,
+      "required_glyphs": {
+        "£": true,
+        "€": true,
+        "₹": false,
+        "œ": true
+      },
+      "layout_tables": [
+        "GDEF",
+        "GPOS",
+        "GSUB"
+      ],
+      "fallbacks": {
+        "₹": "source-sans-semibold"
+      },
+      "limitation": "The official Archivo Black source lacks U+20B9. Use Source Sans 3 Semibold for rupee prices."
+    },
+    {
+      "key": "bebas-neue",
+      "family": "MenuAtelier Bebas Neue",
+      "original_family": "Bebas Neue",
+      "postscript_name": "MenuAtelier-BebasNeue-Regular",
+      "weight": 400,
+      "style": "normal",
+      "ttf_path": "MenuAtelier-BebasNeue-Regular.ttf",
+      "woff2_path": "MenuAtelier-BebasNeue-Regular.woff2",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bebasneue/BebasNeue-Regular.ttf",
+      "source_blob_url": "https://api.github.com/repos/google/fonts/git/blobs/c328c6e08b20a20a1de47d823e007ee73812a438",
+      "source_sha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "source_git_blob_sha": "c328c6e08b20a20a1de47d823e007ee73812a438",
+      "license_path": "licenses/bebasneue.OFL.txt",
+      "license": "OFL-1.1",
+      "static_transform": {
+        "axes": {},
+        "subset_ranges": [
+          "U+0000-024F",
+          "U+1E00-1EFF",
+          "U+2000-206F",
+          "U+20A0-20CF",
+          "U+2100-214F",
+          "U+2190-21FF",
+          "U+2200-22FF",
+          "U+25A0-25FF"
+        ],
+        "renamed_family": "MenuAtelier Bebas Neue",
+        "retained_layout_features": "all",
+        "hinting": "retained"
+      },
+      "bytes": {
+        "ttf": 52544,
+        "woff2": 19360
+      },
+      "sha256": {
+        "ttf": "b7a8b8a4e0ff077d2851d591acea8c2211e24a613ae113433a760ec281a788a8",
+        "woff2": "1b96a289c0e6857e29ecdeaacd1ca6e3080ad46c17609937014e1168d2fd0870"
+      },
+      "encoded_codepoints": 401,
+      "glyphs": 472,
+      "required_glyphs": {
+        "£": true,
+        "€": true,
+        "₹": true,
+        "œ": true
+      },
+      "layout_tables": [
+        "GDEF",
+        "GPOS",
+        "GSUB"
+      ]
+    },
+    {
+      "key": "fraunces-display",
+      "family": "MenuAtelier Fraunces",
+      "original_family": "Fraunces",
+      "postscript_name": "MenuAtelier-Fraunces-SemiBold",
+      "weight": 650,
+      "style": "normal",
+      "ttf_path": "MenuAtelier-Fraunces-SemiBold.ttf",
+      "woff2_path": "MenuAtelier-Fraunces-SemiBold.woff2",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+      "source_blob_url": "https://api.github.com/repos/google/fonts/git/blobs/8210f9488d3c732359a9292dd09aca3f2bae830e",
+      "source_sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "source_git_blob_sha": "8210f9488d3c732359a9292dd09aca3f2bae830e",
+      "license_path": "licenses/fraunces.OFL.txt",
+      "license": "OFL-1.1",
+      "static_transform": {
+        "axes": {
+          "wght": 650,
+          "opsz": 72,
+          "SOFT": 0,
+          "WONK": 1
+        },
+        "subset_ranges": [
+          "U+0000-024F",
+          "U+1E00-1EFF",
+          "U+2000-206F",
+          "U+20A0-20CF",
+          "U+2100-214F",
+          "U+2190-21FF",
+          "U+2200-22FF",
+          "U+25A0-25FF"
+        ],
+        "renamed_family": "MenuAtelier Fraunces",
+        "retained_layout_features": "all",
+        "hinting": "retained"
+      },
+      "bytes": {
+        "ttf": 71352,
+        "woff2": 31020
+      },
+      "sha256": {
+        "ttf": "331adff8c3e0a5696c89ccd078c34b258d5f067062269a4549ae500093be440a",
+        "woff2": "0a9c5d05150ff0da61313f50c94eb59225ecee71bd08c50dd6a96fd09d0fe365"
+      },
+      "encoded_codepoints": 580,
+      "glyphs": 663,
+      "required_glyphs": {
+        "£": true,
+        "€": true,
+        "₹": true,
+        "œ": true
+      },
+      "layout_tables": [
+        "GPOS",
+        "GSUB"
+      ]
+    }
+  ],
+  "limitations": [
+    "The subset retains the supported source glyphs within the stated Unicode ranges, not every codepoint in those ranges.",
+    "This Latin pack omits Devanagari and other non-Latin scripts.",
+    "Archivo Black requires the recorded Source Sans 3 fallback for the rupee symbol."
+  ]
+}

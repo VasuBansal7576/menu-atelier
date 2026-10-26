@@ -1,5 +1,5 @@
 export const SCHEMA_VERSION = 1;
-export const currencies = { USD: '$', GBP: '£', EUR: '€', INR: 'INR ', CAD: 'CA$', AUD: 'A$', JPY: '¥' };
+export const currencies = { USD: '$', GBP: '£', EUR: '€', INR: '₹', CAD: 'CA$', AUD: 'A$', JPY: '¥' };
 export const uid = () => globalThis.crypto?.randomUUID?.() || `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 export const clone = value => JSON.parse(JSON.stringify(value));
 export const minorDigits = currency => currency === 'JPY' ? 0 : 2;
