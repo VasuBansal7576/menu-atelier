@@ -27,6 +27,6 @@ User-supplied entry facts are India, Sangrur, Punjab, solo, team name Newgen Lab
 
 ## Limits
 
-The local compiler combines four measured architectures with supported palettes, motifs and spacing. It interprets a bounded vocabulary and cannot invent arbitrary layouts or provide Gamma's conversational model agent. External AI recipe import remains constrained to the same grammar. No provider inference is claimed.
+The local compiler combines four measured architectures with supported palettes, motifs and spacing. It interprets a bounded vocabulary and cannot invent arbitrary layouts or provide Gamma's conversational model agent. External AI recipe import remains constrained to the same grammar. Repeated generation reports when a constrained brief produces unchanged design choices. It does not imply unlimited new structures. No provider inference is claimed.
 
 OCR is English and must be reviewed. Arbitrary PDF columns may need correction. Unsupported scripts fail preflight without overwriting valid work. Examples are unofficial source snapshots, including Bianco's linked April 2023 menu. No performance benchmark or physical-phone test is claimed. Final deployment and hosted-browser results are recorded separately in release-evidence.json.

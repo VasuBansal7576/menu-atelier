@@ -103,7 +103,13 @@ function generateFromBrief() {
   if (!validPendingFields()) return;
   const brief = $('#design-brief').value.trim();
   if (!brief) { $('#design-brief').focus(); toast('Describe the atmosphere, colours or kind of restaurant first.'); return; }
-  try { previewDirections(generateDirections(state().menu, brief, {seed:directionSeed++,pageSize:state().settings.pageSize}), brief); }
+  try {
+    const recipes = generateDirections(state().menu, brief, {seed:directionSeed++,pageSize:state().settings.pageSize});
+    const signature = values => JSON.stringify(values.map(recipe => JSON.stringify([recipe.template,recipe.palette,recipe.motif,recipe.density])).sort());
+    const unchanged = directions.length && signature(recipes) === signature(directions.map(direction => direction.recipe));
+    previewDirections(recipes, brief);
+    if (unchanged) $('#direction-result').textContent = 'The design choices are unchanged. Change the brief’s colours, spacing or orientation to explore another result.';
+  }
   catch (error) { toast(`Could not generate these directions. ${error.message}`); }
 }
 $('#design-brief').addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key==='Enter'){event.preventDefault();generateFromBrief();}});
