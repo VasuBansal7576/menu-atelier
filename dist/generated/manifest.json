@@ -1,0 +1,268 @@
+[
+  {
+    "base": "dishoom-1",
+    "restaurant": "Dishoom",
+    "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
+    "recipe": {
+      "version": 1,
+      "id": "direction-midnight-1lrp9ep",
+      "name": "Saffron Supper Broadsheet",
+      "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
+      "seed": 3493100257,
+      "template": "midnight",
+      "palette": {
+        "paper": "#161C22",
+        "ink": "#F8F4E8",
+        "accent": "#F8CD59",
+        "muted": "#C3CBD0",
+        "tint": "#F8CD59",
+        "header": "#242E38",
+        "headingInk": "#161C22"
+      },
+      "motif": "none",
+      "type": "modern",
+      "density": "balanced",
+      "rationale": [
+        "An indexed category rail and adaptive dish grid.",
+        "10 dishes fit across 1 A4 landscape page.",
+        "Dark paper, saffron accents and balanced spacing. No illustration."
+      ]
+    },
+    "pages": 1,
+    "format": "A4 landscape",
+    "source": {
+      "label": "Official all-day menu",
+      "url": "https://www.dishoom.com/menu/all-day-main/",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens."
+    }
+  },
+  {
+    "base": "dishoom-2",
+    "restaurant": "Dishoom",
+    "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
+    "recipe": {
+      "version": 1,
+      "id": "direction-botanical-1lrp9eq",
+      "name": "Saffron Daylight Poster",
+      "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
+      "seed": 3493100258,
+      "template": "botanical",
+      "palette": {
+        "paper": "#161C22",
+        "ink": "#F8F4E8",
+        "accent": "#F8CD59",
+        "muted": "#C3CBD0",
+        "tint": "#F8CD59",
+        "header": "#242E38",
+        "headingInk": "#161C22"
+      },
+      "motif": "none",
+      "type": "editorial",
+      "density": "balanced",
+      "rationale": [
+        "An identity island beside two flowing menu columns.",
+        "10 dishes fit across 1 A4 landscape page.",
+        "Dark paper, saffron accents and balanced spacing. No illustration."
+      ]
+    },
+    "pages": 1,
+    "format": "A4 landscape",
+    "source": {
+      "label": "Official all-day menu",
+      "url": "https://www.dishoom.com/menu/all-day-main/",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens."
+    }
+  },
+  {
+    "base": "balthazar-1",
+    "restaurant": "Balthazar",
+    "brief": "A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.",
+    "recipe": {
+      "version": 1,
+      "id": "direction-atelier-1c4nf4e",
+      "name": "Burgundy Editorial Journal",
+      "brief": "A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.",
+      "seed": 2910187598,
+      "template": "atelier",
+      "palette": {
+        "paper": "#FFF8E8",
+        "ink": "#702438",
+        "accent": "#702438",
+        "muted": "#565A55",
+        "tint": "#EED9DE",
+        "header": "#EED9DE",
+        "headingInk": "#20251F"
+      },
+      "motif": "none",
+      "type": "condensed",
+      "density": "balanced",
+      "rationale": [
+        "A typographic masthead with aligned names, descriptions and prices.",
+        "10 dishes fit across 1 A4 portrait page.",
+        "Cream paper, burgundy accents and balanced spacing. No illustration."
+      ]
+    },
+    "pages": 1,
+    "format": "A4",
+    "source": {
+      "label": "Official New York dinner menu",
+      "url": "https://balthazarny.com/menus/dinner-menu/",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Balthazar. Names and prices follow the official dinner menu retrieved on this date. Ingredient descriptions are condensed paraphrases. Prices and availability may change. No dietary or allergen claims are inferred."
+    }
+  },
+  {
+    "base": "balthazar-2",
+    "restaurant": "Balthazar",
+    "brief": "A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.",
+    "recipe": {
+      "version": 1,
+      "id": "direction-trattoria-1c4nf4f",
+      "name": "Burgundy Market Letter",
+      "brief": "A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.",
+      "seed": 2910187599,
+      "template": "trattoria",
+      "palette": {
+        "paper": "#FFF8E8",
+        "ink": "#702438",
+        "accent": "#702438",
+        "muted": "#565A55",
+        "tint": "#EED9DE",
+        "header": "#702438",
+        "headingInk": "#20251F"
+      },
+      "motif": "none",
+      "type": "editorial",
+      "density": "balanced",
+      "rationale": [
+        "A generous illustrated masthead and independent category lanes.",
+        "10 dishes fit across 1 A4 portrait page.",
+        "Cream paper, burgundy accents and balanced spacing. No illustration."
+      ]
+    },
+    "pages": 1,
+    "format": "A4",
+    "source": {
+      "label": "Official New York dinner menu",
+      "url": "https://balthazarny.com/menus/dinner-menu/",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Balthazar. Names and prices follow the official dinner menu retrieved on this date. Ingredient descriptions are condensed paraphrases. Prices and availability may change. No dietary or allergen claims are inferred."
+    }
+  },
+  {
+    "base": "pizzeria-bianco-1",
+    "restaurant": "Pizzeria Bianco",
+    "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
+    "recipe": {
+      "version": 1,
+      "id": "direction-trattoria-v36rf0",
+      "name": "Terracotta Market Letter",
+      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
+      "seed": 1879805772,
+      "template": "trattoria",
+      "palette": {
+        "paper": "#FFF8E8",
+        "ink": "#9B432E",
+        "accent": "#9B432E",
+        "muted": "#565A55",
+        "tint": "#F0DFD2",
+        "header": "#F0DFD2",
+        "headingInk": "#20251F"
+      },
+      "motif": "produce",
+      "type": "editorial",
+      "density": "balanced",
+      "rationale": [
+        "A generous illustrated masthead and independent category lanes.",
+        "10 dishes fit across 1 A4 portrait page.",
+        "Cream paper, terracotta accents and balanced spacing."
+      ]
+    },
+    "pages": 1,
+    "format": "A4",
+    "source": {
+      "label": "Official Heritage Square menu PDF",
+      "url": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred."
+    }
+  },
+  {
+    "base": "pizzeria-bianco-2",
+    "restaurant": "Pizzeria Bianco",
+    "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
+    "recipe": {
+      "version": 1,
+      "id": "direction-midnight-v36rf1",
+      "name": "Terracotta Supper Broadsheet",
+      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
+      "seed": 1879805773,
+      "template": "midnight",
+      "palette": {
+        "paper": "#FFF8E8",
+        "ink": "#9B432E",
+        "accent": "#9B432E",
+        "muted": "#565A55",
+        "tint": "#F0DFD2",
+        "header": "#9B432E",
+        "headingInk": "#20251F"
+      },
+      "motif": "produce",
+      "type": "modern",
+      "density": "balanced",
+      "rationale": [
+        "An indexed category rail and adaptive dish grid.",
+        "10 dishes fit across 1 A4 landscape page.",
+        "Cream paper, terracotta accents and balanced spacing."
+      ]
+    },
+    "pages": 1,
+    "format": "A4 landscape",
+    "source": {
+      "label": "Official Heritage Square menu PDF",
+      "url": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred."
+    }
+  },
+  {
+    "base": "pizzeria-bianco-3",
+    "restaurant": "Pizzeria Bianco",
+    "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
+    "recipe": {
+      "version": 1,
+      "id": "direction-botanical-v36rf2",
+      "name": "Terracotta Daylight Poster",
+      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
+      "seed": 1879805774,
+      "template": "botanical",
+      "palette": {
+        "paper": "#FFF8E8",
+        "ink": "#9B432E",
+        "accent": "#9B432E",
+        "muted": "#565A55",
+        "tint": "#F0DFD2",
+        "header": "#F0DFD2",
+        "headingInk": "#20251F"
+      },
+      "motif": "produce",
+      "type": "editorial",
+      "density": "balanced",
+      "rationale": [
+        "An identity island beside two flowing menu columns.",
+        "10 dishes fit across 1 A4 landscape page.",
+        "Cream paper, terracotta accents and balanced spacing."
+      ]
+    },
+    "pages": 1,
+    "format": "A4 landscape",
+    "source": {
+      "label": "Official Heritage Square menu PDF",
+      "url": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred."
+    }
+  }
+]

@@ -1,43 +1,32 @@
-# Verification record
+# Current verification
 
-The user rejected both previous visual releases. Their passing tests and favorable agent reviews did not establish design quality. The current release replaces the form rail with a paper-first workspace and editing beside the printed price. It adds four physical compositions and original artwork. User taste acceptance remains pending.
+The user rejected three prior appearances and a generated-image experiment. The current brief-based studio is a new grading candidate. User taste remains unverified. Full Gamma-style runtime AI generation is not implemented.
 
-## Current evidence
+## Software evidence
 
-| Requirement | Evidence | Result |
-| --- | --- | --- |
-| Actual restaurant import | Parent uploaded the original Bianco PDF through the browser file chooser. Mandatory review showed 20 dishes and original amounts. The repaired layout exports those 20 dishes on 2 readable sheets. | Browser import and actual repair PDFs verified. |
-| Review before replacement | Parent pasted the original Olive & Ember TXT. Review showed all 9 names, descriptions and prices before confirmation. | Verified in the integrated browser and recording. |
-| Direct price editing | Whipped ricotta changed from $12.00 to $14.50 beside its printed price. Enter saved one history action. Undo restored$12.00 and Redo restored$14.50. | Verified in the integrated browser. |
-| Invalid input | Three-decimal 24.999 remained highlighted and blocked the actual Export action. Escape restored the prior valid price. | Browser and regression verified. |
-| Actual selectable PDF | `olive-and-ember-before.pdf` and `olive-and-ember-price-change.pdf` preserve all 9 names and descriptions. Independent extraction confirms that only Whipped ricotta changes 1200→1450 minor units. The edited file has no$12.00 and has two$14.50 prices. | Saved PDF bytes verified. Reproduce with `node scripts/demo-proof.mjs`. |
-| Export action | Actual browser Export returned completed feedback during the recording. The same exporter generated independently inspected PDF bytes. | UI action and exporter verified. Repeated physical browser file saving was not independently observed. |
-| Phone-width editing | At390×844, document width remained 390. The editor occupied x=8..382 and ended at 836. An entered $15.25 survived Enter and reload. | Tested browser viewport. No physical-phone claim. |
-| Secondary content controls | Parent added, named, described, priced and removed a dish. Undo restored it. Table-card stock settings showed actual A5 and Half Letter dimensions. | Verified in the integrated browser. |
-| OCR and source correctness | Real local OCR recovers 10 fixture dishes and exact prices. PDF extraction retains 20 official source dishes. Source JSON/TXT, malformed data, history, stale import cancellation and captured currency have regressions. | Included in 40 passing tests. OCR browser flow was verified in the prior release; its adapter is unchanged. |
-| Four compositions | Osteria uses an asymmetric dining sheet. Herbarium uses original ink artwork and measured columns. Counter is a landscape category index. Table cards use A5 or Half Letter. | Actual PDF rasters inspected. User taste pending. |
-| Complete collection | 12 source/template exports have 15 pages. Every page has an actual PDF raster, correct dimensions, source link and editable backup. All names/prices and embedded fonts pass independent saved-file checks. | `scripts/verify-grading.py` and `dist/grading/verification.json`. |
-| Geometry | Independent verification before the final bounded Counter adjustment matched 596 saved gallery text runs and 914 runs including repair artifacts to scene values, baselines, x positions and advances. Final Counter and actual-PDF geometry regressions pass. | Real PDF geometry verified. |
-| Actual demonstration | 31 actual browser screencast frames, long holds shortened, no third-party restaurant branding or music. H.264 1360×1000, 93.50 seconds. | `dist/grading/demo.mp4`. Public YouTube/Vimeo upload remains pending. |
+- All 43 behavior and integration checks pass, with no skipped tests. The suite includes 72 actual PDF source/design/stock/density round trips, supported Unicode and currencies, dense content, long fields, glyph geometry, invalid state recovery, recipe validation, selected-stock generation, undo and JSON restoration.
+- Ten application guard checks cover failed edits and imports, stale reads, currency capture, one-action edit sessions, generated previews without state mutation, recipe application and invalid recipe recovery.
+- Twelve base architecture PDFs and seven brief-generated restaurant PDFs each contain one complete page. Their previews are rasterizations of actual PDFs. Source names, descriptions, prices and verified tags remain present. Font subsets are embedded and no raster images are included in the PDFs.
+- Two independent contexts reviewed the generator. One reproduced a valid Letter draft that could not open generated previews because fitting used A4. The correction measures the selected stock and was independently rechecked. The other inspected 21 generated PDF cases and found distinct architectures within a generation, legible text and complete source records. Neither review establishes user taste acceptance or runtime AI.
+- The parent exercised the actual browser. A generated Lime Supper Broadsheet was edited to $16.75. Export produced a physical browser download, which was copied and read from disk. Its selectable PDF contains the edited price. A physical JSON download preserves the recipe and amount.
+- A second actual browser run imported nine original demo dishes through mandatory review, generated a burgundy editorial direction, changed Whipped ricotta from $12.00 to $14.50, then applied a blue coastal direction. The changed amount survived restyling and a second physical browser PDF and JSON download.
+- A 390 by 844 mobile viewport exercised navigation and price editing. An invalid three-decimal amount blocked export, and Escape restored the valid price. This is viewport testing, not physical-phone testing.
+- Current dialogs have accessible names. Muted studio text was darkened after a contrast finding. A generic invented printed slogan was removed. Repeated same-page category labels in the indexed grid became a single continuous category rail.
 
-## Review corrections
+## Local narrated video
 
-Two initial art-directed pilots did not pass the full gate. The second supplied a basis for refinement after its price association, typography and form rail were corrected. No numerical agent score was used as design acceptance.
+The current 98.20-second local MP4 contains H.264 video at 1360 by 1000 and a 48 kHz mono AAC narration stream. It is an edit of actual browser screenshots into timed holds. It is not a continuous screen recording. The narration describes the bounded local generator accurately and shows the original $12.00 to $14.50 price change, restyling and export.
 
-Two fresh adversarial reviewers independently found sparse continuation sheets and subtitles crossing identity artwork. Shared region flow now reclaims unused paper, repeats headings and uses wider Osteria continuation columns. Bianco Herbarium changes from 2 sheets to 1. The original 20-dish Bianco import changes from 3 sheets to 2. Both illustrated headers reserve artwork space on A4 and Letter. Long fragmented fields retain complete selectable text. A final measured balancing pass improves Herbarium's last sheet without adding pages.
+The user selected Keep the video local. The MP4, narration and capture files are outside dist and excluded from the public repository. No new video was uploaded. A local MP4 does not satisfy the public-video submission requirement.
 
-Final review inspected all 15 actual page rasters. A bounded Counter refinement gives compact categories separate indexed columns when they fit, while retaining shared flow for longer content. Parent inspected all three final Counter PDFs after regeneration. No source-specific layout branch is used.
+## Submission state
 
-## Efficiency and limits
+The account was signed in and registered for Build With AI: Basics. Create project repeatedly failed with a reCAPTCHA timeout while the user reported no visible challenge. No check was bypassed. No draft project or final entry was created. The official rules require a public YouTube or Vimeo video, which remains unmet under the later local-only instruction.
 
-Font preparation and text measurement are cached. The default vector composition does not wait for the unused raster illustration. Its bytes load only when required for an illustrated PDF and are cached. Browser startup observation showed local assets only, with no OCR, PDF-writing library or illustration request on that default route. No latency or speedup benchmark is claimed.
+User-supplied entry facts are India, Sangrur, Punjab, solo, team name Newgen Labs. No personal learning reflection, age, interview, legal acceptance or final taste grade is inferred.
 
-PDF writing and recognition libraries load when required. Editing makes no external request. Fonts, dependencies and the English OCR model are vendored. Supported Latin/currency characters stay original. Unsupported scripts fail preflight without changing saved work. Arbitrary PDF columns and OCR may require manual correction. Restaurant examples are unofficial snapshots. Bianco uses an April2023 source.
+## Limits
 
-No runtime generative service is called or falsely claimed. AI helped plan, design, implement and verify the software. The original ink asset has its generation prompt, hash and alpha receipt in `dist/art/`. Reference designers' copyrighted imagery is not incorporated.
+The local compiler combines four measured architectures with supported palettes, motifs and spacing. It interprets a bounded vocabulary and cannot invent arbitrary layouts or provide Gamma's conversational model agent. External AI recipe import remains constrained to the same grammar. No provider inference is claimed.
 
-## Release and hackathon state
-
-The user explicitly approved public source/planning/demo publication under VasuBansal7576. The existing website remains owner-private. The deployed software commit is `b64de60d7df71559bedaf62a1736155f787e176c`. Native deployment succeeded. Parent then verified the hosted review, Vegetable Samosas £7.90→£9.25 edit, illustrated design switch, PDF completion and reload persistence. The hosted gallery exposes all 12 exports and 15 page previews. `release-evidence.json` records the exact release and remaining limits. The subsequent documentation commit changes no website bytes.
-
-Official rules allow standard libraries and AI assistants. Design, Potential Impact, Innovation/Idea and Presentation are equally weighted. Public source includes scope.md, prd.md and spec.md. The required Learn Skill Pack was consulted. No interview, final user grade, learner tour or reflection is invented. Public YouTube/Vimeo upload, entrant-written answers, exit survey and final Devpost submission remain pending.
+OCR is English and must be reviewed. Arbitrary PDF columns may need correction. Unsupported scripts fail preflight without overwriting valid work. Examples are unofficial source snapshots, including Bianco's linked April 2023 menu. No performance benchmark or physical-phone test is claimed. Final deployment and hosted-browser results are recorded separately in release-evidence.json.

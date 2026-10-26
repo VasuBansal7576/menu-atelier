@@ -1,0 +1,157 @@
+{
+  "menu": {
+    "schemaVersion": 1,
+    "id": "dishoom",
+    "name": "Dishoom",
+    "subtitle": "Bombay comfort food",
+    "currency": "GBP",
+    "footer": "Unofficial demonstration excerpt. Source snapshot prices.\nNot affiliated with or endorsed by the restaurant.",
+    "source": {
+      "label": "Official all-day menu",
+      "url": "https://www.dishoom.com/menu/all-day-main/",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens."
+    },
+    "sections": [
+      {
+        "id": "dishoom-small-plates",
+        "name": "Small Plates",
+        "items": [
+          {
+            "id": "dishoom-vegetable-samosas",
+            "name": "Vegetable Samosas",
+            "description": "Pea and potato pastries, warmly spiced with cinnamon, with chutneys.",
+            "price": 790,
+            "tags": [
+              "vegan",
+              "vegetarian"
+            ]
+          },
+          {
+            "id": "dishoom-chilli-cheese-toast",
+            "name": "Chilli Cheese Toast",
+            "description": "Cheddar toast with green chillies, capsicum and garlic.",
+            "price": 750,
+            "tags": [
+              "vegetarian",
+              "spicy"
+            ]
+          },
+          {
+            "id": "dishoom-dishoom-house-chaat",
+            "name": "Dishoom House Chaat",
+            "description": "Fried sweet potato, yoghurt, pomegranate, vegetables and tangy chutneys.",
+            "price": 1090,
+            "tags": [
+              "vegetarian"
+            ]
+          },
+          {
+            "id": "dishoom-bhel",
+            "name": "Bhel",
+            "description": "Puffed rice, peanuts and Bombay Mix with fruit, vegetables and chutneys.",
+            "price": 850,
+            "tags": [
+              "vegan",
+              "vegetarian"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dishoom-grills",
+        "name": "Grills",
+        "items": [
+          {
+            "id": "dishoom-dishoom-chicken-tikka",
+            "name": "Dishoom Chicken Tikka",
+            "description": "Chicken in sweet vinegar, ginger, turmeric, garlic and green chilli marinade.",
+            "price": 1550,
+            "tags": [
+              "spicy"
+            ]
+          },
+          {
+            "id": "dishoom-makhmali-paneer",
+            "name": "Makhmali Paneer",
+            "description": "Gently spiced, charred paneer with fried cashews and pomegranate.",
+            "price": 1470,
+            "tags": [
+              "vegetarian"
+            ]
+          },
+          {
+            "id": "dishoom-gunpowder-potatoes",
+            "name": "Gunpowder Potatoes",
+            "description": "Smoky grilled potatoes tossed with butter, aromatic seeds and herbs.",
+            "price": 1070,
+            "tags": [
+              "vegetarian"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dishoom-house-favourites",
+        "name": "House Favourites",
+        "items": [
+          {
+            "id": "dishoom-chicken-ruby",
+            "name": "Chicken Ruby",
+            "description": "Tender chicken in a rich, spiced makhani sauce.",
+            "price": 1890,
+            "tags": []
+          },
+          {
+            "id": "dishoom-house-black-daal",
+            "name": "House Black Daal",
+            "description": "Rich, dark daal cooked for more than 24 hours.",
+            "price": 1150,
+            "tags": [
+              "vegetarian"
+            ]
+          },
+          {
+            "id": "dishoom-mattar-paneer",
+            "name": "Mattar Paneer",
+            "description": "A vegetarian curry described as a Bombay family favourite.",
+            "price": 1790,
+            "tags": [
+              "vegetarian"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "template": "botanical",
+    "pageSize": "a4",
+    "density": "balanced",
+    "recipe": {
+      "version": 1,
+      "id": "direction-botanical-1lrp9eq",
+      "name": "Saffron Daylight Poster",
+      "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
+      "seed": 3493100258,
+      "template": "botanical",
+      "palette": {
+        "paper": "#161C22",
+        "ink": "#F8F4E8",
+        "accent": "#F8CD59",
+        "muted": "#C3CBD0",
+        "tint": "#F8CD59",
+        "header": "#242E38",
+        "headingInk": "#161C22"
+      },
+      "motif": "none",
+      "type": "editorial",
+      "density": "balanced",
+      "rationale": [
+        "An identity island beside two flowing menu columns.",
+        "10 dishes fit across 1 A4 landscape page.",
+        "Dark paper, saffron accents and balanced spacing. No illustration."
+      ]
+    }
+  }
+}

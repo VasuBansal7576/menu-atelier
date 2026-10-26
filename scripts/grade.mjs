@@ -9,7 +9,7 @@ const directory = new URL('../outputs/grade/', import.meta.url);
 const curated = [
  { menuId: 'pizzeria-bianco', templateId: 'trattoria' },
  { menuId: 'balthazar', templateId: 'atelier' },
- { menuId: 'dishoom', templateId: 'botanical' }
+ { menuId: 'dishoom', templateId: 'midnight' }
 ];
 await fs.mkdir(directory, { recursive: true });
 await fs.rm(new URL('pages/', directory), { recursive: true, force: true });

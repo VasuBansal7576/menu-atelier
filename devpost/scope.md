@@ -14,10 +14,10 @@ An actual dish price changes in structured data, immediately updates the designe
 An independent restaurant owner who changes dishes and prices and currently rebuilds a menu in a design tool or asks a designer to do it.
 
 ## The Core Loop
-Open the studio, upload or paste a menu, review the extracted names and prices, choose a design, edit a dish or price, and export a PDF. Return to the saved browser draft for the next update.
+Open the studio, upload or paste a menu, review the extracted names and prices, write a design brief, compare generated directions, edit a dish or price, and export a PDF. Return to the saved browser draft for the next update.
 
 ## Inspiration & Identity
-The user requested beautiful and distinctive designs and may grade multiple examples. No specific reference site or brand was supplied. The agent will create a restrained editorial studio and a small library of distinct menu designs.
+The user requested beautiful and distinctive designs and may grade multiple examples. The user later named Gamma as the workflow reference. The current bounded slice uses a brief, reviewable directions, refinement and editable export. It is a procedural design engine, not runtime AI or arbitrary layout generation.
 
 ## Why This Matters to the Learner
 The user wants a complete hackathon result to personally grade for design, speed, correctness and uniqueness.
@@ -26,7 +26,7 @@ The user wants a complete hackathon result to personally grade for design, speed
 Import a real restaurant excerpt, change a price, switch layouts without losing the edit, and download a legible PDF containing the changed price. Show the entire sequence in a real app recording.
 
 ## The POC Boundary
-One browser-based studio. Structured text, CSV and JSON import. PDF text extraction and image OCR when supported. A mandatory import review step. Editable dishes and categories, design selection, local persistence, undo, PDF and data export. Three sourced real restaurant excerpts.
+One browser-based studio. Structured text, CSV and JSON import. PDF text extraction and image OCR when supported. A mandatory import review step. Editable dishes and categories, brief-based design generation, validated external art-direction recipes, design selection, local persistence, undo, PDF and data export. Three sourced real restaurant excerpts.
 
 ## Later
 Accounts, team editing, POS integration, cloud asset storage and commercial printing fulfilment are future work.

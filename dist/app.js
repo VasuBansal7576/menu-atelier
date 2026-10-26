@@ -1,6 +1,7 @@
 import { demoMenu, validateMenu, createHistory, clone, uid, parsePrice, priceInput, formatPrice, currencies } from './model.js';
 import { templates, layoutMenu, renderSVG, prepareTypography } from './layout.js';
 import { parseImport, extractPDF, recognizeImage } from './import.js';
+import { generateDirections, validateRecipe } from './design-generator.js';
 import { createPDF, downloadBlob, unsupportedCharacters } from './export.js';
 
 const $ = selector => document.querySelector(selector);
@@ -23,9 +24,10 @@ const defaultSettings = { template: 'trattoria', pageSize: 'a4', density: 'balan
 let initial = { menu: demoMenu(), settings: defaultSettings }, storageError = '', restoredDraft = false;
 try {
   const saved = localStorage.getItem('menu-atelier-v1');
-  if(saved) { const data = JSON.parse(saved); const loaded = { menu: validateMenu(data.menu), settings: {template: templates[data.settings?.template] ? data.settings.template : defaultSettings.template,pageSize: data.settings?.pageSize === 'letter' ? 'letter' : 'a4',density: ['compact','balanced','spacious'].includes(data.settings?.density) ? data.settings.density : 'balanced'} };layoutMenu(loaded.menu,loaded.settings);initial=loaded;restoredDraft=true; }
+  if(saved) { const data = JSON.parse(saved); const loaded = { menu: validateMenu(data.menu), settings: {template: templates[data.settings?.template] ? data.settings.template : defaultSettings.template,pageSize: data.settings?.pageSize === 'letter' ? 'letter' : 'a4',density: ['compact','balanced','spacious'].includes(data.settings?.density) ? data.settings.density : 'balanced', ...(data.settings?.recipe ? {recipe:validateRecipe(data.settings.recipe)} : {})} };layoutMenu(loaded.menu,loaded.settings);initial=loaded;restoredDraft=true; }
 } catch(error) { storageError = `The saved draft could not be opened. Your browser backup is retained. ${error.message}`; }
 const history = createHistory(initial);
+let directions = [], directionSeed = 0;
 let selected = '', editSession = null, view = 'paper', candidate = null, categoryId = '', pages = [], examples = [], toastTimer, lastCommitError = '', importGeneration = 0;
 const collapsed = new Set();
 const state = () => editSession?.draft || history.value;
@@ -54,7 +56,8 @@ function pageDescription(page) {
 }
 function render(options = {}) {
   const { menu, settings } = state();
-  $('#project-name').textContent = menu.name; $('#current-design').textContent = templates[settings.template].name;
+  $('#project-name').textContent = menu.name; $('#current-design').textContent = settings.recipe?.name || templates[settings.template].name;
+  renderDirectionSummary();
   $('#content-tab').textContent = `All ${dishCount(menu)} dishes`;
   $('#undo').disabled = !history.canUndo && !editSession; $('#redo').disabled = !history.canRedo || Boolean(editSession);
   for (const [id, value] of [['menu-name', menu.name], ['menu-subtitle', menu.subtitle], ['menu-currency', menu.currency], ['page-size', settings.pageSize]]) if (document.activeElement !== $(`#${id}`)) $(`#${id}`).value = value;
@@ -62,7 +65,7 @@ function render(options = {}) {
   pages = options.pages || layoutMenu(menu, settings);
   $('#pages').innerHTML = pages.map((page, index) => `<div class="paper-wrap">${renderSVG(page, { interactive: true, selected })}<span class="page-number">${pages.length > 1 ? `Page ${index + 1} of ${pages.length}` : ''}</span></div>`).join('');
   document.querySelectorAll('#pages [data-item]').forEach(hit => { const item = menu.sections.flatMap(section => section.items).find(item => item.id === hit.dataset.item); if (item) hit.setAttribute('aria-label', `Edit price for ${item.name}, ${formatPrice(item.price, menu.currency)}`); });
-  $('#actual-format').textContent = `Printed format · ${pageDescription(pages[0])}. The composition determines orientation and size.`;
+  $('#actual-format').textContent = `Printed format · ${pageDescription(pages[0])}. The composition determines orientation.`;
   $('#page-status').textContent = `${pageDescription(pages[0])} · ${pages.length} ${pages.length === 1 ? 'page' : 'pages'}`;
   if (editSession && $('#selection-title')) { const record = selectedRecord(); if (record) { $('#selection-title').textContent = record.item.name; $('#dish-price').setAttribute('aria-label', `Price for ${record.item.name} in ${menu.currency}`); $('.editor-kicker').textContent = `${record.section.name} · ${menu.currency}`; } }
   if (!options.skipList) renderSections();
@@ -72,10 +75,68 @@ function render(options = {}) {
 function renderTemplates() {
   const { menu, settings } = state();
   $('#template-grid').innerHTML = Object.entries(templates).map(([key, template]) => {
-    try { const scene = layoutMenu(menu, { ...settings, template: key })[0]; return `<button class="template-card ${settings.template === key ? 'selected' : ''}" data-template="${key}" aria-label="Choose ${escape(template.name)} design" aria-pressed="${settings.template === key}"><span class="template-preview">${renderSVG(scene)}</span><span class="template-name">${escape(template.name)} ${settings.template === key ? '✓' : ''}</span><span class="template-mood">${escape(pageDescription(scene))}</span></button>`; }
+    try { const scene = layoutMenu(menu, { ...settings, template: key, recipe: undefined })[0]; return `<button class="template-card ${settings.template === key ? 'selected' : ''}" data-template="${key}" aria-label="Choose ${escape(template.name)} design" aria-pressed="${settings.template === key}"><span class="template-preview">${renderSVG(scene)}</span><span class="template-name">${escape(template.name)} ${settings.template === key ? '✓' : ''}</span><span class="template-mood">${escape(pageDescription(scene))}</span></button>`; }
     catch (error) { return `<button class="template-card" disabled><span class="template-preview unavailable">${escape(error.message)}</span><span class="template-name">${escape(template.name)}</span></button>`; }
   }).join('');
 }
+
+function renderDirectionSummary() {
+  const { settings } = state(), recipe = settings.recipe;
+  $('#direction-name').textContent = recipe?.name || templates[settings.template].name;
+  $('#direction-description').textContent = recipe ? `${templates[settings.template].mood}. ${dishCount(state().menu)} editable dishes · ${settings.density} spacing.` : templates[settings.template].mood;
+  const palette = recipe?.palette;
+  $('#direction-colors').innerHTML = palette ? ['paper','ink','accent'].map(key => `<span style="background:${palette[key]}" title="${key}: ${palette[key]}"></span>`).join('') : '';
+}
+function previewDirections(recipes, brief) {
+  directions = recipes.map(recipe => {
+    const settings = { ...state().settings, template: recipe.template, density: recipe.density, recipe };
+    return { recipe, pages: layoutMenu(state().menu, settings) };
+  });
+  $('#directions-brief').textContent = brief;
+  $('#design-brief').value = brief;
+  $('#direction-grid').setAttribute('data-count',String(directions.length));
+  $('#direction-result').textContent = `${directions.length} ${directions.length===1?'direction':'directions'} using all ${dishCount(state().menu)} dishes. Compare the actual print layouts.`;
+  $('#direction-grid').innerHTML = directions.map(({recipe,pages:generatedPages}, index) => `<article class="generated-card ${state().settings.recipe?.id === recipe.id ? 'selected' : ''}"><div class="generated-preview">${renderSVG(generatedPages[0])}</div><div class="generated-info"><span class="generated-number">DIRECTION ${String(index+1).padStart(2,'0')}</span><h3>${escape(recipe.name)}</h3><p>${recipe.rationale.filter((_,index)=>index!==1).map(escape).join(' ')}</p><div class="generated-meta">${['paper','ink','accent'].map(key=>`<span style="background:${recipe.palette[key]}" title="${key}"></span>`).join('')}<small>${generatedPages.length} ${generatedPages.length===1?'page':'pages'} · ${escape(generatedPages[0].format.name)}</small></div><button class="primary" data-use-direction="${index}">Use this direction ↗</button></div></article>`).join('');
+  $('#directions-dialog').showModal();
+}
+function generateFromBrief() {
+  if (!validPendingFields()) return;
+  const brief = $('#design-brief').value.trim();
+  if (!brief) { $('#design-brief').focus(); toast('Describe the atmosphere, colours or kind of restaurant first.'); return; }
+  try { previewDirections(generateDirections(state().menu, brief, {seed:directionSeed++,pageSize:state().settings.pageSize}), brief); }
+  catch (error) { toast(`Could not generate these directions. ${error.message}`); }
+}
+$('#design-brief').addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key==='Enter'){event.preventDefault();generateFromBrief();}});
+$('#design-form').onsubmit = event => { event.preventDefault(); generateFromBrief(); };
+document.querySelectorAll('[data-brief]').forEach(button => button.onclick = () => { $('#design-brief').value = button.dataset.brief; directionSeed = 0; generateFromBrief(); });
+document.querySelectorAll('[data-refine]').forEach(button => button.onclick = () => { $('#design-brief').value = `${$('#design-brief').value.trim() || state().settings.recipe?.brief || templates[state().settings.template].mood} ${button.dataset.refine}`.slice(-1200); generateFromBrief(); });
+$('#regenerate-directions').onclick = () => { $('#directions-dialog').close(); generateFromBrief(); };
+$('#direction-grid').onclick = event => {
+  const button = event.target.closest('[data-use-direction]');
+  const direction = button && directions[Number(button.dataset.useDirection)];
+  if (!direction || !validPendingFields()) return;
+  const recipe = validateRecipe(direction.recipe);
+  if (commit(next => { next.settings = { ...next.settings, template:recipe.template, density:recipe.density, recipe }; })) {
+    $('#design-brief').value = recipe.brief; $('#directions-dialog').close(); showView('paper'); if(matchMedia('(max-width:600px)').matches)$('#canvas-area').scrollIntoView?.({block:'start',behavior:'instant'}); announce(`${recipe.name} applied. Every dish and price is preserved.`); toast(`${recipe.name} applied. You can undo this.`);
+  }
+};
+$('#open-ai-direction').onclick = () => { if (!validPendingFields()) return; $('#art-recipe-error').hidden = true; $('#ai-direction-dialog').showModal(); };
+$('#download-art-prompt').onclick = () => {
+  const brief = $('#design-brief').value.trim() || 'An original restaurant menu with strong typography and a restrained palette.';
+  const prompt = `Act as a restaurant menu art director. Return only a single valid JSON design recipe. Do not generate menu content or images. The app will preserve every dish and price.
+Owner brief: ${brief}
+Menu structure: ${state().menu.sections.length} categories, ${dishCount(state().menu)} dishes.
+Use this exact schema. version is 1. template must be trattoria (portrait category lanes with a produce masthead), atelier (portrait editorial rows), botanical (landscape identity island with two columns), or midnight (landscape indexed dish grid). motif must be produce, sun, moon, or none. type is descriptive metadata for the composition: editorial for trattoria and botanical, condensed for atelier, modern for midnight. It does not replace fonts. density must be compact, balanced, or spacious. All seven palette values must be six-digit hex colours with strong readable contrast. Keep name under80 characters and rationale a list of1to3 short strings. Do not include unknown keys or markup.
+Example shape:
+${JSON.stringify({version:1,id:'owner-art-direction',name:'Quiet wine journal',brief,seed:0,template:'atelier',palette:{paper:'#FFF8E9',ink:'#3D1625',accent:'#7D263E',muted:'#624C51',tint:'#E8D5BB',header:'#3D1625',headingInk:'#3D1625'},motif:'none',type:'editorial',density:'balanced',rationale:['A restrained editorial layout for a wine bar.','Cream paper and burgundy type.']},null,2)}
+The app validates the recipe before applying it. This is a bounded design grammar, not arbitrary HTML or code.`;
+  downloadBlob(new Blob([prompt],{type:'text/plain'}),'menu-atelier-art-direction-prompt.txt'); toast('Art direction prompt downloaded. No dishes or prices were included.');
+};
+$('#apply-art-recipe').onclick = () => {
+  try { const recipe = validateRecipe(JSON.parse($('#art-recipe').value)); previewDirections([recipe],recipe.brief); $('#ai-direction-dialog').close(); $('#art-recipe-error').hidden = true; }
+  catch(error) { $('#art-recipe-error').textContent = `This recipe could not be used. ${error.message}`; $('#art-recipe-error').hidden = false; }
+};
+
 function renderSections() {
   const { menu } = state();
   $('#section-list').innerHTML = menu.sections.map(section => `<section class="category"><div class="category-heading"><button class="section-toggle" data-toggle-section="${escape(section.id)}" aria-expanded="${!collapsed.has(section.id)}"><span>${collapsed.has(section.id) ? '▸' : '▾'}</span>${escape(section.name)}<span class="category-count">${section.items.length}</span></button><button class="category-edit" data-edit-section="${escape(section.id)}" aria-label="Edit ${escape(section.name)} category">···</button></div>${collapsed.has(section.id) ? '' : section.items.map(item => `<button class="dish-row ${selected === item.id ? 'active' : ''}" data-select="${escape(item.id)}"><span><strong>${escape(item.name)}</strong><small>${escape(item.description)}</small>${item.tags.length ? `<small>${item.tags.map(escape).join(' · ')}</small>` : ''}</span><span class="dish-price">${escape(formatPrice(item.price, menu.currency))}</span></button>`).join('')}${!section.items.length ? `<button class="dish-row" data-new-in="${escape(section.id)}">+ Add your first dish</button>` : ''}</section>`).join('') || '<p class="empty-menu">Add a category, then your first dish.</p>';
@@ -206,9 +267,9 @@ $('#delete-category').onclick = () => { if (commit(next => next.menu.sections = 
 $('#edit-footer').onclick = () => { if (!validPendingFields()) return; $('#menu-footer').value = state().menu.footer; $('#menu-footer').setCustomValidity(''); $('#footer-dialog').showModal(); };
 $('#menu-footer').addEventListener('input', event => event.target.setCustomValidity(''));
 $('#save-footer').onclick = () => { if (commit(next => next.menu.footer = $('#menu-footer').value)) $('#footer-dialog').close(); else { $('#menu-footer').setCustomValidity(lastCommitError); $('#menu-footer').reportValidity(); } };
-$('#template-grid').onclick = event => { const button = event.target.closest('[data-template]'); if (button && validPendingFields() && commit(next => next.settings.template = button.dataset.template)) { $('#composition-dialog').close(); announce(`${templates[state().settings.template].name} selected.`); } };
+$('#template-grid').onclick = event => { const button = event.target.closest('[data-template]'); if (button && validPendingFields() && commit(next => { next.settings.template = button.dataset.template; delete next.settings.recipe; })) { $('#composition-dialog').close(); announce(`${templates[state().settings.template].name} selected.`); } };
 $('#page-size').onchange = event => { if (!validPendingFields() || !commit(next => next.settings.pageSize = event.target.value)) event.target.value = state().settings.pageSize; };
-document.querySelectorAll('[data-density]').forEach(button => button.onclick = () => { if (validPendingFields()) commit(next => next.settings.density = button.dataset.density); });
+document.querySelectorAll('[data-density]').forEach(button => button.onclick = () => { if (validPendingFields()) commit(next => { next.settings.density = button.dataset.density; if (next.settings.recipe) next.settings.recipe.density = button.dataset.density; }); });
 function travel(direction) {
   if (editSession && direction === 'undo') { finishEdit({ cancel: true }); return; }
   if (editSession && !validPendingFields()) return;
@@ -228,7 +289,8 @@ $('#zoom-fit').onclick = () => { const fitted = $('#pages').classList.toggle('fi
 function fitPaper() {
   const area = $('#canvas-area'); if (!area.clientWidth || !pages.length) return;
   const available = Math.max(220, area.clientWidth - (innerWidth < 600 ? 8 : 70));
-  const readingWidth = Math.min(660, available), ratio = pages[0].width / pages[0].height;
+  const ratio = pages[0].width / pages[0].height;
+  const readingWidth = Math.min(ratio > 1 ? 1000 : 720, available);
   const fittedWidth = Math.min(readingWidth, Math.max(160, area.clientHeight - 60) * ratio);
   $('#pages').style.setProperty('--paper-width', `${$('#pages').classList.contains('fitted') ? fittedWidth : readingWidth}px`);
 }
@@ -236,7 +298,7 @@ window.addEventListener('resize', () => { fitPaper(); positionEditor(); });
 window.addEventListener('scroll', positionEditor, true);
 window.visualViewport?.addEventListener('resize', positionEditor); window.visualViewport?.addEventListener('scroll', positionEditor);
 function validPendingEdits() { if (!validPendingFields()) return false; const unsupported = unsupportedCharacters(state().menu); if (unsupported.length) { toast(`The selected fonts cannot print these characters. Edit the content before exporting: ${unsupported.slice(0, 8).join(' ')}`); return false; } return true; }
-$('#export-pdf').onclick = async () => { if (!validPendingEdits()) return; const button = $('#export-pdf'), exportPages = pages, exportTitle = state().menu.name, exportDesign = templates[state().settings.template].name; button.disabled = true; button.textContent = 'Preparing…'; try { const doc = await createPDF(exportPages, exportTitle); doc.save(`${exportTitle.replace(/[^\p{L}\p{N} -]/gu, '').trim() || 'Menu'} - ${exportDesign}.pdf`); toast(`${exportPages.length}-page PDF exported for ${exportTitle}.`); } catch (error) { toast(`Export failed. ${error.message}`); } finally { button.disabled = false; button.innerHTML = 'Export PDF <span>↗</span>'; } };
+$('#export-pdf').onclick = async () => { if (!validPendingEdits()) return; const button = $('#export-pdf'), exportPages = pages, exportTitle = state().menu.name, exportDesign = state().settings.recipe?.name || templates[state().settings.template].name; button.disabled = true; button.textContent = 'Preparing…'; try { const doc = await createPDF(exportPages, exportTitle); doc.save(`${exportTitle.replace(/[^\p{L}\p{N} -]/gu, '').trim() || 'Menu'} - ${exportDesign}.pdf`); toast(`${exportPages.length}-page PDF exported for ${exportTitle}.`); } catch (error) { toast(`Export failed. ${error.message}`); } finally { button.disabled = false; button.innerHTML = 'Export PDF <span>↗</span>'; } };
 $('#export-json').onclick = () => { if (!validPendingFields()) return; downloadBlob(new Blob([JSON.stringify(state(), null, 2)], { type: 'application/json' }), `${state().menu.name.replace(/[^a-z0-9-]/gi, '-')}-menu.json`); toast('Menu backup downloaded. Import it anytime.'); };
 function closeDialog(dialog){if(dialog.id==='settings-dialog'&&!validPendingFields())return;if(dialog.id==='import-dialog')importGeneration++;dialog.close();}
 document.querySelectorAll('.close-dialog').forEach(button=>button.onclick=()=>closeDialog(button.closest('dialog')));
@@ -305,6 +367,7 @@ $('#new-demo').onclick=()=>{
 $('#open-examples').onclick=()=>{if(validPendingFields())$('#examples-dialog').showModal();};
 if(typeof ResizeObserver!=='undefined')new ResizeObserver(()=>{fitPaper();positionEditor();}).observe($('#canvas-area'));
 showView('paper');render();loadExamples();
+if (state().settings.recipe) $('#design-brief').value = state().settings.recipe.brief;
 $('#save-status').textContent=restoredDraft?'Saved in this browser':'Demo · changes autosave';
 if(storageError)toast(storageError);
 globalThis.menuAtelier={getMenu:()=>clone(state().menu),getSettings:()=>clone(state().settings),getPages:()=>clone(pages),createPDF:()=>{if(!validPendingEdits())return Promise.reject(new Error('Finish the highlighted edit before exporting.'));return createPDF(pages,state().menu.name);}};

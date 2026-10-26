@@ -20,7 +20,7 @@ Official dependency documentation must be checked when integrated. Main sources 
 Run `npm start` from the project. Open the printed localhost URL. No API key is required for the core journey. A private Sites deployment gives the owner a grading link. Public repository and public demo video are separate hackathon requirements and are not replaced by deployment.
 
 ## Look and Feel
-Implements `prd.md > Look and Feel`. Use a paper-first studio with an anchored price editor and secondary details/settings dialogs. Keep template identifiers atelier, trattoria, botanical and midnight to preserve existing preference and backup contracts. Their current compositions are Herbarium, Osteria, Counter and Table cards. Use vendored static fonts and their OFL notices. The layout engine emits immutable pages with final text lines, font IDs, measured widths and positions in points. Preview and PDF consume those exact pages. Export does not reflow or transliterate source text. Coverage and fit errors reject a candidate before history or persistence. Respect reduced motion and readable focus indicators.
+Implements `prd.md > Look and Feel`. Use a paper-first studio with an anchored price editor and secondary details/settings dialogs. Keep template identifiers atelier, trattoria, botanical and midnight to preserve existing preference and backup contracts. Their current compositions are Folio, Market Bloom, Sunroom and Night Press. Use vendored static fonts and their OFL notices. The layout engine emits immutable pages with final text lines, font IDs, measured widths and positions in points. Preview and PDF consume those exact pages. Export does not reflow or transliterate source text. Coverage and fit errors reject a candidate before history or persistence. Respect reduced motion and readable focus indicators.
 
 ## Components
 
@@ -37,7 +37,7 @@ Own template constants, item wrapping and pagination. Both renderers use their p
 Owns controls, dialogs, accessible feedback, persistence and preview interaction. Implements the full core journey.
 
 ### PDF exporter
-Draws selectable text and vector ornaments using the current layout. Implements `prd.md > Export`.
+Draws selectable text and code-rendered vectors using the current layout. Implements `prd.md > Export`.
 
 ## Data Model
 Menu has schemaVersion, id, name, subtitle, currency, footer, source metadata, and ordered sections. Section has id, name, and ordered items. Item has id, name, description, price in integer minor currency units, and explicit tags. Import adapters normalize external decimal prices once. Template selection, page format and density belong to presentation settings, not dish data. History snapshots support undo. Validate storage and imports at their boundaries.
@@ -59,18 +59,24 @@ No learner uncertainty was stated, so none is invented. The main engineering unc
 
 ## Public source and demonstration
 
-The user approved public repository publication under VasuBansal7576. Source and planning files are at [https://github.com/VasuBansal7576/menu-atelier](https://github.com/VasuBansal7576/menu-atelier). The actual browser demo is at `dist/grading/demo.mp4` in the repository. The owner-private website retains its current audience. A public YouTube or Vimeo upload and the final entrant submission remain separate steps.
+The public source repository is https://github.com/VasuBansal7576/menu-atelier under the user's explicit publication authorization. The existing Site remains owner-private. The latest 98.20-second narrated demonstration is local only at the user's later request. It is excluded from dist and the public source. No YouTube upload or Devpost entry is claimed.
 
-## Design recovery on 2026-10-26
+## Code-only print architecture
 
-The user rejected the original appearance. The first two runnable alternatives selected a single-rail studio. The user rejected that result. The second recovery compared new physical print pilots, rejected both initial candidates, then refined a paper-first direction with an editor beside the actual printed price. The selected architecture preserves model/import/history and replaces typography, composition and the PDF adapter. Functional tests are regression evidence, not visual acceptance. A first real embedded-font PDF precedes expansion to all designs. Final verification includes actual source imports, rendered PDFs, source-price extraction, responsive editing and independent adversarial review.
+The user rejected the shared page-engine premise after three visual releases. The extracted print-kit owns font metrics, wrapping, text records and dish shaping. Two scene modules own four independent page architectures. The registry maps stable backup IDs to current designs. layoutMenu validates supported glyphs, delegates composition and normalizes physical page metadata. Immutable scenes retain exact item/section IDs, text roles, advances and ink bounds. The anchored editor uses price records through the SVG screen matrix. PDF consumes those same records.
 
-## Taste reset architecture boundary
+The current scene vocabulary is text, rectangle, line and ellipse. No generated raster image assets or external runtime asset service are required. Public thumbnails come from actual PDF rasterization. Long text flows or rejects explicitly before history or storage mutation. Failed imports and invalid pending edits retain prior valid work.
 
-Keep schemaVersion1, integer prices, import review, history and the verified font/PDF geometry contract. The previously selected studio and all four visual templates failed user acceptance. Isolated pilots may add purposeful illustration, image or rotation support to the shared scene. The selected implementation must preserve the same graphic positions in SVG and PDF, preserve selectable text and disclose asset provenance. Revise the implementation plan before production edits after the pilot comparison.
+## Narrated demonstration and submission boundary
 
-## Production taste reset
+The local recording shows original fictional restaurant content, mandatory import review, design choices, a real12to14.50 price change, actual PDF export and JSON backup. Footage consists of captured working browser states edited to original synthetic narration. It contains no third-party restaurant branding or music. Public upload was declined. The mandatory YouTube/Vimeo link is absent. Devpost's Create project action timed out on reCAPTCHA. Do not bypass that check or report an entry as created or submitted.
 
-The refined B pilot supplies the selected visual and editing basis. A composition registry owns physical formats, identity graphics and measured regions. Shared DishBlock records own text roles, glyph bounds, price gutters and pagination. Pages remain immutable. Each text price retains its item and section IDs and a role of price so the browser can position its editor using the actual SVG screen matrix. The UI keeps createHistory as the sole committed owner. A dish edit session holds a validated temporary draft, updates the preview, and commits once when finished. Escape cancels it. All navigation and export boundaries finish a valid session or block invalid input.
+## Brief-based generation revision
 
-Only original or properly licensed graphics enter the application. The generated ink illustration has a retained prompt and hash. SVG and PDF use the same asset, alpha and placement. Reference designers' copyrighted branding and photography remain research material. The official demonstration uses original fictional restaurant content.
+The user requested a Gamma-inspired system after rejecting previous fixed-design results. The new interaction is source menu plus owner brief, up to three measured directions, explicit application, refinement and editable PDF export. Hard portrait or landscape constraints return only matching architectures. Generation uses the selected A4 or Letter stock.
+
+The authoritative menu remains separate from a version 1 design recipe in settings. A recipe carries its stable architecture, palette, motif, descriptive type category, density, seed, brief and rationale. Applying a recipe cannot alter source text, font metrics, glyph positions, hit targets or prices. Both the composition and density must match the saved settings. Unknown fields, invalid colors, insufficient text contrast and invalid enums are rejected before state mutation. Undo and JSON backup retain the complete recipe.
+
+This is local procedural generation over four architectures. It does not provide Gamma's runtime model agent, arbitrary font generation or unrestricted layouts. An optional downloaded prompt and strict recipe import support an external AI art director without automatically transmitting the menu. All current visual assets are original code-rendered vectors. No image generation is used.
+
+The current software has 43 passing checks and seven additional actual generated restaurant PDFs. Real browser acceptance includes applying a generated direction, editing a price to $16.75, downloading the PDF, extracting its selectable changed amount, downloading a JSON backup, reload persistence, invalid price rejection and a narrow mobile viewport. User taste remains unverified. The new narrated video remains local. Public video and Devpost submission requirements are unmet.

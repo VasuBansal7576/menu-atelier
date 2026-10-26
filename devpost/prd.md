@@ -20,9 +20,10 @@ Implements `scope.md > The Core Loop` and `scope.md > The Unique Kernel`.
 A paper-first creative workspace keeps import, source, history and export easy to reach. Composition choices use current-menu visual previews in a compact picker. The full inventory has a separate view. Selecting a dish opens a compact price editor anchored to its printed amount. Name, description, tags and category edits are secondary details. Restaurant, paper and footer settings use focused dialogs. On a phone, the price editor becomes a focused bottom panel that names the selected dish. Controls remain available while the document scrolls.
 
 ## Look and Feel
-The user rejected both prior visual releases. Functional tests and favorable agent reviews did not meet their design requirement. The current direction uses a coherent warm studio identity and deliberate restaurant compositions. Osteria is an asymmetric dining sheet with a purposeful original line-oven illustration and a strong main/supporting hierarchy. Herbarium combines an original ink illustration with an asymmetric name/art relationship and balanced readable categories. Counter is a landscape service sheet with a typographic category index. Table cards use an intentional smaller physical format. Each must adapt to actual source content with clear name/price association and readable descriptions.
 
-The refined Osteria pilot and direct-editing interaction were inspected before production expansion. Actual selectable PDFs share font bytes, measured line breaks, graphic placements and positions with the preview. The user's final visual grading remains pending.
+The user rejected three previous visual releases, then rejected generated imagery. The current print system contains no image-generation assets. Each retained composition owns a different page architecture. Market Bloom uses a vivid produce poster and category lanes. Folio uses a large typographic identity and editorial rows. Sunroom uses a landscape identity island. Night Press uses a dark landscape dish grid. Original program-drawn vectors and embedded licensed fonts supply the visual language.
+
+The paper-first studio retains direct editing beside the actual printed price, with readable default widths for portrait and landscape. Exact names, prices and selectable text remain mandatory. Actual PDF pilots precede integration. User taste grading remains pending.
 
 ## Features and Behavior
 
@@ -59,3 +60,17 @@ Final visual grading remains with the user. Eligibility, personal submission ref
 ## Taste reset after the second rejection
 
 The user rejected the first redesign as well. The next direction must establish a restaurant identity through composition, typography and purposeful original graphics. A creative workspace must make the printed dish and its edit feel directly connected. Two isolated pilots will be compared against primary visual references. One actual restaurant PDF and its edit loop must be inspected before expanding the collection. The existing four-template count is an agent-selected implementation detail, not a user requirement. The core menu workflow and all source examples remain required.
+
+## Latest delivery steering
+
+The user authorized a narrated video, upload and autonomous entry preparation. They subsequently selected Keep the video local at the YouTube terms confirmation. Preserve that later decision. The public-video requirement is unmet, and no valid final entry may be claimed. Country India, city Sangrur, state Punjab, solo team name Newgen Labs were supplied for entry preparation. Personal reflections and eligibility must not be invented.
+
+## Brief-based generation revision
+
+The user requested a Gamma-inspired system after rejecting previous fixed-design results. The new interaction is source menu plus owner brief, up to three measured directions, explicit application, refinement and editable PDF export. Hard portrait or landscape constraints return only matching architectures. Generation uses the selected A4 or Letter stock.
+
+The authoritative menu remains separate from a version 1 design recipe in settings. A recipe carries its stable architecture, palette, motif, descriptive type category, density, seed, brief and rationale. Applying a recipe cannot alter source text, font metrics, glyph positions, hit targets or prices. Both the composition and density must match the saved settings. Unknown fields, invalid colors, insufficient text contrast and invalid enums are rejected before state mutation. Undo and JSON backup retain the complete recipe.
+
+This is local procedural generation over four architectures. It does not provide Gamma's runtime model agent, arbitrary font generation or unrestricted layouts. An optional downloaded prompt and strict recipe import support an external AI art director without automatically transmitting the menu. All current visual assets are original code-rendered vectors. No image generation is used.
+
+The current software has 43 passing checks and seven additional actual generated restaurant PDFs. Real browser acceptance includes applying a generated direction, editing a price to $16.75, downloading the PDF, extracting its selectable changed amount, downloading a JSON backup, reload persistence, invalid price rejection and a narrow mobile viewport. User taste remains unverified. The new narrated video remains local. Public video and Devpost submission requirements are unmet.

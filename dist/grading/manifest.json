@@ -2,7 +2,7 @@
   {
     "restaurant": "Dishoom",
     "menuId": "dishoom",
-    "template": "Osteria",
+    "template": "Market Bloom",
     "templateId": "trattoria",
     "filename": "dishoom-trattoria",
     "pages": 1,
@@ -27,7 +27,7 @@
   {
     "restaurant": "Dishoom",
     "menuId": "dishoom",
-    "template": "Herbarium",
+    "template": "Folio",
     "templateId": "atelier",
     "filename": "dishoom-atelier",
     "pages": 1,
@@ -52,7 +52,7 @@
   {
     "restaurant": "Dishoom",
     "menuId": "dishoom",
-    "template": "Counter",
+    "template": "Sunroom",
     "templateId": "botanical",
     "filename": "dishoom-botanical",
     "pages": 1,
@@ -60,6 +60,31 @@
       {
         "number": 1,
         "png": "pages/dishoom-botanical/page-1.png",
+        "pixelWidth": 1100,
+        "pixelHeight": 778,
+        "width": 841.89,
+        "height": 595.28
+      }
+    ],
+    "format": "A4 landscape",
+    "curatedOrder": null,
+    "dishes": 10,
+    "source": "https://www.dishoom.com/menu/all-day-main/",
+    "sourceLabel": "Official all-day menu",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens.",
+    "sourceAccessedAt": "2026-10-26"
+  },
+  {
+    "restaurant": "Dishoom",
+    "menuId": "dishoom",
+    "template": "Night Press",
+    "templateId": "midnight",
+    "filename": "dishoom-midnight",
+    "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/dishoom-midnight/page-1.png",
         "pixelWidth": 1100,
         "pixelHeight": 778,
         "width": 841.89,
@@ -75,42 +100,9 @@
     "sourceAccessedAt": "2026-10-26"
   },
   {
-    "restaurant": "Dishoom",
-    "menuId": "dishoom",
-    "template": "Table cards",
-    "templateId": "midnight",
-    "filename": "dishoom-midnight",
-    "pages": 2,
-    "pageImages": [
-      {
-        "number": 1,
-        "png": "pages/dishoom-midnight/page-1.png",
-        "pixelWidth": 776,
-        "pixelHeight": 1100,
-        "width": 419.53,
-        "height": 595.28
-      },
-      {
-        "number": 2,
-        "png": "pages/dishoom-midnight/page-2.png",
-        "pixelWidth": 776,
-        "pixelHeight": 1100,
-        "width": 419.53,
-        "height": 595.28
-      }
-    ],
-    "format": "A5",
-    "curatedOrder": null,
-    "dishes": 10,
-    "source": "https://www.dishoom.com/menu/all-day-main/",
-    "sourceLabel": "Official all-day menu",
-    "sourceNote": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens.",
-    "sourceAccessedAt": "2026-10-26"
-  },
-  {
     "restaurant": "Balthazar",
     "menuId": "balthazar",
-    "template": "Osteria",
+    "template": "Market Bloom",
     "templateId": "trattoria",
     "filename": "balthazar-trattoria",
     "pages": 1,
@@ -135,7 +127,7 @@
   {
     "restaurant": "Balthazar",
     "menuId": "balthazar",
-    "template": "Herbarium",
+    "template": "Folio",
     "templateId": "atelier",
     "filename": "balthazar-atelier",
     "pages": 1,
@@ -160,7 +152,7 @@
   {
     "restaurant": "Balthazar",
     "menuId": "balthazar",
-    "template": "Counter",
+    "template": "Sunroom",
     "templateId": "botanical",
     "filename": "balthazar-botanical",
     "pages": 1,
@@ -185,29 +177,21 @@
   {
     "restaurant": "Balthazar",
     "menuId": "balthazar",
-    "template": "Table cards",
+    "template": "Night Press",
     "templateId": "midnight",
     "filename": "balthazar-midnight",
-    "pages": 2,
+    "pages": 1,
     "pageImages": [
       {
         "number": 1,
         "png": "pages/balthazar-midnight/page-1.png",
-        "pixelWidth": 776,
-        "pixelHeight": 1100,
-        "width": 419.53,
-        "height": 595.28
-      },
-      {
-        "number": 2,
-        "png": "pages/balthazar-midnight/page-2.png",
-        "pixelWidth": 776,
-        "pixelHeight": 1100,
-        "width": 419.53,
+        "pixelWidth": 1100,
+        "pixelHeight": 778,
+        "width": 841.89,
         "height": 595.28
       }
     ],
-    "format": "A5",
+    "format": "A4 landscape",
     "curatedOrder": null,
     "dishes": 10,
     "source": "https://balthazarny.com/menus/dinner-menu/",
@@ -218,7 +202,7 @@
   {
     "restaurant": "Pizzeria Bianco",
     "menuId": "pizzeria-bianco",
-    "template": "Osteria",
+    "template": "Market Bloom",
     "templateId": "trattoria",
     "filename": "pizzeria-bianco-trattoria",
     "pages": 1,
@@ -243,7 +227,7 @@
   {
     "restaurant": "Pizzeria Bianco",
     "menuId": "pizzeria-bianco",
-    "template": "Herbarium",
+    "template": "Folio",
     "templateId": "atelier",
     "filename": "pizzeria-bianco-atelier",
     "pages": 1,
@@ -268,7 +252,7 @@
   {
     "restaurant": "Pizzeria Bianco",
     "menuId": "pizzeria-bianco",
-    "template": "Counter",
+    "template": "Sunroom",
     "templateId": "botanical",
     "filename": "pizzeria-bianco-botanical",
     "pages": 1,
@@ -293,29 +277,21 @@
   {
     "restaurant": "Pizzeria Bianco",
     "menuId": "pizzeria-bianco",
-    "template": "Table cards",
+    "template": "Night Press",
     "templateId": "midnight",
     "filename": "pizzeria-bianco-midnight",
-    "pages": 2,
+    "pages": 1,
     "pageImages": [
       {
         "number": 1,
         "png": "pages/pizzeria-bianco-midnight/page-1.png",
-        "pixelWidth": 776,
-        "pixelHeight": 1100,
-        "width": 419.53,
-        "height": 595.28
-      },
-      {
-        "number": 2,
-        "png": "pages/pizzeria-bianco-midnight/page-2.png",
-        "pixelWidth": 776,
-        "pixelHeight": 1100,
-        "width": 419.53,
+        "pixelWidth": 1100,
+        "pixelHeight": 778,
+        "width": 841.89,
         "height": 595.28
       }
     ],
-    "format": "A5",
+    "format": "A4 landscape",
     "curatedOrder": null,
     "dishes": 10,
     "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",

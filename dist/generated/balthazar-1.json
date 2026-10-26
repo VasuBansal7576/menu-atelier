@@ -1,0 +1,130 @@
+{
+  "menu": {
+    "schemaVersion": 1,
+    "id": "balthazar",
+    "name": "Balthazar",
+    "subtitle": "French fare in New York",
+    "currency": "USD",
+    "footer": "Unofficial demonstration excerpt. Source snapshot prices.\nNot affiliated with or endorsed by the restaurant.",
+    "source": {
+      "label": "Official New York dinner menu",
+      "url": "https://balthazarny.com/menus/dinner-menu/",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Balthazar. Names and prices follow the official dinner menu retrieved on this date. Ingredient descriptions are condensed paraphrases. Prices and availability may change. No dietary or allergen claims are inferred."
+    },
+    "sections": [
+      {
+        "id": "balthazar-hors-doeuvres",
+        "name": "Hors D’œuvres",
+        "items": [
+          {
+            "id": "balthazar-balthazar-salad",
+            "name": "Balthazar Salad",
+            "description": "Haricots verts, asparagus, fennel, avocado and ricotta salata with truffle vinaigrette.",
+            "price": 2400,
+            "tags": []
+          },
+          {
+            "id": "balthazar-escargots",
+            "name": "Escargots",
+            "description": "Served in garlic butter.",
+            "price": 2600,
+            "tags": []
+          },
+          {
+            "id": "balthazar-bibb-lettuce-salad",
+            "name": "Bibb Lettuce Salad",
+            "description": "Croutons and chervil with Champagne tarragon vinaigrette.",
+            "price": 2200,
+            "tags": []
+          },
+          {
+            "id": "balthazar-salmon-crudo",
+            "name": "Salmon Crudo",
+            "description": "Citrus miso cream, crispy quinoa, chili and ponzu dressing.",
+            "price": 3300,
+            "tags": []
+          },
+          {
+            "id": "balthazar-chicken-liver-mousse",
+            "name": "Chicken Liver Mousse",
+            "description": "Ruby Port, crispy onion, greens and grilled baguette.",
+            "price": 2800,
+            "tags": []
+          }
+        ]
+      },
+      {
+        "id": "balthazar-entrees",
+        "name": "Entrées",
+        "items": [
+          {
+            "id": "balthazar-seared-salmon",
+            "name": "Seared Salmon",
+            "description": "Broccolini and toasted hazelnuts with whole grain mustard sauce.",
+            "price": 4600,
+            "tags": []
+          },
+          {
+            "id": "balthazar-sweet-pea-ravioli",
+            "name": "Sweet Pea Ravioli",
+            "description": "Toasted pistachios and radish with brown butter mint sauce.",
+            "price": 3800,
+            "tags": []
+          },
+          {
+            "id": "balthazar-pesto-casarecce",
+            "name": "Pesto Casarecce",
+            "description": "Shrimp, cherry tomatoes and basil.",
+            "price": 4500,
+            "tags": []
+          },
+          {
+            "id": "balthazar-roasted-chicken-marsala",
+            "name": "Roasted Chicken \"Marsala\"",
+            "description": "Wild mushrooms and roasted potato millefeuille.",
+            "price": 3800,
+            "tags": []
+          },
+          {
+            "id": "balthazar-duck-a-lorange",
+            "name": "Duck À L'Orange",
+            "description": "Wild rice, orange segments, candied orange and duck jus.",
+            "price": 4900,
+            "tags": []
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "template": "atelier",
+    "pageSize": "a4",
+    "density": "balanced",
+    "recipe": {
+      "version": 1,
+      "id": "direction-atelier-1c4nf4e",
+      "name": "Burgundy Editorial Journal",
+      "brief": "A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.",
+      "seed": 2910187598,
+      "template": "atelier",
+      "palette": {
+        "paper": "#FFF8E8",
+        "ink": "#702438",
+        "accent": "#702438",
+        "muted": "#565A55",
+        "tint": "#EED9DE",
+        "header": "#EED9DE",
+        "headingInk": "#20251F"
+      },
+      "motif": "none",
+      "type": "condensed",
+      "density": "balanced",
+      "rationale": [
+        "A typographic masthead with aligned names, descriptions and prices.",
+        "10 dishes fit across 1 A4 portrait page.",
+        "Cream paper, burgundy accents and balanced spacing. No illustration."
+      ]
+    }
+  }
+}

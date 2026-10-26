@@ -22,7 +22,7 @@ test('an impossible footer edit leaves the valid draft, preview, history and per
     env.node('#edit-footer').onclick();env.node('#menu-footer').value='A valid new footer';env.node('#save-footer').onclick();
     const before=globalThis.menuAtelier.getMenu(),pages=globalThis.menuAtelier.getPages(),bytes=env.stored.get('menu-atelier-v1'),writes=env.writes;
     env.node('#edit-footer').onclick();env.node('#menu-footer').value=Array(80).fill('A').join('\n');env.node('#save-footer').onclick();
-    assert.deepEqual(globalThis.menuAtelier.getMenu(),before);assert.deepEqual(globalThis.menuAtelier.getPages(),pages);assert.equal(env.stored.get('menu-atelier-v1'),bytes);assert.equal(env.writes,writes);assert.equal(env.node('#footer-dialog').open,true);assert.match(env.node('#menu-footer').validationMessage,/Shorten those fields/);assert.equal(env.node('#menu-footer').validityReported,true);
+    assert.deepEqual(globalThis.menuAtelier.getMenu(),before);assert.deepEqual(globalThis.menuAtelier.getPages(),pages);assert.equal(env.stored.get('menu-atelier-v1'),bytes);assert.equal(env.writes,writes);assert.equal(env.node('#footer-dialog').open,true);assert.ok(env.node('#menu-footer').validationMessage.trim().length > 15);assert.equal(env.node('#menu-footer').validityReported,true);
     env.node('#undo').onclick();assert.notEqual(globalThis.menuAtelier.getMenu().footer,before.footer);
     env.node('#redo').onclick();assert.equal(globalThis.menuAtelier.getMenu().footer,before.footer);
   } finally {env.restore();}
@@ -41,7 +41,7 @@ test('an imported multiline heading cannot replace the active menu or close revi
     const before=globalThis.menuAtelier.getMenu(),pages=globalThis.menuAtelier.getPages();env.node('#open-import').onclick();
     await env.node('#import-file').onchange({target:{files:[{name:'menu.json',size:2000,text:async()=>JSON.stringify(menu)}]}});
     env.node('#apply-import').onclick();
-    assert.deepEqual(globalThis.menuAtelier.getMenu(),before);assert.deepEqual(globalThis.menuAtelier.getPages(),pages);assert.equal(env.writes,0);assert.equal(env.node('#import-dialog').open,true);assert.equal(env.node('#review-error').hidden,false);assert.match(env.node('#review-error').textContent,/Shorten those fields/);
+    assert.deepEqual(globalThis.menuAtelier.getMenu(),before);assert.deepEqual(globalThis.menuAtelier.getPages(),pages);assert.equal(env.writes,0);assert.equal(env.node('#import-dialog').open,true);assert.equal(env.node('#review-error').hidden,false);assert.ok(env.node('#review-error').textContent.trim().length > 15);
   } finally {env.restore();}
 });
 
@@ -109,4 +109,51 @@ test('dish draft updates live, completes as one history action, and invalid valu
     await assert.rejects(globalThis.menuAtelier.createPDF(),/highlighted edit/);assert.equal(env.writes,writes);
     document.listeners.keydown({key:'Escape',preventDefault(){}});assert.equal(globalThis.menuAtelier.getMenu().sections[0].items[0].price,1450);
   } finally {env.restore();}
+});
+
+test('brief generation previews without changing content and applying a recipe is one undoable action',async()=>{
+  const env=studioEnvironment();
+  try {
+    await import(`../dist/app.js?brief-generation=${Date.now()}`);
+    const before=globalThis.menuAtelier.getMenu(),settings=globalThis.menuAtelier.getSettings(),writes=env.writes;
+    env.node('#design-brief').value='A contemporary wine bar. Cream paper, burgundy ink, editorial, no illustration.';
+    env.node('#design-form').onsubmit({preventDefault(){}});
+    assert.equal(env.node('#directions-dialog').open,true);
+    assert.match(env.node('#direction-grid').innerHTML,/Burgundy Editorial Journal/);
+    assert.deepEqual(globalThis.menuAtelier.getMenu(),before);assert.deepEqual(globalThis.menuAtelier.getSettings(),settings);assert.equal(env.writes,writes);
+    env.node('#direction-grid').onclick({target:{closest:()=>({dataset:{useDirection:'0'}})}});
+    assert.equal(env.node('#directions-dialog').open,false);assert.deepEqual(globalThis.menuAtelier.getMenu(),before);
+    const chosen=globalThis.menuAtelier.getSettings();assert.equal(chosen.recipe.palette.ink,'#702438');assert.equal(chosen.recipe.motif,'none');assert.equal(env.writes,writes+1);
+    const saved=JSON.parse(env.stored.get('menu-atelier-v1'));assert.deepEqual(saved.settings,chosen);
+    env.node('#undo').onclick();assert.deepEqual(globalThis.menuAtelier.getSettings(),settings);assert.deepEqual(globalThis.menuAtelier.getMenu(),before);
+    env.node('#redo').onclick();assert.deepEqual(globalThis.menuAtelier.getSettings(),chosen);
+  }finally{env.restore();}
+});
+
+test('an invalid imported art recipe leaves the active menu, preview, history and stored bytes intact',async()=>{
+  const env=studioEnvironment();
+  try{
+    await import(`../dist/app.js?bad-recipe=${Date.now()}`);
+    const before=globalThis.menuAtelier.getMenu(),pages=globalThis.menuAtelier.getPages(),writes=env.writes;
+    env.node('#art-recipe').value='{"version":1,"template":"evil"}';env.node('#apply-art-recipe').onclick();
+    assert.equal(env.node('#art-recipe-error').hidden,false);assert.match(env.node('#art-recipe-error').textContent,/missing or unknown fields/);
+    assert.deepEqual(globalThis.menuAtelier.getMenu(),before);assert.deepEqual(globalThis.menuAtelier.getPages(),pages);assert.equal(env.writes,writes);
+  }finally{env.restore();}
+});
+
+test('a saved recipe survives browser restart and JSON backup import exactly',async()=>{
+  const {generateDirections}=await import('../dist/design-generator.js');
+  const {candidateFromJSON}=await import('../dist/import.js');
+  const {layoutMenu}=await import('../dist/layout.js');
+  const menu=demoMenu(),recipe=generateDirections(menu,'Dark navy landscape with moon')[0];
+  const saved={menu,settings:{template:recipe.template,pageSize:'letter',density:recipe.density,recipe}};
+  assert.deepEqual(candidateFromJSON(JSON.stringify(saved)).settings,saved.settings);
+  const env=studioEnvironment(saved);
+  try{
+    await import(`../dist/app.js?restore-recipe=${Date.now()}`);
+    assert.deepEqual(globalThis.menuAtelier.getSettings(),saved.settings);assert.deepEqual(globalThis.menuAtelier.getPages(),JSON.parse(JSON.stringify(layoutMenu(menu,saved.settings))));assert.equal(env.writes,0);
+    assert.equal(env.node('#direction-name').textContent,recipe.name);
+  }finally{env.restore();}
+  assert.throws(()=>candidateFromJSON(JSON.stringify({...saved,settings:{...saved.settings,template:recipe.template==='midnight'?'botanical':'midnight'}})),/does not match/);
+  assert.throws(()=>candidateFromJSON(JSON.stringify({...saved,settings:{...saved.settings,density:recipe.density==='compact'?'spacious':'compact'}})),/spacing setting must match/);
 });

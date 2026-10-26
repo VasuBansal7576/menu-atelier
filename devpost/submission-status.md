@@ -1,22 +1,17 @@
 # Submission status
 
-The official [hackathon rules](https://learn-ai-basics.devpost.com/rules) require a new working project built with the Learn Skill Pack, planning files in a public repository, and a publicly visible demo video under three minutes. The main event page requests a 1 to 3 minute video. Standard libraries are permitted. Design, Potential Impact, Innovation/Idea and Presentation are equally weighted. Reviewers do not need to run the code, so the video must show the actual app functioning.
+No Devpost entry was submitted. Software completion, visual acceptance and hackathon submission are separate outcomes.
 
-The stated submission deadline is October 26, 2026 at 5 pm Eastern Time. This converts to October 27, 2026 at 2:30 am India Standard Time.
+| Requirement | Current state |
+| --- | --- |
+| Required Skill Pack | Installed and consulted during the build. Planning records are included. |
+| Public source | Approved repository under VasuBansal7576. Current publication evidence is recorded separately. |
+| Working software | Brief-based local generation, mandatory import review, editable prices, native PDF and JSON export. 43 checks pass. |
+| Visual taste | Previous appearances failed user acceptance. Current designs await the user's grade. |
+| Gamma-style runtime AI | Not implemented. The bounded procedural engine and external recipe import are labeled honestly. |
+| Narrated demonstration | Completed locally, 98.20 seconds, using actual browser captures and audible narration. Excluded from public source and hosting. |
+| Public YouTube or Vimeo demo | Unmet. The user later selected Keep the video local. No new upload was made. |
+| Devpost draft | Not created. Create project failed with reCAPTCHA Timeout without a visible challenge. |
+| Final submission | Not completed. No entry confirmation exists. |
 
-| Requirement | State | Evidence or remaining action |
-| --- | --- | --- |
-| New project during submission period | Recorded | New menu-studio folder created on 2026-10-26. No old app source reused. |
-| Required skill pack | Installed and consulted | skills-lock.json and .agents/skills. |
-| Planning documents | Created before application code | scope.md, prd.md, spec.md and devpost/checklist.md. |
-| End-to-end working app | Current release verified locally and on the existing private Site | Genuine source PDF import, live editing, design switching and actual PDF price propagation. See verification.md. |
-| Public repository URL | Public repository created | [https://github.com/VasuBansal7576/menu-atelier](https://github.com/VasuBansal7576/menu-atelier). The user explicitly approved publication under VasuBansal7576. |
-| 1 to 3 minute demo | Local video ready | 93.50-second actual browser recording in dist/grading/demo.mp4. Long holds were shortened. The demo is also included at `dist/grading/demo.mp4` in the public repository. Public YouTube or Vimeo upload remains separate. |
-| Entrant's submission fields and exit survey | Pending user authorship | Do not invent personal learning reflections. |
-| Devpost entry submitted | Not submitted | No submission action has been taken. |
-
-The user asked for autonomous delivery and intends to grade the finished menus. The final hands-on review remains pending until that grading happens. Agent verification must remain separately labeled.
-
-The user rejected both previous appearances. The current paper-first studio and12 sourced PDFs have passed local mechanical checks and independent artifact review. Final user taste grading is still pending. The new demo uses original fictional restaurant content, without third-party restaurant branding or music.
-
-Current software release is `b64de60d7df71559bedaf62a1736155f787e176c`. Hosted review, live price edit, illustrated design, PDF export feedback, reload persistence and all 12 grading exports were verified after deployment. See `release-evidence.json`.
+Supplied entrant facts are India, Punjab, Sangrur, solo, team name Newgen Labs. No age, personal reflection, legal consent or eligibility fact is invented. The local video decision remains controlling.

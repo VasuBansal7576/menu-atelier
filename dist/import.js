@@ -1,4 +1,5 @@
 import { createMenu, uid, parsePrice, validateMenu } from './model.js';
+import { validateRecipe } from './design-generator.js';
 
 export function parseCSV(text) {
   const rows = []; let row = [], field = '', quoted = false;
@@ -81,7 +82,8 @@ export function candidateFromJSON(text) {
   if(!value || typeof value!=='object' || Array.isArray(value))throw new Error('JSON must contain a menu object with schemaVersion 1.');
   const settings=value.settings;
   if(settings && (!['atelier','trattoria','botanical','midnight'].includes(settings.template)||!['a4','letter'].includes(settings.pageSize)||!['compact','balanced','spacious'].includes(settings.density)))throw new Error('This JSON backup contains invalid design settings.');
-  return { menu: validateMenu(value.menu || value), warnings: settings?['This backup will also restore its saved design and page settings.']:[], method: 'JSON', ...(settings?{settings:{template:settings.template,pageSize:settings.pageSize,density:settings.density}}:{}) };
+  if(settings?.recipe){const recipe=validateRecipe(settings.recipe,{template:settings.template});if(recipe.density!==settings.density)throw new Error('The saved design recipe and spacing setting must match.');}
+  return { menu: validateMenu(value.menu || value), warnings: settings?['This backup will also restore its saved design and page settings.']:[], method: 'JSON', ...(settings?{settings:{template:settings.template,pageSize:settings.pageSize,density:settings.density,...(settings.recipe?{recipe:validateRecipe(settings.recipe)}:{})}}:{}) };
 }
 export function parseImport(text, type = 'text', currency = 'USD', name) {
   if (text.length > 3_000_000) throw new Error('Import a text file smaller than 3 MB.');

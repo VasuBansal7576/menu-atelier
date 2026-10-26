@@ -118,3 +118,34 @@ The user rejected the redesigned appearance as well. Its passing29 tests and fav
   Commit: `Integrate direct paper editing and art-directed menu compositions`
 
 Current slice 7 mechanical release is complete. All 40 tests pass. The 12 exports contain 15 verified pages. Software commit `b64de60d7df71559bedaf62a1736155f787e176c` is deployed to the existing owner-private Site and was exercised after deployment. Both prior design failures remain failed. Current user taste grading, learner Final Review, public YouTube/Vimeo upload and entrant-authored submission remain pending.
+
+## Third rejection and code-only deadline recovery
+
+The user rejected the prior release and then rejected generated imagery. The current work replaces the common column engine with independent code-rendered compositions. Prior agent reviews do not reverse the user's rejection.
+
+- [x] **8. Integrate independent code-only compositions and verify exact PDFs.**
+  Becomes usable. Four different print architectures retain direct price editing and native selectable PDF.
+  Build. Extract font primitives and preserve the numeric menu, import review and committed history owner. Remove image-generation assets from current output.
+  Mechanical verification.35 regression checks pass, including72 actual source/design/stock/density PDF cases. Two independent reviewers found no established correctness blocker. The12 source exports preserve all content and have12 page previews.
+  Learner check. Current user taste remains pending.
+- [x] Prepare an83second narrated demonstration from actual app captures.
+- [ ] Publish the narrated video. Blocked by the user's explicit Keep the video local decision.
+- [ ] Create and submit the Devpost entry. Draft creation is blocked by reCAPTCHA timeout; public-video requirement remains unmet. No submission is claimed.
+
+Final software publication and destination evidence are recorded with the current release. The website remains owner-private. No final user grading, personal reflection or entry acceptance is fabricated.
+
+## Brief generation slice
+
+- [x] Replace preset selection as the main interaction with owner brief, measured directions, explicit application and refinement.
+- [x] Keep authoritative menu facts separate from the versioned design recipe.
+- [x] Preserve recipe through undo, browser reload and JSON backup.
+- [x] Validate imported recipes and reject failed geometry without state mutation.
+- [x] Correct generation fitting for the selected A4 or Letter stock.
+- [x] Generate seven actual attributed restaurant PDF studies and editable backups.
+- [x] Verify physical browser PDF and JSON downloads after price edits and restyling.
+- [x] Complete 43 scoped checks and two independent generator reviews.
+- [x] Refresh the narrated local demo to 98.20 seconds. No new public video upload.
+- [ ] User taste acceptance remains unverified. Prior rejection is preserved.
+- [ ] Gamma-style runtime model generation is not implemented. Local generation is labeled procedural.
+- [ ] Public YouTube or Vimeo requirement is unmet under the user's later Keep the video local instruction.
+- [ ] Devpost project creation and final entry remain incomplete. No CAPTCHA bypass.

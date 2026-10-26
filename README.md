@@ -1,19 +1,32 @@
 # Menu Atelier
 
-An editable restaurant menu studio. Import a menu, review its dishes and prices, choose a design, edit the content, and download a PDF.
+An editable restaurant menu studio from Newgen Labs. Import a menu, review its dishes and prices, write a design brief, compare print directions, refine one and export a selectable PDF.
 
-## Project links
+The generation engine runs locally. It interprets a bounded vocabulary and combines four print architectures with palettes, illustration choices and spacing. It does not call a language model or invent arbitrary layouts. A separate art-direction prompt and validated recipe import let an owner use an AI assistant they already have.
 
-- [Public source repository](https://github.com/VasuBansal7576/menu-atelier).
-- [Recorded browser demo](dist/grading/demo.mp4), 1 minute 33.5 seconds.
-- [Twelve menu PDFs and editable backups](dist/grading/).
-- [Private studio](https://menu-atelier-vasu-oct26.zippy17.chatgpt.site) and [grading gallery](https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/grading/). Sign in with the owner account.
+## Try it
 
-![Redesigned editing studio](dist/grading/studio-preview.jpg)
+- [Owner-private studio](https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/).
+- [Seven generated restaurant studies and actual PDFs](https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/generated/).
+- [Twelve base architecture exports](https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/grading/).
+- [Public source](https://github.com/VasuBansal7576/menu-atelier).
 
-Four compositions use licensed local fonts and a shared measured scene for preview and selectable PDF. Osteria is an asymmetric dining sheet. Herbarium pairs ink illustration with restaurant typography. Counter is a landscape service index. Table cards use A5 or Half Letter pages. pdf-lib writes the final scene and fontkit measures the embedded font bytes.
+![Current studio](dist/grading/studio-preview.png)
 
-## Run the studio
+## The workflow
+
+1. Upload TXT, CSV, JSON, a text PDF or an image. Review every extracted name and price.
+2. Describe the restaurant's atmosphere, palette, paper orientation and illustration preference. Try the Wine bar, Coastal café or After dark examples.
+3. Compare up to three directions using the actual menu. An explicit orientation yields up to two matching architectures.
+4. Apply a direction. Select a printed price, enter a new amount and press Done or Enter.
+5. Refine the brief, change spacing or edit content. Undo restores menu data and the selected recipe together.
+6. Export a PDF or a portable JSON backup. The recipe survives import and browser reload.
+
+Market Bloom uses a produce masthead and category lanes. Folio uses an editorial masthead with separate name, ingredient and price lanes. Sunroom places an identity island beside flowing columns. Night Press uses an indexed category rail and adaptive dish grid. All current artwork consists of original code-drawn vectors. No image-generation assets are included.
+
+Names, descriptions, verified tags and prices remain separate from the design recipe. Prices use integer minor units. The SVG preview and pdf-lib exporter share measured text records from the exact embedded font bytes. A design request cannot silently rewrite menu facts.
+
+## Run
 
 Use Node.js 22.13 or newer.
 
@@ -22,38 +35,28 @@ npm install
 npm start
 ```
 
-Open the localhost address printed by the server. The core editing and PDF workflow requires no API key. Drafts stay in the current browser. Export JSON to keep a portable backup.
+Open the printed localhost address. The core workflow needs no API key. Drafts stay in the current browser. The art-direction prompt contains the owner's brief and category/dish counts. It excludes dish names, descriptions and prices.
 
-## Verify a real price change
+## Verify
 
-1. Open an attributed restaurant example.
-2. Select a printed price and change it beside the dish. Press Enter or Done to save the edit.
-3. Check the new price in the paper preview.
-4. Switch to another design and check that the edit remains.
-5. Download the PDF and find the changed price in its selectable text.
+`npm test` runs 43 behavior and integration checks. They include 72 source/design/paper/spacing PDF round trips, extreme content, original Unicode, geometry, invalid input recovery, recipe validation, selected-stock generation, undo and backup restoration.
 
-Run `npm test` for 40 behavior and integration checks. Run `node scripts/grade.mjs --publish-assets` to reproduce all 12 grading PDFs, every rendered page and editable backups. Thumbnail generation requires Poppler's `pdftoppm`. Optional `python scripts/verify-grading.py` requires `pypdf` and checks the actual files. Integrated browser and PDF evidence is recorded in `devpost/verification.md`. The private deployment includes a `/grading/` gallery and a 93.50-second actual browser demo.
+`node scripts/grade.mjs --publish-assets` reproduces twelve base-design PDFs and their complete page rasters. `node scripts/generate-studies.mjs` reproduces seven brief-generated restaurant studies. Both use actual PDF output. Rasterization requires Poppler's `pdftoppm`. `python3 scripts/verify-grading.py` requires pypdf and checks saved base exports.
 
-Run `node scripts/demo-proof.mjs` to reproduce the original before/after demonstration PDFs.
+`node scripts/demo-proof.mjs` reproduces the original fictional menu's before/after PDFs. Whipped ricotta changes from $12.00 to $14.50. In the current browser acceptance run, a generated Lime Supper Broadsheet was edited to $16.75, downloaded through the browser and inspected from the saved PDF. Its JSON backup preserved the same recipe and price.
 
-The [edited original-demo PDF](dist/grading/olive-and-ember-price-change.pdf) contains the recorded $12.00 to $14.50 change. The [grading gallery](dist/grading/index.html) starts with three selected restaurant studies and includes all twelve exports.
+## Planning and implementation
 
-## Understand the files
+Root scope.md, prd.md and spec.md mirror the canonical records in devpost/. The project began during the submission period. The required Devpost Learn Skill Pack was installed and consulted during development. Pstack Poteto Mode also guided the work. See devpost/checklist.md and devpost/app-map.html for the process and data flow.
 
-The root `scope.md`, `prd.md` and `spec.md` mirror the canonical planning files in `devpost/`. `devpost/checklist.md` records build progress and distinguishes agent checks from the user's final review. `research/sources.md` records the official restaurant sources and their limitations. `devpost/app-map.html` explains the finished implementation.
+The menu model owns validated content and committed history. Import produces reviewable candidates. The print modules own measured page architectures. The design generator produces versioned recipes and adapts immutable scenes. Layout validates the complete printable result. Export writes those same text records and vectors into a native PDF.
 
-## Know the boundaries
+The restaurant examples are attributed, unofficial source snapshots. Descriptions are paraphrased. Pizzeria Bianco uses its linked April 2023 menu. The fonts and third-party libraries are disclosed in THIRD_PARTY_NOTICES.md.
 
-Menu recognition requires review. OCR can misread names and prices. The app does not infer allergen safety. Example menus are unofficial selections and are not endorsed by the restaurants. Pizzeria Bianco's source PDF is a documented April 2023 snapshot linked by the official site at retrieval time. Prices and availability can change.
+## Honest status
 
-AI helped plan, write, design and verify this software using the Devpost Learn Skill Pack. Runtime import uses parsing, PDF text extraction and OCR. It does not require or claim an online generative model.
+The user rejected three previous appearances and a generated-image experiment. Current visual taste remains unverified by the user. Independent reviews establish bounded content and PDF correctness, not a design grade or Gamma-equivalent AI generation.
 
-## Hackathon preparation
+The narrated demo remains local at the user's request and is excluded from the repository and Site. No new YouTube upload or Devpost entry was submitted. Devpost Create project also failed with a reCAPTCHA timeout while no challenge was visible. A local video does not satisfy the public-video requirement.
 
-Built from an empty project folder on 2026-10-26 for [Build With AI Basics](https://learn-ai-basics.devpost.com/). The required [Devpost Learn Skill Pack](https://github.com/challengepost/learn-ai-basics) is installed locally and its six stages were consulted. The user's explicit autonomous-build instruction adapted the repeated conversational approval checkpoints. The records do not claim unperformed interviews, learner testing or reflection.
-
-The public repository includes the source, planning files, menu PDFs, and recorded demo. The hackathon separately requires the demo on public YouTube or Vimeo. That upload, the entrant-written submission answers, the exit survey, and the final Devpost entry remain pending. The private app audience is unchanged.
-
-## License
-
-Application code is MIT licensed. Restaurant facts and names remain attributed to their sources. Third-party dependencies retain their own licenses and notices.
+OCR is English and requires review. Arbitrary PDF columns may need correction. Unsupported scripts fail preflight without overwriting valid work. Mobile viewport checks were performed; physical-phone testing is not claimed. No performance benchmark is claimed.

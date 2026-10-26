@@ -1,5 +1,4 @@
 import { getFont, missingCharacters, fontFeatures } from './document-fonts.js';
-import { getArt, prepareArt } from './print-art.js';
 let pdfLibrary;
 async function loadPDFLibrary() {
   if (!pdfLibrary) pdfLibrary = (async () => {
@@ -27,10 +26,6 @@ export async function pdfBytes(pages, title = 'Menu') {
   document.setSubject('Editable menu designed with Menu Atelier');
   document.setCreator('Menu Atelier');
   const fonts = new Map();
-  const images = new Map();
-  const imageIds = [...new Set(pages.flatMap(page => page.elements.filter(e => e.type === 'image').map(e => e.asset)))];
-  await prepareArt(imageIds);
-  for (const id of imageIds) images.set(id, await document.embedPng(getArt(id).bytes));
   for (const id of new Set(pages.flatMap(page => page.elements.filter(e => e.type === 'text').map(e => e.font)))) {
     fonts.set(id, await document.embedFont(getFont(id).bytes, { subset: false, features: fontFeatures }));
   }
@@ -44,7 +39,7 @@ export async function pdfBytes(pages, title = 'Menu') {
       if (e.type === 'text') {
         const x = e.x - (e.align === 'right' ? e.advance : e.align === 'center' ? e.advance / 2 : 0);
         page.drawText(e.value, { x, y: scene.height - e.y, size: e.size, font: fonts.get(e.font), color: color(e.color) });
-      } else if (e.type === 'image') page.drawImage(images.get(e.asset), { x: e.x, y: scene.height - e.y - e.height, width: e.width, height: e.height, opacity: e.opacity });
+      }
       else if (e.type === 'line') page.drawLine({ start: { x: e.x1, y: scene.height - e.y1 }, end: { x: e.x2, y: scene.height - e.y2 }, thickness: e.width, color: color(e.color) });
       else if (e.type === 'rect') page.drawRectangle({ x: e.x, y: scene.height - e.y - e.height, width: e.width, height: e.height, color: e.fill ? color(e.fill) : undefined, borderColor: e.stroke ? color(e.stroke) : undefined, borderWidth: e.stroke ? .7 : 0 });
       else if (e.type === 'ellipse') page.drawEllipse({ x: e.cx, y: scene.height - e.cy, xScale: e.rx, yScale: e.ry, color: e.fill ? color(e.fill) : undefined, borderColor: e.stroke ? color(e.stroke) : undefined, borderWidth: e.stroke ? .6 : 0 });

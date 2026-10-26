@@ -37,9 +37,9 @@ gallery.feed(gallery_html)
 assert len(manifest) == len(gallery.cards) == 12, 'Expected all twelve exports'
 assert gallery.filters == {'curated': 'true', 'all': 'false', 'trattoria': 'false', 'atelier': 'false', 'botanical': 'false', 'midnight': 'false'}, gallery.filters
 selected = [card for card in gallery.cards if 'hidden' not in card]
-assert [card['data-design'] for card in selected] == ['trattoria', 'atelier', 'botanical'], selected
+assert [card['data-design'] for card in selected] == ['trattoria', 'atelier', 'midnight'], selected
 assert all(card['data-curated'] == 'true' for card in selected), selected
-assert [(entry['menuId'], entry['templateId']) for entry in sorted(manifest, key=lambda entry: entry['curatedOrder'] or 99)[:3]] == [('pizzeria-bianco', 'trattoria'), ('balthazar', 'atelier'), ('dishoom', 'botanical')]
+assert [(entry['menuId'], entry['templateId']) for entry in sorted(manifest, key=lambda entry: entry['curatedOrder'] or 99)[:3]] == [('pizzeria-bianco', 'trattoria'), ('balthazar', 'atelier'), ('dishoom', 'midnight')]
 assert all(not image['src'].endswith('.svg') for image in gallery.images), 'PDF raster images required'
 assert not re.search(r'/Users/|/private/|file://|api[_-]?key|access[_-]?token', gallery_html + json.dumps(manifest), re.I), 'Public gallery contains local paths or secrets'
 assert 'April 2023' in gallery_html and 'not affiliated with or endorsed' in gallery_html
