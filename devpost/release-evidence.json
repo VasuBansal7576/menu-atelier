@@ -1,48 +1,11 @@
 {
-  "record_kind": "Previous release receipt, before editorial replacement",
-  "previous_release": {
-    "deployed_software_commit": "fa448068312dd55ea90e54093934b3e101472726",
-    "site_version": 6,
-    "deployment_id": "appgdep_6adfb5524eec81918e583bfedafb8a56",
-    "status": "succeeded",
-    "studio": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/",
-    "generated_gallery": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/generated/",
-    "base_gallery": "https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/grading/",
-    "audience": "Existing owner-private audience preserved. One allowed user, zero external visitors.",
-    "public_repository": "https://github.com/VasuBansal7576/menu-atelier",
-    "mechanical_tests": 43,
-    "source_exports": 19,
-    "restaurant_export_pages": 19,
-    "generation": "Bounded local procedural grammar. No runtime model inference or image generation.",
-    "local_demo": {
-      "seconds": 98.2,
-      "sha256": "683ce69b0b5841e94ceb26813eaa313dab3ef427a616fe7b2679eac7325f625d",
-      "public_upload": false,
-      "method": "Edited actual browser screenshots with audible narration. Not continuous capture."
-    },
-    "hosted_browser_checks": [
-      "Previous Dishoom draft restored without content loss",
-      "Brief generated two measured landscape directions using all ten dishes",
-      "Repeated constrained generation explicitly reported unchanged choices",
-      "Generated Saffron Supper Broadsheet applied without rewriting prices",
-      "Vegetable Samosas changed from GBP9.25 to GBP9.75 on paper and committed",
-      "Recipe and GBP9.75 survived reload",
-      "Physical PDF downloaded from the final v6 release; saved selectable text contains GBP9.75",
-      "Generated gallery contains seven attributed actual PDFs and editable backups",
-      "No browser errors or warnings observed in bounded final check"
-    ],
-    "submission": {
-      "submitted": false,
-      "public_video_requirement": "Unmet under the user Keep the video local instruction",
-      "draft_creation": "Earlier reCAPTCHA Timeout, no visible challenge, no bypass"
-    },
-    "limits": [
-      "Current user taste acceptance remains unverified after prior failed appearances",
-      "Runtime conversational AI and arbitrary layout generation remain absent",
-      "Mobile viewport checked, physical phone not tested",
-      "OCR and source prices require owner review",
-      "No performance benchmark claimed"
-    ]
-  },
-  "current_candidate": "Editorial print grammar. 43 checks pass. Publication receipt is recorded after deployment."
+  "software_commit": "dd71dcfb68d23e624826eeffbfb627555a4472ca",
+  "deployment_id": "appgdep_6adfb8ec9d448191bda098ba5f8f42cc",
+  "status": "succeeded",
+  "tests_passed": 43,
+  "actual_hosted_price": "\u00a39.95",
+  "native_pdf_pages": 1,
+  "generated_examples": 6,
+  "taste_acceptance": "unverified",
+  "method": "Two independent candidates, actual PDF pilots, independent cross-judge, integrated grammar and hosted export."
 }

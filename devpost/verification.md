@@ -1,3 +1,9 @@
+# Editorial replacement verification
+
+The poster appearance failed user acceptance again. The replacement uses Carta, Maison, Gazette and Service print grammars. All 43 checks pass. Six regenerated restaurant PDFs and twelve base exports are current. Some compositions continue onto a second page. A physical hosted Navy Gazette PDF contains the edited £9.95 amount. Actual source geometry, source facts and native text checks remain in the suite. Taste remains unverified. The earlier narrated video depicts the prior print system and stays local. No entry was submitted.
+
+## Prior release verification record
+
 # Current verification
 
 The user rejected three prior appearances and a generated-image experiment. The current brief-based studio is a new grading candidate. User taste remains unverified. Full Gamma-style runtime AI generation is not implemented.
