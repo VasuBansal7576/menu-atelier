@@ -41,6 +41,31 @@ test('Casa Rosso checkerboard clears complete footer text, page counter and bord
     }
   }
 });
+test('Casa Rosso PDF counter glyph bounds clear the inner border inside the checkerboard gap',async()=>{
+  const menu=JSON.parse(readFileSync(new URL('../dist/examples/pizzeria-bianco.json',import.meta.url),'utf8'));
+  for(const pageSize of ['a4','letter'])for(const footer of [menu.footer,Array(25).fill('A footer line').join('\n')]) {
+    const pages=layoutMenu({...menu,footer},{template:'trattoria',pageSize});
+    const doc=renderPDF(jsPDF,pages,menu.name);
+    const task=getDocument({data:new Uint8Array(doc.output('arraybuffer')),useSystemFonts:true});
+    const pdf=await task.promise;
+    try {
+      for(const [index,page] of pages.entries()) {
+        const content=await(await pdf.getPage(index+1)).getTextContent();
+        const counter=content.items.find(item=>/^[0-9]+ \/ [0-9]+$/.test(item.str));
+        assert.ok(counter);
+        const font=content.styles[counter.fontName],size=Math.hypot(counter.transform[2],counter.transform[3]);
+        const top=page.height-counter.transform[5]-font.ascent*size;
+        const bottom=page.height-counter.transform[5]-font.descent*size;
+        const innerBorder=page.elements.find(e=>e.type==='rect'&&e.y===25&&e.stroke);
+        assert.ok(top>=page.height-38,'counter glyph ascenders stay within the reserved checkerboard gap');
+        assert.ok(bottom<innerBorder.y+innerBorder.height-.35,'counter glyph descenders clear the inner border stroke');
+        for(const check of page.elements.filter(e=>e.type==='rect'&&e.fill===templates.trattoria.color)) {
+          assert.ok(check.x+check.width<=counter.transform[4]||check.x>=counter.transform[4]+counter.width||check.y+check.height<=top||check.y>=bottom,'checkerboard clears actual counter glyph bounds');
+        }
+      }
+    } finally {await task.destroy();}
+  }
+});
 test('all four compositions retain every dish and latest numeric price',()=>{
   const menu=demoMenu();menu.sections[0].items[0].price=1875;
   for(const template of Object.keys(templates)){

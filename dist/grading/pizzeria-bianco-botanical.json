@@ -1,0 +1,111 @@
+{
+  "menu": {
+    "schemaVersion": 1,
+    "id": "pizzeria-bianco",
+    "name": "Pizzeria Bianco",
+    "subtitle": "Heritage Square, Phoenix",
+    "currency": "USD",
+    "footer": "Unofficial demonstration excerpt. Source snapshot prices.\nNot affiliated with or endorsed by the restaurant.",
+    "source": {
+      "label": "Official Heritage Square menu PDF",
+      "url": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+      "accessedAt": "2026-10-26",
+      "note": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred."
+    },
+    "sections": [
+      {
+        "id": "pizzeria-bianco-small-plates",
+        "name": "Small Plates",
+        "items": [
+          {
+            "id": "pizzeria-bianco-spiedini",
+            "name": "Spiedini",
+            "description": "Italian fontina wrapped in Prosciutto di Parma.",
+            "price": 1500,
+            "tags": []
+          },
+          {
+            "id": "pizzeria-bianco-antipasto",
+            "name": "Antipasto",
+            "description": "Wood-roasted vegetables, sopressata and a bite of cheese. After 4pm.",
+            "price": 1600,
+            "tags": []
+          }
+        ]
+      },
+      {
+        "id": "pizzeria-bianco-salads",
+        "name": "Salads",
+        "items": [
+          {
+            "id": "pizzeria-bianco-local-organic-greens",
+            "name": "Local Organic Greens",
+            "description": "With balsamic vinaigrette.",
+            "price": 800,
+            "tags": []
+          },
+          {
+            "id": "pizzeria-bianco-handmade-mozzarella",
+            "name": "Handmade Mozzarella",
+            "description": "Local market vegetable, basil and extra virgin olive oil.",
+            "price": 1300,
+            "tags": []
+          }
+        ]
+      },
+      {
+        "id": "pizzeria-bianco-pizza",
+        "name": "Pizza",
+        "items": [
+          {
+            "id": "pizzeria-bianco-marinara",
+            "name": "Marinara",
+            "description": "Tomato sauce, oregano and garlic. No cheese.",
+            "price": 1800,
+            "tags": []
+          },
+          {
+            "id": "pizzeria-bianco-margherita",
+            "name": "Margherita",
+            "description": "Tomato sauce, fresh mozzarella and basil.",
+            "price": 2200,
+            "tags": []
+          },
+          {
+            "id": "pizzeria-bianco-sonny-boy",
+            "name": "Sonny Boy",
+            "description": "Tomato sauce, fresh mozzarella, salami and Gaeta olives.",
+            "price": 2600,
+            "tags": []
+          },
+          {
+            "id": "pizzeria-bianco-rosa",
+            "name": "Rosa",
+            "description": "Red onion, Parmigiano Reggiano, rosemary and Arizona pistachios.",
+            "price": 2300,
+            "tags": []
+          },
+          {
+            "id": "pizzeria-bianco-biancoverde",
+            "name": "Biancoverde",
+            "description": "Fresh mozzarella, Parmigiano Reggiano, ricotta and arugula.",
+            "price": 2400,
+            "tags": []
+          },
+          {
+            "id": "pizzeria-bianco-wiseguy",
+            "name": "Wiseguy",
+            "description": "Wood-roasted onion, house-smoked mozzarella and fennel sausage.",
+            "price": 2600,
+            "tags": []
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "template": "botanical",
+    "pageSize": "a4",
+    "density": "compact"
+  }
+}

@@ -193,7 +193,7 @@ export function layoutMenu(menu, settings = {}) {
     const footerTop=Math.min(h-75,bottom+19);
     line(p,margin,footerTop,w-right,footerTop,template.color,.4);
     footerLines.forEach((t,j)=>text(p,t,footerX,footerTop+19+j*footerLeading,footerSize,{align:footerAlign,style:'italic',color:template.muted}));
-    text(p,`${String(i+1).padStart(2,'0')} / ${String(pages.length).padStart(2,'0')}`,w-right,h-23,6.5,{font:'sans',align:'right',color:template.muted});
+    text(p,`${String(i+1).padStart(2,'0')} / ${String(pages.length).padStart(2,'0')}`,w-right,h-(key==='trattoria'?32:23),6.5,{font:'sans',align:'right',color:template.muted});
   });
   return pages;
 }

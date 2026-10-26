@@ -1,0 +1,98 @@
+[
+  {
+    "restaurant": "Dishoom",
+    "template": "The Atelier",
+    "filename": "dishoom-atelier",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://www.dishoom.com/menu/all-day-main/"
+  },
+  {
+    "restaurant": "Dishoom",
+    "template": "Casa Rosso",
+    "filename": "dishoom-trattoria",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://www.dishoom.com/menu/all-day-main/"
+  },
+  {
+    "restaurant": "Dishoom",
+    "template": "The Herbarium",
+    "filename": "dishoom-botanical",
+    "pages": 2,
+    "dishes": 10,
+    "source": "https://www.dishoom.com/menu/all-day-main/"
+  },
+  {
+    "restaurant": "Dishoom",
+    "template": "After Hours",
+    "filename": "dishoom-midnight",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://www.dishoom.com/menu/all-day-main/"
+  },
+  {
+    "restaurant": "Balthazar",
+    "template": "The Atelier",
+    "filename": "balthazar-atelier",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://balthazarny.com/menus/dinner-menu/"
+  },
+  {
+    "restaurant": "Balthazar",
+    "template": "Casa Rosso",
+    "filename": "balthazar-trattoria",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://balthazarny.com/menus/dinner-menu/"
+  },
+  {
+    "restaurant": "Balthazar",
+    "template": "The Herbarium",
+    "filename": "balthazar-botanical",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://balthazarny.com/menus/dinner-menu/"
+  },
+  {
+    "restaurant": "Balthazar",
+    "template": "After Hours",
+    "filename": "balthazar-midnight",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://balthazarny.com/menus/dinner-menu/"
+  },
+  {
+    "restaurant": "Pizzeria Bianco",
+    "template": "The Atelier",
+    "filename": "pizzeria-bianco-atelier",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
+  },
+  {
+    "restaurant": "Pizzeria Bianco",
+    "template": "Casa Rosso",
+    "filename": "pizzeria-bianco-trattoria",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
+  },
+  {
+    "restaurant": "Pizzeria Bianco",
+    "template": "The Herbarium",
+    "filename": "pizzeria-bianco-botanical",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
+  },
+  {
+    "restaurant": "Pizzeria Bianco",
+    "template": "After Hours",
+    "filename": "pizzeria-bianco-midnight",
+    "pages": 1,
+    "dishes": 10,
+    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
+  }
+]
