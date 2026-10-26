@@ -20,7 +20,7 @@ catch(error) {
 startupControls.forEach(control=>control.disabled=false);
 document.body?.removeAttribute('aria-busy');
 
-const defaultSettings = { template: 'trattoria', pageSize: 'a4', density: 'balanced' };
+const defaultSettings = { template: 'atelier', pageSize: 'a4', density: 'balanced' };
 let initial = { menu: demoMenu(), settings: defaultSettings }, storageError = '', restoredDraft = false;
 try {
   const saved = localStorage.getItem('menu-atelier-v1');
@@ -31,6 +31,7 @@ let directions = [], directionSeed = 0;
 let selected = '', editSession = null, view = 'paper', candidate = null, categoryId = '', pages = [], examples = [], toastTimer, lastCommitError = '', importGeneration = 0;
 const collapsed = new Set();
 const state = () => editSession?.draft || history.value;
+const designName = settings => settings.recipe?.id.startsWith('direction-') ? `${settings.recipe.name.split(' ')[0]} ${templates[settings.template].name}` : settings.recipe?.name || templates[settings.template].name;
 const dishCount = menu => menu.sections.reduce((sum, section) => sum + section.items.length, 0);
 const selectedRecord = () => state().menu.sections.flatMap(section => section.items.map(item => ({ section, item }))).find(record => record.item.id === selected);
 function toast(message) { $('#toast').textContent = message; $('#toast').classList.add('visible'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 4000); }
@@ -56,7 +57,7 @@ function pageDescription(page) {
 }
 function render(options = {}) {
   const { menu, settings } = state();
-  $('#project-name').textContent = menu.name; $('#current-design').textContent = settings.recipe?.name || templates[settings.template].name;
+  $('#project-name').textContent = menu.name; $('#current-design').textContent = designName(settings);
   renderDirectionSummary();
   $('#content-tab').textContent = `All ${dishCount(menu)} dishes`;
   $('#undo').disabled = !history.canUndo && !editSession; $('#redo').disabled = !history.canRedo || Boolean(editSession);
@@ -82,8 +83,8 @@ function renderTemplates() {
 
 function renderDirectionSummary() {
   const { settings } = state(), recipe = settings.recipe;
-  $('#direction-name').textContent = recipe?.name || templates[settings.template].name;
-  $('#direction-description').textContent = recipe ? `${recipe.rationale[0]} ${dishCount(state().menu)} editable dishes · ${settings.density} spacing.` : templates[settings.template].mood;
+  $('#direction-name').textContent = designName(settings);
+  $('#direction-description').textContent = recipe ? `${templates[settings.template].mood}. ${dishCount(state().menu)} editable dishes · ${settings.density} spacing.` : templates[settings.template].mood;
   const palette = recipe?.palette;
   $('#direction-colors').innerHTML = palette ? ['paper','ink','accent'].map(key => `<span style="background:${palette[key]}" title="${key}: ${palette[key]}"></span>`).join('') : '';
 }
@@ -304,7 +305,7 @@ window.addEventListener('resize', () => { fitPaper(); positionEditor(); });
 window.addEventListener('scroll', positionEditor, true);
 window.visualViewport?.addEventListener('resize', positionEditor); window.visualViewport?.addEventListener('scroll', positionEditor);
 function validPendingEdits() { if (!validPendingFields()) return false; const unsupported = unsupportedCharacters(state().menu); if (unsupported.length) { toast(`The selected fonts cannot print these characters. Edit the content before exporting: ${unsupported.slice(0, 8).join(' ')}`); return false; } return true; }
-$('#export-pdf').onclick = async () => { if (!validPendingEdits()) return; const button = $('#export-pdf'), exportPages = pages, exportTitle = state().menu.name, exportDesign = state().settings.recipe?.name || templates[state().settings.template].name; button.disabled = true; button.textContent = 'Preparing…'; try { const doc = await createPDF(exportPages, exportTitle); doc.save(`${exportTitle.replace(/[^\p{L}\p{N} -]/gu, '').trim() || 'Menu'} - ${exportDesign}.pdf`); toast(`${exportPages.length}-page PDF exported for ${exportTitle}.`); } catch (error) { toast(`Export failed. ${error.message}`); } finally { button.disabled = false; button.innerHTML = 'Export PDF <span>↗</span>'; } };
+$('#export-pdf').onclick = async () => { if (!validPendingEdits()) return; const button = $('#export-pdf'), exportPages = pages, exportTitle = state().menu.name, exportDesign = designName(state().settings); button.disabled = true; button.textContent = 'Preparing…'; try { const doc = await createPDF(exportPages, exportTitle); doc.save(`${exportTitle.replace(/[^\p{L}\p{N} -]/gu, '').trim() || 'Menu'} - ${exportDesign}.pdf`); toast(`${exportPages.length}-page PDF exported for ${exportTitle}.`); } catch (error) { toast(`Export failed. ${error.message}`); } finally { button.disabled = false; button.innerHTML = 'Export PDF <span>↗</span>'; } };
 $('#export-json').onclick = () => { if (!validPendingFields()) return; downloadBlob(new Blob([JSON.stringify(state(), null, 2)], { type: 'application/json' }), `${state().menu.name.replace(/[^a-z0-9-]/gi, '-')}-menu.json`); toast('Menu backup downloaded. Import it anytime.'); };
 function closeDialog(dialog){if(dialog.id==='settings-dialog'&&!validPendingFields())return;if(dialog.id==='import-dialog')importGeneration++;dialog.close();}
 document.querySelectorAll('.close-dialog').forEach(button=>button.onclick=()=>closeDialog(button.closest('dialog')));

@@ -109,10 +109,10 @@
     "density": "balanced",
     "recipe": {
       "version": 1,
-      "id": "direction-trattoria-v36rf0",
-      "name": "Terracotta Market Letter",
-      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
-      "seed": 1879805772,
+      "id": "direction-trattoria-thw85r",
+      "name": "Terracotta Carta",
+      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a contemporary Italian portrait menu. No illustration.",
+      "seed": 1783576143,
       "template": "trattoria",
       "palette": {
         "paper": "#FFF8E8",
@@ -123,13 +123,13 @@
         "header": "#F0DFD2",
         "headingInk": "#20251F"
       },
-      "motif": "produce",
+      "motif": "none",
       "type": "editorial",
       "density": "balanced",
       "rationale": [
-        "A generous illustrated masthead and independent category lanes.",
+        "Full-width rows, a serif dish hierarchy and fine rules.",
         "10 dishes fit across 1 A4 portrait page.",
-        "Cream paper, terracotta accents and balanced spacing."
+        "Cream paper, terracotta accents and balanced spacing. No illustration."
       ]
     }
   }

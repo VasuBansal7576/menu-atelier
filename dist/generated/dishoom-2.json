@@ -125,32 +125,32 @@
     ]
   },
   "settings": {
-    "template": "botanical",
+    "template": "midnight",
     "pageSize": "a4",
     "density": "balanced",
     "recipe": {
       "version": 1,
-      "id": "direction-botanical-1lrp9eq",
-      "name": "Saffron Daylight Poster",
-      "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
-      "seed": 3493100258,
-      "template": "botanical",
+      "id": "direction-midnight-6x79yl",
+      "name": "Navy Service",
+      "brief": "A Bombay supper room. Cream paper, navy ink, elegant cafe landscape. No illustration.",
+      "seed": 418563885,
+      "template": "midnight",
       "palette": {
-        "paper": "#161C22",
-        "ink": "#F8F4E8",
-        "accent": "#F8CD59",
-        "muted": "#C3CBD0",
-        "tint": "#F8CD59",
-        "header": "#242E38",
-        "headingInk": "#161C22"
+        "paper": "#FFF8E8",
+        "ink": "#173455",
+        "accent": "#173455",
+        "muted": "#565A55",
+        "tint": "#DBE4EE",
+        "header": "#173455",
+        "headingInk": "#20251F"
       },
       "motif": "none",
-      "type": "editorial",
+      "type": "modern",
       "density": "balanced",
       "rationale": [
-        "An identity island beside two flowing menu columns.",
-        "10 dishes fit across 1 A4 landscape page.",
-        "Dark paper, saffron accents and balanced spacing. No illustration."
+        "A concise landscape menu with a condensed identity and two columns.",
+        "10 dishes fit across 2 A4 landscape pages.",
+        "Cream paper, navy accents and balanced spacing. No illustration."
       ]
     }
   }

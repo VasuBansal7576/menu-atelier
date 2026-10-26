@@ -125,32 +125,32 @@
     ]
   },
   "settings": {
-    "template": "midnight",
+    "template": "botanical",
     "pageSize": "a4",
     "density": "balanced",
     "recipe": {
       "version": 1,
-      "id": "direction-midnight-1lrp9ep",
-      "name": "Saffron Supper Broadsheet",
-      "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
-      "seed": 3493100257,
-      "template": "midnight",
+      "id": "direction-botanical-6x79yk",
+      "name": "Navy Gazette",
+      "brief": "A Bombay supper room. Cream paper, navy ink, elegant cafe landscape. No illustration.",
+      "seed": 418563884,
+      "template": "botanical",
       "palette": {
-        "paper": "#161C22",
-        "ink": "#F8F4E8",
-        "accent": "#F8CD59",
-        "muted": "#C3CBD0",
-        "tint": "#F8CD59",
-        "header": "#242E38",
-        "headingInk": "#161C22"
+        "paper": "#FFF8E8",
+        "ink": "#173455",
+        "accent": "#173455",
+        "muted": "#565A55",
+        "tint": "#DBE4EE",
+        "header": "#DBE4EE",
+        "headingInk": "#20251F"
       },
       "motif": "none",
-      "type": "modern",
+      "type": "editorial",
       "density": "balanced",
       "rationale": [
-        "An indexed category rail and adaptive dish grid.",
+        "A landscape café menu with three category columns.",
         "10 dishes fit across 1 A4 landscape page.",
-        "Dark paper, saffron accents and balanced spacing. No illustration."
+        "Cream paper, navy accents and balanced spacing. No illustration."
       ]
     }
   }

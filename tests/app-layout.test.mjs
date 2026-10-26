@@ -119,7 +119,7 @@ test('brief generation previews without changing content and applying a recipe i
     env.node('#design-brief').value='A contemporary wine bar. Cream paper, burgundy ink, editorial portrait, no illustration.';
     env.node('#design-form').onsubmit({preventDefault(){}});
     assert.equal(env.node('#directions-dialog').open,true);
-    assert.match(env.node('#direction-grid').innerHTML,/Burgundy Editorial Journal/);
+    assert.match(env.node('#direction-grid').innerHTML,/Burgundy Maison/);
     assert.deepEqual(globalThis.menuAtelier.getMenu(),before);assert.deepEqual(globalThis.menuAtelier.getSettings(),settings);assert.equal(env.writes,writes);
     env.node('#design-form').onsubmit({preventDefault(){}});assert.match(env.node('#direction-result').textContent,/design choices are unchanged/);assert.equal(env.writes,writes);
     env.node('#direction-grid').onclick({target:{closest:()=>({dataset:{useDirection:'0'}})}});

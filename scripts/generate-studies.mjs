@@ -6,12 +6,12 @@ import { prepareTypography, layoutMenu } from '../dist/layout.js';
 import { generateDirections } from '../dist/design-generator.js';
 import { pdfBytes } from '../dist/export.js';
 const root=path.dirname(path.dirname(fileURLToPath(import.meta.url))),target=path.join(root,'dist/generated');
-await prepareTypography();await fs.mkdir(target,{recursive:true});
+await prepareTypography();await fs.rm(target,{recursive:true,force:true});await fs.mkdir(target,{recursive:true});
 const examples=JSON.parse(await fs.readFile(path.join(root,'dist/examples/index.json'),'utf8'));
 const briefs={
-  dishoom:'A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.',
+  dishoom:'A Bombay supper room. Cream paper, navy ink, elegant cafe landscape. No illustration.',
   balthazar:'A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.',
-  'pizzeria-bianco':'A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.'
+  'pizzeria-bianco':'A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a contemporary Italian portrait menu. No illustration.'
 };
 const studies=[];
 for(const menu of examples){

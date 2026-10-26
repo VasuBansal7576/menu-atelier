@@ -3,10 +3,10 @@ import { validateMenu } from './model.js';
 import { freeze } from './print-kit.js';
 
 const ARCHITECTURES = Object.freeze({
-  trattoria: { orientation: 'portrait', type: 'editorial', motif: 'produce', title: 'Market Letter', description: 'A generous illustrated masthead and independent category lanes.' },
-  atelier: { orientation: 'portrait', type: 'condensed', motif: 'none', title: 'Editorial Journal', description: 'A typographic masthead with aligned names, descriptions and prices.' },
-  botanical: { orientation: 'landscape', type: 'editorial', motif: 'sun', title: 'Daylight Poster', description: 'An identity island beside two flowing menu columns.' },
-  midnight: { orientation: 'landscape', type: 'modern', motif: 'moon', title: 'Supper Broadsheet', description: 'An indexed category rail and adaptive dish grid.' }
+  trattoria: { orientation: 'portrait', type: 'editorial', motif: 'produce', title: 'Carta', description: 'Full-width rows, a serif dish hierarchy and fine rules.' },
+  atelier: { orientation: 'portrait', type: 'condensed', motif: 'none', title: 'Maison', description: 'A centered brasserie identity and balanced category columns.' },
+  botanical: { orientation: 'landscape', type: 'editorial', motif: 'sun', title: 'Gazette', description: 'A landscape café menu with three category columns.' },
+  midnight: { orientation: 'landscape', type: 'modern', motif: 'moon', title: 'Service', description: 'A concise landscape menu with a condensed identity and two columns.' }
 });
 const KEYS = ['version', 'id', 'name', 'brief', 'seed', 'template', 'palette', 'motif', 'type', 'density', 'rationale'];
 const PALETTE_KEYS = ['paper', 'ink', 'accent', 'muted', 'tint', 'header', 'headingInk'];
@@ -114,8 +114,8 @@ export function generateDirections(input, brief, { seed = 0, pageSize = 'a4' } =
       assertPrintable(pages, menu);
       const color = colorFor(c, results.length, entropy), colorName = color[0].toUpperCase() + color.slice(1);
       const treatment = `${c.dark ? 'Dark' : c.cream ? 'Cream' : 'Light'} paper, ${color} accents and ${density === 'spacious' ? 'airy' : density} spacing.`;
-      const motif = c.quiet || template === 'atelier' ? 'none' : c.motif || architecture.motif;
-      const rationale = [motif === 'none' && template === 'trattoria' ? 'A generous typographic masthead and independent category lanes.' : architecture.description, `${count} dishes fit across ${pages.length} ${pageSize === 'letter' ? 'Letter' : 'A4'} ${architecture.orientation} page${pages.length === 1 ? '' : 's'}.`, `${treatment}${c.quiet ? ' No illustration.' : motif === 'none' ? ' A purely typographic treatment.' : ''}`];
+      const motif = 'none';
+      const rationale = [architecture.description, `${count} dishes fit across ${pages.length} ${pageSize === 'letter' ? 'Letter' : 'A4'} ${architecture.orientation} page${pages.length === 1 ? '' : 's'}.`, `${treatment}${c.quiet ? ' No illustration.' : motif === 'none' ? ' A purely typographic treatment.' : ''}`];
       const recipe = validateRecipe({ version: 1, id: `direction-${template}-${directionSeed.toString(36)}`, name: `${colorName} ${architecture.title}`, brief, seed: directionSeed, template, palette: paletteFor(c, results.length, entropy), motif, type: architecture.type, density, rationale });
       applyRecipe(pages, recipe);
       results.push(recipe);
@@ -176,6 +176,12 @@ function motifElements(page, recipe) {
 export function applyRecipe(pages, input) {
   if (input == null) return pages;
   const recipe = validateRecipe(input), c = recipe.palette;
+  if(pages.some(page=>(ALIASES[page.template]||page.template)!==recipe.template))throw new Error('The design recipe does not match the page composition.');
+  if(pages.every(page=>page.designSystem==='editorial-v2'))return freeze(pages.map(page=>{
+    const paper=page.elements.find(e=>e.type==='rect')?.fill,ink=page.elements.find(e=>e.role==='masthead')?.color,accent=page.elements.find(e=>e.role==='category')?.color;
+    const recolor=value=>value===paper?c.paper:value===ink?c.ink:value===accent?c.accent:value;
+    return {...page,recipeId:recipe.id,compositionName:recipe.name,elements:page.elements.map(e=>({...e,...(e.color?{color:recolor(e.color)}:{}),...(e.fill?{fill:recolor(e.fill)}:{}),...(e.stroke?{stroke:recolor(e.stroke)}:{})}))};
+  }));
   if (!Array.isArray(pages) || !pages.length) throw new Error('A design recipe needs printable pages.');
   const transformed = pages.map(page => {
     const key = ALIASES[page.template] || page.template;

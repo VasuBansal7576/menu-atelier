@@ -104,7 +104,7 @@
     "recipe": {
       "version": 1,
       "id": "direction-trattoria-1c4nf4f",
-      "name": "Burgundy Market Letter",
+      "name": "Burgundy Carta",
       "brief": "A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.",
       "seed": 2910187599,
       "template": "trattoria",
@@ -121,7 +121,7 @@
       "type": "editorial",
       "density": "balanced",
       "rationale": [
-        "A generous typographic masthead and independent category lanes.",
+        "Full-width rows, a serif dish hierarchy and fine rules.",
         "10 dishes fit across 1 A4 portrait page.",
         "Cream paper, burgundy accents and balanced spacing. No illustration."
       ]

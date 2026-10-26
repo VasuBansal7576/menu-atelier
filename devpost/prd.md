@@ -74,3 +74,7 @@ The authoritative menu remains separate from a version 1 design recipe in settin
 This is local procedural generation over four architectures. It does not provide Gamma's runtime model agent, arbitrary font generation or unrestricted layouts. An optional downloaded prompt and strict recipe import support an external AI art director without automatically transmitting the menu. All current visual assets are original code-rendered vectors. No image generation is used.
 
 The current software has 43 passing checks and seven additional actual generated restaurant PDFs. Real browser acceptance includes applying a generated direction, editing a price to $16.75, downloading the PDF, extracting its selectable changed amount, downloading a JSON backup, reload persistence, invalid price rejection and a narrow mobile viewport. User taste remains unverified. The new narrated video remains local. Public video and Devpost submission requirements are unmet.
+
+## Ten-minute print-system replacement
+
+Following another failed taste review, replace poster compositions with a measured editorial grammar. Carta has full-width rows, Maison balanced brasserie columns, Gazette three landscape category columns, and Service two landscape columns. Preserve stable recipe IDs, integer prices, import review, history and native PDF. Keep typography and hierarchy independent from source facts. No runtime AI or generated images. Previous visual acceptance remains failed; this candidate awaits the user's grade. The earlier local video depicts the prior print system.

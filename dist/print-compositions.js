@@ -1,9 +1,8 @@
-import { layoutStudioA } from './print-studio-a.js';
-import { layoutStudioB } from './print-studio-b.js';
-const definition = value => Object.freeze(value);
-export const compositions = Object.freeze({
-  trattoria: definition({ name: 'Market Bloom', mood: 'A vivid produce poster with category lanes', layout: layoutStudioA, variant: 'market-bloom' }),
-  atelier: definition({ name: 'Folio', mood: 'A typographic journal with editorial rows', layout: layoutStudioB, variant: 'folio' }),
-  botanical: definition({ name: 'Sunroom', mood: 'A landscape poster with an illustrated identity island', layout: layoutStudioB, variant: 'sunroom' }),
-  midnight: definition({ name: 'Night Press', mood: 'A dark culinary broadsheet with an adaptive dish grid', layout: layoutStudioA, variant: 'night-press' })
+import { layoutEditorial } from './print-editorial.js';
+const entry=(name,mood,variant)=>Object.freeze({name,mood,variant,layout:layoutEditorial});
+export const compositions=Object.freeze({
+ trattoria:entry('Carta','A full-width Italian menu with fine rules and a dedicated price lane','trattoria'),
+ atelier:entry('Maison','A centered brasserie identity, serif dishes and balanced category columns','atelier'),
+ botanical:entry('Gazette','A landscape café menu with three category columns','botanical'),
+ midnight:entry('Service','A concise landscape menu with a condensed identity and two columns','midnight')
 });

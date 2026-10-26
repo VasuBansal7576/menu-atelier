@@ -2,30 +2,30 @@
   {
     "base": "dishoom-1",
     "restaurant": "Dishoom",
-    "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
+    "brief": "A Bombay supper room. Cream paper, navy ink, elegant cafe landscape. No illustration.",
     "recipe": {
       "version": 1,
-      "id": "direction-midnight-1lrp9ep",
-      "name": "Saffron Supper Broadsheet",
-      "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
-      "seed": 3493100257,
-      "template": "midnight",
+      "id": "direction-botanical-6x79yk",
+      "name": "Navy Gazette",
+      "brief": "A Bombay supper room. Cream paper, navy ink, elegant cafe landscape. No illustration.",
+      "seed": 418563884,
+      "template": "botanical",
       "palette": {
-        "paper": "#161C22",
-        "ink": "#F8F4E8",
-        "accent": "#F8CD59",
-        "muted": "#C3CBD0",
-        "tint": "#F8CD59",
-        "header": "#242E38",
-        "headingInk": "#161C22"
+        "paper": "#FFF8E8",
+        "ink": "#173455",
+        "accent": "#173455",
+        "muted": "#565A55",
+        "tint": "#DBE4EE",
+        "header": "#DBE4EE",
+        "headingInk": "#20251F"
       },
       "motif": "none",
-      "type": "modern",
+      "type": "editorial",
       "density": "balanced",
       "rationale": [
-        "An indexed category rail and adaptive dish grid.",
+        "A landscape café menu with three category columns.",
         "10 dishes fit across 1 A4 landscape page.",
-        "Dark paper, saffron accents and balanced spacing. No illustration."
+        "Cream paper, navy accents and balanced spacing. No illustration."
       ]
     },
     "pages": 1,
@@ -40,33 +40,33 @@
   {
     "base": "dishoom-2",
     "restaurant": "Dishoom",
-    "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
+    "brief": "A Bombay supper room. Cream paper, navy ink, elegant cafe landscape. No illustration.",
     "recipe": {
       "version": 1,
-      "id": "direction-botanical-1lrp9eq",
-      "name": "Saffron Daylight Poster",
-      "brief": "A Bombay supper room. Dark navy, saffron accents, bold modern landscape. No illustration.",
-      "seed": 3493100258,
-      "template": "botanical",
+      "id": "direction-midnight-6x79yl",
+      "name": "Navy Service",
+      "brief": "A Bombay supper room. Cream paper, navy ink, elegant cafe landscape. No illustration.",
+      "seed": 418563885,
+      "template": "midnight",
       "palette": {
-        "paper": "#161C22",
-        "ink": "#F8F4E8",
-        "accent": "#F8CD59",
-        "muted": "#C3CBD0",
-        "tint": "#F8CD59",
-        "header": "#242E38",
-        "headingInk": "#161C22"
+        "paper": "#FFF8E8",
+        "ink": "#173455",
+        "accent": "#173455",
+        "muted": "#565A55",
+        "tint": "#DBE4EE",
+        "header": "#173455",
+        "headingInk": "#20251F"
       },
       "motif": "none",
-      "type": "editorial",
+      "type": "modern",
       "density": "balanced",
       "rationale": [
-        "An identity island beside two flowing menu columns.",
-        "10 dishes fit across 1 A4 landscape page.",
-        "Dark paper, saffron accents and balanced spacing. No illustration."
+        "A concise landscape menu with a condensed identity and two columns.",
+        "10 dishes fit across 2 A4 landscape pages.",
+        "Cream paper, navy accents and balanced spacing. No illustration."
       ]
     },
-    "pages": 1,
+    "pages": 2,
     "format": "A4 landscape",
     "source": {
       "label": "Official all-day menu",
@@ -82,7 +82,7 @@
     "recipe": {
       "version": 1,
       "id": "direction-atelier-1c4nf4e",
-      "name": "Burgundy Editorial Journal",
+      "name": "Burgundy Maison",
       "brief": "A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.",
       "seed": 2910187598,
       "template": "atelier",
@@ -99,7 +99,7 @@
       "type": "condensed",
       "density": "balanced",
       "rationale": [
-        "A typographic masthead with aligned names, descriptions and prices.",
+        "A centered brasserie identity and balanced category columns.",
         "10 dishes fit across 1 A4 portrait page.",
         "Cream paper, burgundy accents and balanced spacing. No illustration."
       ]
@@ -120,7 +120,7 @@
     "recipe": {
       "version": 1,
       "id": "direction-trattoria-1c4nf4f",
-      "name": "Burgundy Market Letter",
+      "name": "Burgundy Carta",
       "brief": "A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.",
       "seed": 2910187599,
       "template": "trattoria",
@@ -137,7 +137,7 @@
       "type": "editorial",
       "density": "balanced",
       "rationale": [
-        "A generous typographic masthead and independent category lanes.",
+        "Full-width rows, a serif dish hierarchy and fine rules.",
         "10 dishes fit across 1 A4 portrait page.",
         "Cream paper, burgundy accents and balanced spacing. No illustration."
       ]
@@ -154,13 +154,13 @@
   {
     "base": "pizzeria-bianco-1",
     "restaurant": "Pizzeria Bianco",
-    "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
+    "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a contemporary Italian portrait menu. No illustration.",
     "recipe": {
       "version": 1,
-      "id": "direction-trattoria-v36rf0",
-      "name": "Terracotta Market Letter",
-      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
-      "seed": 1879805772,
+      "id": "direction-trattoria-thw85r",
+      "name": "Terracotta Carta",
+      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a contemporary Italian portrait menu. No illustration.",
+      "seed": 1783576143,
       "template": "trattoria",
       "palette": {
         "paper": "#FFF8E8",
@@ -171,13 +171,13 @@
         "header": "#F0DFD2",
         "headingInk": "#20251F"
       },
-      "motif": "produce",
+      "motif": "none",
       "type": "editorial",
       "density": "balanced",
       "rationale": [
-        "A generous illustrated masthead and independent category lanes.",
+        "Full-width rows, a serif dish hierarchy and fine rules.",
         "10 dishes fit across 1 A4 portrait page.",
-        "Cream paper, terracotta accents and balanced spacing."
+        "Cream paper, terracotta accents and balanced spacing. No illustration."
       ]
     },
     "pages": 1,
@@ -192,14 +192,14 @@
   {
     "base": "pizzeria-bianco-2",
     "restaurant": "Pizzeria Bianco",
-    "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
+    "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a contemporary Italian portrait menu. No illustration.",
     "recipe": {
       "version": 1,
-      "id": "direction-midnight-v36rf1",
-      "name": "Terracotta Supper Broadsheet",
-      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
-      "seed": 1879805773,
-      "template": "midnight",
+      "id": "direction-atelier-thw85s",
+      "name": "Terracotta Maison",
+      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a contemporary Italian portrait menu. No illustration.",
+      "seed": 1783576144,
+      "template": "atelier",
       "palette": {
         "paper": "#FFF8E8",
         "ink": "#9B432E",
@@ -209,55 +209,17 @@
         "header": "#9B432E",
         "headingInk": "#20251F"
       },
-      "motif": "produce",
-      "type": "modern",
+      "motif": "none",
+      "type": "condensed",
       "density": "balanced",
       "rationale": [
-        "An indexed category rail and adaptive dish grid.",
-        "10 dishes fit across 1 A4 landscape page.",
-        "Cream paper, terracotta accents and balanced spacing."
+        "A centered brasserie identity and balanced category columns.",
+        "10 dishes fit across 1 A4 portrait page.",
+        "Cream paper, terracotta accents and balanced spacing. No illustration."
       ]
     },
     "pages": 1,
-    "format": "A4 landscape",
-    "source": {
-      "label": "Official Heritage Square menu PDF",
-      "url": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
-      "accessedAt": "2026-10-26",
-      "note": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred."
-    }
-  },
-  {
-    "base": "pizzeria-bianco-3",
-    "restaurant": "Pizzeria Bianco",
-    "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
-    "recipe": {
-      "version": 1,
-      "id": "direction-botanical-v36rf2",
-      "name": "Terracotta Daylight Poster",
-      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
-      "seed": 1879805774,
-      "template": "botanical",
-      "palette": {
-        "paper": "#FFF8E8",
-        "ink": "#9B432E",
-        "accent": "#9B432E",
-        "muted": "#565A55",
-        "tint": "#F0DFD2",
-        "header": "#F0DFD2",
-        "headingInk": "#20251F"
-      },
-      "motif": "produce",
-      "type": "editorial",
-      "density": "balanced",
-      "rationale": [
-        "An identity island beside two flowing menu columns.",
-        "10 dishes fit across 1 A4 landscape page.",
-        "Cream paper, terracotta accents and balanced spacing."
-      ]
-    },
-    "pages": 1,
-    "format": "A4 landscape",
+    "format": "A4",
     "source": {
       "label": "Official Heritage Square menu PDF",
       "url": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",

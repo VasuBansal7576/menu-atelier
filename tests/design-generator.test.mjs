@@ -48,7 +48,7 @@ test('brief color, density, darkness and quiet constraints change actual recipes
   assert.equal(quiet.filter(d => ['trattoria', 'atelier'].includes(d.template)).length, 2);
   assert.ok(quiet.every(d => d.palette.paper === '#FFF8E8' && d.palette.accent === '#224B36'));
   const dark = generateDirections(menu, briefs[1]);
-  assert.ok(dark.every(d => d.motif === 'moon' && d.density === 'compact' && d.palette.paper === '#161C22'));
+  assert.ok(dark.every(d => d.motif === 'none' && d.density === 'compact' && d.palette.paper === '#161C22'));
   assert.equal(dark.filter(d => ['botanical', 'midnight'].includes(d.template)).length, 2);
   assert.ok(dark.every(d => ['botanical', 'midnight'].includes(d.template)));
   const wine = generateDirections(menu, briefs[4]);

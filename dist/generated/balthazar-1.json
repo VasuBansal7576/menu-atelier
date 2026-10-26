@@ -104,7 +104,7 @@
     "recipe": {
       "version": 1,
       "id": "direction-atelier-1c4nf4e",
-      "name": "Burgundy Editorial Journal",
+      "name": "Burgundy Maison",
       "brief": "A Parisian neighbourhood brasserie. Cream paper, burgundy ink, quiet editorial portrait. No illustration.",
       "seed": 2910187598,
       "template": "atelier",
@@ -121,7 +121,7 @@
       "type": "condensed",
       "density": "balanced",
       "rationale": [
-        "A typographic masthead with aligned names, descriptions and prices.",
+        "A centered brasserie identity and balanced category columns.",
         "10 dishes fit across 1 A4 portrait page.",
         "Cream paper, burgundy accents and balanced spacing. No illustration."
       ]

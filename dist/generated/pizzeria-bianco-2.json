@@ -104,16 +104,16 @@
     ]
   },
   "settings": {
-    "template": "midnight",
+    "template": "atelier",
     "pageSize": "a4",
     "density": "balanced",
     "recipe": {
       "version": 1,
-      "id": "direction-midnight-v36rf1",
-      "name": "Terracotta Supper Broadsheet",
-      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a produce poster with tomato illustration.",
-      "seed": 1879805773,
-      "template": "midnight",
+      "id": "direction-atelier-thw85s",
+      "name": "Terracotta Maison",
+      "brief": "A Phoenix neighbourhood pizzeria. Warm cream paper, terracotta ink, a contemporary Italian portrait menu. No illustration.",
+      "seed": 1783576144,
+      "template": "atelier",
       "palette": {
         "paper": "#FFF8E8",
         "ink": "#9B432E",
@@ -123,13 +123,13 @@
         "header": "#9B432E",
         "headingInk": "#20251F"
       },
-      "motif": "produce",
-      "type": "modern",
+      "motif": "none",
+      "type": "condensed",
       "density": "balanced",
       "rationale": [
-        "An indexed category rail and adaptive dish grid.",
-        "10 dishes fit across 1 A4 landscape page.",
-        "Cream paper, terracotta accents and balanced spacing."
+        "A centered brasserie identity and balanced category columns.",
+        "10 dishes fit across 1 A4 portrait page.",
+        "Cream paper, terracotta accents and balanced spacing. No illustration."
       ]
     }
   }

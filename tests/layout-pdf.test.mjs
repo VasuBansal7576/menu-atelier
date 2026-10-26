@@ -99,13 +99,12 @@ test('four code-only compositions expose independent silhouettes and normalized 
       assert.ok(page.elements.filter(element => element.role === 'description').every(element => element.size >= 10.5));
       assert.ok(!/<image|data:image/i.test(renderSVG(page)));
     }
-    const market = sheets.trattoria[0], folio = sheets.atelier[0], sunroom = sheets.botanical[0], night = sheets.midnight[0];
-    assert.ok(Math.max(...market.elements.filter(e => e.role === 'category').map(e => e.inkBounds.right)) < Math.min(...market.blocks.map(block => block.x)), 'Market Bloom gives categories a separate lane');
-    const folioItem = folio.elements.find(e => e.role === 'description');
-    assert.ok(folioItem.inkBounds.left > Math.max(...folio.elements.filter(e => e.itemId === folioItem.itemId && e.role === 'name').map(e => e.inkBounds.right)), 'Folio separates editorial name and description columns');
-    assert.ok(Math.max(...sunroom.elements.filter(e => e.role === 'masthead').map(e => e.inkBounds.right)) < Math.min(...sunroom.blocks.map(block => block.x)), 'Sunroom keeps its identity island beside the food');
-    assert.ok(new Set(night.blocks.map(block => block.x)).size > 1, 'Night Press lays dishes out in a grid');
-    assert.notEqual(night.elements.find(e => e.type === 'rect').fill, market.elements.find(e => e.type === 'rect').fill);
+    const carta=sheets.trattoria.flatMap(p=>p.blocks),maison=sheets.atelier[0],gazette=sheets.botanical[0],service=sheets.midnight[0];
+    assert.equal(new Set(carta.map(block=>block.x)).size,1,'Carta uses full-width rows');
+    assert.ok(new Set(maison.blocks.map(block=>block.x)).size>=2,'Maison balances category columns');
+    assert.ok(new Set(gazette.blocks.map(block=>block.x)).size>=2,'Gazette distributes categories across landscape columns');
+    assert.ok(service.width>service.height,'Service uses landscape paper');
+
   }
 });
 test('exported compositions contain vector artwork and selectable text without raster images', async () => {
