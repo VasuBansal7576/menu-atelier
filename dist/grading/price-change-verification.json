@@ -1,0 +1,14 @@
+{
+  "names": 9,
+  "all_descriptions_preserved": true,
+  "only_change": [
+    [
+      "Whipped ricotta",
+      1200,
+      1450
+    ]
+  ],
+  "before_price_in_actual_PDF": true,
+  "after_price_in_actual_PDF": true,
+  "same_exporter": "dist/export.js"
+}

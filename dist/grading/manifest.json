@@ -1,110 +1,326 @@
 [
   {
     "restaurant": "Dishoom",
-    "template": "Maison",
-    "templateId": "atelier",
-    "filename": "dishoom-atelier",
-    "pages": 1,
-    "dishes": 10,
-    "source": "https://www.dishoom.com/menu/all-day-main/"
-  },
-  {
-    "restaurant": "Dishoom",
-    "template": "Edition",
-    "templateId": "midnight",
-    "filename": "dishoom-midnight",
-    "pages": 1,
-    "dishes": 10,
-    "source": "https://www.dishoom.com/menu/all-day-main/"
-  },
-  {
-    "restaurant": "Dishoom",
-    "template": "Mercato",
+    "menuId": "dishoom",
+    "template": "Osteria",
     "templateId": "trattoria",
     "filename": "dishoom-trattoria",
     "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/dishoom-trattoria/page-1.png",
+        "pixelWidth": 778,
+        "pixelHeight": 1100,
+        "width": 595.28,
+        "height": 841.89
+      }
+    ],
+    "format": "A4",
+    "curatedOrder": null,
     "dishes": 10,
-    "source": "https://www.dishoom.com/menu/all-day-main/"
+    "source": "https://www.dishoom.com/menu/all-day-main/",
+    "sourceLabel": "Official all-day menu",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens.",
+    "sourceAccessedAt": "2026-10-26"
   },
   {
     "restaurant": "Dishoom",
-    "template": "Broadside",
+    "menuId": "dishoom",
+    "template": "Herbarium",
+    "templateId": "atelier",
+    "filename": "dishoom-atelier",
+    "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/dishoom-atelier/page-1.png",
+        "pixelWidth": 778,
+        "pixelHeight": 1100,
+        "width": 595.28,
+        "height": 841.89
+      }
+    ],
+    "format": "A4",
+    "curatedOrder": null,
+    "dishes": 10,
+    "source": "https://www.dishoom.com/menu/all-day-main/",
+    "sourceLabel": "Official all-day menu",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens.",
+    "sourceAccessedAt": "2026-10-26"
+  },
+  {
+    "restaurant": "Dishoom",
+    "menuId": "dishoom",
+    "template": "Counter",
     "templateId": "botanical",
     "filename": "dishoom-botanical",
     "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/dishoom-botanical/page-1.png",
+        "pixelWidth": 1100,
+        "pixelHeight": 778,
+        "width": 841.89,
+        "height": 595.28
+      }
+    ],
+    "format": "A4 landscape",
+    "curatedOrder": 3,
     "dishes": 10,
-    "source": "https://www.dishoom.com/menu/all-day-main/"
+    "source": "https://www.dishoom.com/menu/all-day-main/",
+    "sourceLabel": "Official all-day menu",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens.",
+    "sourceAccessedAt": "2026-10-26"
   },
   {
-    "restaurant": "Balthazar",
-    "template": "Maison",
-    "templateId": "atelier",
-    "filename": "balthazar-atelier",
-    "pages": 1,
-    "dishes": 10,
-    "source": "https://balthazarny.com/menus/dinner-menu/"
-  },
-  {
-    "restaurant": "Balthazar",
-    "template": "Edition",
+    "restaurant": "Dishoom",
+    "menuId": "dishoom",
+    "template": "Table cards",
     "templateId": "midnight",
-    "filename": "balthazar-midnight",
-    "pages": 1,
+    "filename": "dishoom-midnight",
+    "pages": 2,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/dishoom-midnight/page-1.png",
+        "pixelWidth": 776,
+        "pixelHeight": 1100,
+        "width": 419.53,
+        "height": 595.28
+      },
+      {
+        "number": 2,
+        "png": "pages/dishoom-midnight/page-2.png",
+        "pixelWidth": 776,
+        "pixelHeight": 1100,
+        "width": 419.53,
+        "height": 595.28
+      }
+    ],
+    "format": "A5",
+    "curatedOrder": null,
     "dishes": 10,
-    "source": "https://balthazarny.com/menus/dinner-menu/"
+    "source": "https://www.dishoom.com/menu/all-day-main/",
+    "sourceLabel": "Official all-day menu",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Dishoom. Names and prices follow the official all-day menu retrieved on this date. Descriptions are condensed paraphrases. The three excerpt categories are editorial selections. Prices exclude the optional 12.5% service charge. Dietary labels reproduce the source and do not guarantee absence of allergens.",
+    "sourceAccessedAt": "2026-10-26"
   },
   {
     "restaurant": "Balthazar",
-    "template": "Mercato",
+    "menuId": "balthazar",
+    "template": "Osteria",
     "templateId": "trattoria",
     "filename": "balthazar-trattoria",
     "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/balthazar-trattoria/page-1.png",
+        "pixelWidth": 778,
+        "pixelHeight": 1100,
+        "width": 595.28,
+        "height": 841.89
+      }
+    ],
+    "format": "A4",
+    "curatedOrder": null,
     "dishes": 10,
-    "source": "https://balthazarny.com/menus/dinner-menu/"
+    "source": "https://balthazarny.com/menus/dinner-menu/",
+    "sourceLabel": "Official New York dinner menu",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Balthazar. Names and prices follow the official dinner menu retrieved on this date. Ingredient descriptions are condensed paraphrases. Prices and availability may change. No dietary or allergen claims are inferred.",
+    "sourceAccessedAt": "2026-10-26"
   },
   {
     "restaurant": "Balthazar",
-    "template": "Broadside",
+    "menuId": "balthazar",
+    "template": "Herbarium",
+    "templateId": "atelier",
+    "filename": "balthazar-atelier",
+    "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/balthazar-atelier/page-1.png",
+        "pixelWidth": 778,
+        "pixelHeight": 1100,
+        "width": 595.28,
+        "height": 841.89
+      }
+    ],
+    "format": "A4",
+    "curatedOrder": 2,
+    "dishes": 10,
+    "source": "https://balthazarny.com/menus/dinner-menu/",
+    "sourceLabel": "Official New York dinner menu",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Balthazar. Names and prices follow the official dinner menu retrieved on this date. Ingredient descriptions are condensed paraphrases. Prices and availability may change. No dietary or allergen claims are inferred.",
+    "sourceAccessedAt": "2026-10-26"
+  },
+  {
+    "restaurant": "Balthazar",
+    "menuId": "balthazar",
+    "template": "Counter",
     "templateId": "botanical",
     "filename": "balthazar-botanical",
     "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/balthazar-botanical/page-1.png",
+        "pixelWidth": 1100,
+        "pixelHeight": 778,
+        "width": 841.89,
+        "height": 595.28
+      }
+    ],
+    "format": "A4 landscape",
+    "curatedOrder": null,
     "dishes": 10,
-    "source": "https://balthazarny.com/menus/dinner-menu/"
+    "source": "https://balthazarny.com/menus/dinner-menu/",
+    "sourceLabel": "Official New York dinner menu",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Balthazar. Names and prices follow the official dinner menu retrieved on this date. Ingredient descriptions are condensed paraphrases. Prices and availability may change. No dietary or allergen claims are inferred.",
+    "sourceAccessedAt": "2026-10-26"
   },
   {
-    "restaurant": "Pizzeria Bianco",
-    "template": "Maison",
-    "templateId": "atelier",
-    "filename": "pizzeria-bianco-atelier",
-    "pages": 1,
-    "dishes": 10,
-    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
-  },
-  {
-    "restaurant": "Pizzeria Bianco",
-    "template": "Edition",
+    "restaurant": "Balthazar",
+    "menuId": "balthazar",
+    "template": "Table cards",
     "templateId": "midnight",
-    "filename": "pizzeria-bianco-midnight",
-    "pages": 1,
+    "filename": "balthazar-midnight",
+    "pages": 2,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/balthazar-midnight/page-1.png",
+        "pixelWidth": 776,
+        "pixelHeight": 1100,
+        "width": 419.53,
+        "height": 595.28
+      },
+      {
+        "number": 2,
+        "png": "pages/balthazar-midnight/page-2.png",
+        "pixelWidth": 776,
+        "pixelHeight": 1100,
+        "width": 419.53,
+        "height": 595.28
+      }
+    ],
+    "format": "A5",
+    "curatedOrder": null,
     "dishes": 10,
-    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
+    "source": "https://balthazarny.com/menus/dinner-menu/",
+    "sourceLabel": "Official New York dinner menu",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Balthazar. Names and prices follow the official dinner menu retrieved on this date. Ingredient descriptions are condensed paraphrases. Prices and availability may change. No dietary or allergen claims are inferred.",
+    "sourceAccessedAt": "2026-10-26"
   },
   {
     "restaurant": "Pizzeria Bianco",
-    "template": "Mercato",
+    "menuId": "pizzeria-bianco",
+    "template": "Osteria",
     "templateId": "trattoria",
     "filename": "pizzeria-bianco-trattoria",
     "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/pizzeria-bianco-trattoria/page-1.png",
+        "pixelWidth": 778,
+        "pixelHeight": 1100,
+        "width": 595.28,
+        "height": 841.89
+      }
+    ],
+    "format": "A4",
+    "curatedOrder": 1,
     "dishes": 10,
-    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
+    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+    "sourceLabel": "Official Heritage Square menu PDF",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred.",
+    "sourceAccessedAt": "2026-10-26"
   },
   {
     "restaurant": "Pizzeria Bianco",
-    "template": "Broadside",
+    "menuId": "pizzeria-bianco",
+    "template": "Herbarium",
+    "templateId": "atelier",
+    "filename": "pizzeria-bianco-atelier",
+    "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/pizzeria-bianco-atelier/page-1.png",
+        "pixelWidth": 778,
+        "pixelHeight": 1100,
+        "width": 595.28,
+        "height": 841.89
+      }
+    ],
+    "format": "A4",
+    "curatedOrder": null,
+    "dishes": 10,
+    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+    "sourceLabel": "Official Heritage Square menu PDF",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred.",
+    "sourceAccessedAt": "2026-10-26"
+  },
+  {
+    "restaurant": "Pizzeria Bianco",
+    "menuId": "pizzeria-bianco",
+    "template": "Counter",
     "templateId": "botanical",
     "filename": "pizzeria-bianco-botanical",
     "pages": 1,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/pizzeria-bianco-botanical/page-1.png",
+        "pixelWidth": 1100,
+        "pixelHeight": 778,
+        "width": 841.89,
+        "height": 595.28
+      }
+    ],
+    "format": "A4 landscape",
+    "curatedOrder": null,
     "dishes": 10,
-    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf"
+    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+    "sourceLabel": "Official Heritage Square menu PDF",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred.",
+    "sourceAccessedAt": "2026-10-26"
+  },
+  {
+    "restaurant": "Pizzeria Bianco",
+    "menuId": "pizzeria-bianco",
+    "template": "Table cards",
+    "templateId": "midnight",
+    "filename": "pizzeria-bianco-midnight",
+    "pages": 2,
+    "pageImages": [
+      {
+        "number": 1,
+        "png": "pages/pizzeria-bianco-midnight/page-1.png",
+        "pixelWidth": 776,
+        "pixelHeight": 1100,
+        "width": 419.53,
+        "height": 595.28
+      },
+      {
+        "number": 2,
+        "png": "pages/pizzeria-bianco-midnight/page-2.png",
+        "pixelWidth": 776,
+        "pixelHeight": 1100,
+        "width": 419.53,
+        "height": 595.28
+      }
+    ],
+    "format": "A5",
+    "curatedOrder": null,
+    "dishes": 10,
+    "source": "https://www.pizzeriabianco.com/s/PHXPBMenu_Apr2023.pdf",
+    "sourceLabel": "Official Heritage Square menu PDF",
+    "sourceNote": "Unofficial demo excerpt, not endorsed by Pizzeria Bianco. This PDF was linked from the official Heritage Square page on the access date. Its filename identifies an April 2023 menu, so these are documented snapshot prices rather than a promise of current prices. Descriptions are condensed paraphrases. Antipasto is served after 4pm. No dietary or allergen claims are inferred.",
+    "sourceAccessedAt": "2026-10-26"
   }
 ]

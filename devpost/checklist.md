@@ -91,3 +91,28 @@ Previous mechanical checks remain historical evidence. The user rejected the ori
   Commit: `Complete redesigned collection and verified grading release`
 
 - Redesign mechanical verification passes29 tests. Independent review verified12 saved PDFs and571 text runs. The original design remains recorded as failed. The new143.50-second original-brand demo is prepared. User grading and learner-authored submission remain pending.
+
+## Second visual rejection and taste reset
+
+The user rejected the redesigned appearance as well. Its passing29 tests and favorable agent reviews did not meet the design requirement. The next slice tests the shared failed premise against primary visual references before production changes.
+
+- [x] **6. Prove a restaurant identity and direct-editing pilot**
+  Becomes usable: One real restaurant menu has a coherent visual identity and a direct price-edit-to-PDF journey in a redesigned creative workspace.
+  Why now: Both previous visual iterations failed user grading. Repeating their template premise is inadequate.
+  PRD ref: `prd.md > Look and Feel`, `prd.md > Screens and Layout`
+  Spec ref: `spec.md > Design recovery on 2026-10-26`, `spec.md > Layout registry and page engine`
+  Build: Compare two isolated art-directed pilots using exact source dishes. Inspect an actual PDF before promoting a direction. Use original or licensed assets and preserve structured data.
+  Verify (mechanical): Match all source names/prices, edit a price in the browser, extract it from the actual exported PDF and inspect the physical print layout. Compare against the rejected screenshots and actual references.
+  Learner check: The user grades the new design. No agent score or technical test substitutes for this.
+  Commit: `Build an art-directed restaurant identity and direct-editing studio`
+
+
+- [ ] **7. Integrate the selected creative workspace and curated compositions**
+  Becomes usable: Owners import their actual menus, edit a price beside the printed dish, choose a coherent composition and export the same measured document.
+  Why now: The refined pilot resolves the concrete visual and interaction defects before generalizing the product.
+  PRD ref: `prd.md > Screens and Layout`, `prd.md > Look and Feel`, `prd.md > Source import and review`
+  Spec ref: `spec.md > Production taste reset`, `spec.md > Data Model`, `spec.md > Browser studio`
+  Build: Keep the validated model, import generations, durable history and shared PDF scene. Integrate the anchored editor and four distinct measured compositions with original graphics.
+  Verify (mechanical): Exercise all three sources, reordered/missing categories, added dishes, long content, dense pagination, invalid input, undo, reload, JSON restore and phone editing. Inspect actual exported PDFs and independently review the final product. Refresh the real demo, approved repository and existing private deployment.
+  Learner check: Grade the final studio and actual restaurant menus. No agent inspection replaces the user's taste judgment.
+  Commit: `Integrate direct paper editing and art-directed menu compositions`

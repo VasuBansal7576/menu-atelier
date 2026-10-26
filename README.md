@@ -5,13 +5,13 @@ An editable restaurant menu studio. Import a menu, review its dishes and prices,
 ## Project links
 
 - [Public source repository](https://github.com/VasuBansal7576/menu-atelier).
-- [Recorded browser demo](dist/grading/demo.mp4), 2 minutes 23 seconds.
+- [Recorded browser demo](dist/grading/demo.mp4), 1 minute 33.5 seconds.
 - [Twelve menu PDFs and editable backups](dist/grading/).
 - [Private studio](https://menu-atelier-vasu-oct26.zippy17.chatgpt.site) and [grading gallery](https://menu-atelier-vasu-oct26.zippy17.chatgpt.site/grading/). Sign in with the owner account.
 
 ![Redesigned editing studio](dist/grading/studio-preview.jpg)
 
-Four compositions use licensed local fonts and a shared measured scene for preview and selectable PDF. Maison, Edition, Mercato and Broadside change the page structure as well as the typography. pdf-lib writes the final scene and fontkit measures the embedded font bytes.
+Four compositions use licensed local fonts and a shared measured scene for preview and selectable PDF. Osteria is an asymmetric dining sheet. Herbarium pairs ink illustration with restaurant typography. Counter is a landscape service index. Table cards use A5 or Half Letter pages. pdf-lib writes the final scene and fontkit measures the embedded font bytes.
 
 ## Run the studio
 
@@ -27,14 +27,16 @@ Open the localhost address printed by the server. The core editing and PDF workf
 ## Verify a real price change
 
 1. Open an attributed restaurant example.
-2. Select a dish and change its price.
+2. Select a printed price and change it beside the dish. Press Enter or Done to save the edit.
 3. Check the new price in the paper preview.
 4. Switch to another design and check that the edit remains.
 5. Download the PDF and find the changed price in its selectable text.
 
-Run `npm test` for 29 behavior and integration checks. Run `node scripts/grade.mjs --publish-assets` to reproduce all 12 grading PDFs, rendered thumbnails and editable backups. Thumbnail generation requires Poppler's `pdftoppm`. Optional `python scripts/verify-grading.py` requires `pypdf` and checks the actual files. Integrated browser and PDF evidence is recorded in `devpost/verification.md`. The private deployment includes a `/grading/` gallery and a 143.50-second actual browser demo.
+Run `npm test` for 40 behavior and integration checks. Run `node scripts/grade.mjs --publish-assets` to reproduce all 12 grading PDFs, every rendered page and editable backups. Thumbnail generation requires Poppler's `pdftoppm`. Optional `python scripts/verify-grading.py` requires `pypdf` and checks the actual files. Integrated browser and PDF evidence is recorded in `devpost/verification.md`. The private deployment includes a `/grading/` gallery and a 93.50-second actual browser demo.
 
-The [edited original-demo PDF](dist/grading/olive-and-ember-price-change.pdf) contains the recorded $12.00 to $14.50 change. The [collection preview](dist/grading/collection.png) shows every default sourced design.
+Run `node scripts/demo-proof.mjs` to reproduce the original before/after demonstration PDFs.
+
+The [edited original-demo PDF](dist/grading/olive-and-ember-price-change.pdf) contains the recorded $12.00 to $14.50 change. The [grading gallery](dist/grading/index.html) starts with three selected restaurant studies and includes all twelve exports.
 
 ## Understand the files
 

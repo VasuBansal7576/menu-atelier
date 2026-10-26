@@ -1,0 +1,31 @@
+{
+  "asset": "tomato-vine-fork-original.png",
+  "dimensions": {
+    "width": 1774,
+    "height": 887,
+    "aspect_ratio": 2
+  },
+  "format": "PNG",
+  "mode": "RGBA",
+  "alpha": {
+    "min": 0,
+    "max": 255,
+    "fully_transparent_pixels": 962792,
+    "total_pixels": 1573538,
+    "receipt": "alpha-verification.json"
+  },
+  "provenance": {
+    "method": "Built-in image_gen.imagegen",
+    "generation_count": 1,
+    "generated_on": "2026-10-26",
+    "sha256": "8cb1b915d6791975ed817ae183aa3c06c676e8be6fcc7fcca65e7fc1de7d4865",
+    "transforms": "None. Byte-for-byte copy. Generated alpha preserved.",
+    "prompt": "Use case: illustration-story.\nAsset type: a single original commissioned editorial illustration for a contemporary independent restaurant's printed menu.\nPrimary request: one loose expressive still life of a ripe tomato still attached to its vine, a few basil leaves and a slender olive sprig, and one simple dining fork. One coherent compact composition.\nStyle/medium: original hand-ink and woodcut illustration, confident organic brush and linocut edges, deliberate irregularities, minimal restrained interior cuts, strong graphic silhouette. No imitation of a named artist.\nComposition/framing: horizontal composition, roughly 2:1 canvas. The still life occupies the central area with generous genuinely transparent negative space around it. Fork lies on a gentle diagonal through the foliage beside the tomato. Keep the whole illustration visible, with clear edges, no cropping.\nColor palette: single deep burgundy ink only, approximately #542326. Varied ink density from naturally broken strokes, with actual transparent gaps. No white fill.\nScene/backdrop: genuinely transparent alpha background, no paper texture or colored rectangle or photographic backdrop. The art must sit cleanly on any colored paper.\nConstraints: tasteful editorial mark with a loose handmade rhythm. One tomato, sparse foliage, one fork, all related in a single still life. No typography, letters, labels, watermark, logo, border, menu mockup, plate, extra props, or sheet of options. Avoid cute mascot, clipart, polished stock vector, photorealism, 3D, gradients, drop shadows, excessive hatching, and decorative flourishes."
+  },
+  "inspection": {
+    "status": "Usable optional original illustration pending parent design acceptance",
+    "observed": "One burgundy still life with tomato, basil-like broad leaves, olive sprig and fork. Coarse ink edges and transparent interior cuts. No visible text or background. It has a dense central silhouette. A few low-alpha edge pixels reach the canvas boundary, so placement should include external layout padding.",
+    "principle": "Prove It Works required direct visual inspection and PNG alpha verification."
+  },
+  "source_artwork": "Original generated illustration. No third-party reference image was supplied."
+}

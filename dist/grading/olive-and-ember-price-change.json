@@ -1,7 +1,7 @@
 {
   "menu": {
     "schemaVersion": 1,
-    "id": "f34b793c-967a-4d7a-b512-049263d51726",
+    "id": "dee0767d-fc7a-4f4b-9954-fe0f01f62691",
     "name": "Olive & Ember",
     "subtitle": "A seasonal table, a little closer to nature.",
     "currency": "USD",
@@ -9,25 +9,25 @@
     "source": null,
     "sections": [
       {
-        "id": "86c3805c-78c9-4c2f-b69d-b97f8f5f764e",
+        "id": "231e1871-4d20-42ec-966b-a43112f78c1c",
         "name": "TO BEGIN",
         "items": [
           {
-            "id": "189d6869-eff0-44a4-84d5-7dddda3d6d13",
+            "id": "2ce53f5f-f2d4-4dc3-80c7-a88ee92a4373",
             "name": "Whipped ricotta",
             "description": "Hot honey, lemon zest, toasted sourdough",
             "price": 1450,
             "tags": []
           },
           {
-            "id": "d8989ac6-e64c-4d43-9266-998f8b1f6f91",
+            "id": "729bb917-7476-45ed-8e2a-702d6ab9499e",
             "name": "Heirloom tomatoes",
             "description": "Peach, basil oil, aged sherry vinegar",
             "price": 1450,
             "tags": []
           },
           {
-            "id": "1d840672-448a-4c02-87c3-dea4c6c06bda",
+            "id": "8aef2f74-4f07-493b-9ebe-918378bb17f7",
             "name": "Crispy artichokes",
             "description": "Preserved lemon aioli, garden herbs",
             "price": 1300,
@@ -36,32 +36,32 @@
         ]
       },
       {
-        "id": "7b83a3c3-d9d0-413f-8d14-8bfba65f3e49",
+        "id": "6d115f5d-1b4c-43c2-8f6d-75df5575c0a9",
         "name": "FROM THE KITCHEN",
         "items": [
           {
-            "id": "b937c0bb-f04d-43af-970d-62a90c5ca11e",
+            "id": "92a725dd-6662-42fd-adb1-b715409e5139",
             "name": "Wild mushroom pappardelle",
             "description": "Hand-cut pasta, woodland mushrooms, thyme",
             "price": 2400,
             "tags": []
           },
           {
-            "id": "e4abe988-9895-4298-9b8e-13552b4501c9",
+            "id": "5df4c5e6-2aa8-44a9-b92a-20fa0e0f02c4",
             "name": "Wood-fired sea bass",
             "description": "White beans, fennel, salsa verde",
             "price": 2850,
             "tags": []
           },
           {
-            "id": "819203cd-14f9-430c-b98a-d4d4bd5cb672",
+            "id": "5e97d444-a685-48d1-b4dc-910e6bf4c791",
             "name": "Slow-roasted aubergine",
             "description": "Tahini yoghurt, pomegranate, warm flatbread",
             "price": 2150,
             "tags": []
           },
           {
-            "id": "14be2130-c05b-4992-983a-0c7ee362b071",
+            "id": "f4fa8f49-d9ac-46e3-aa87-3e7056e1a7af",
             "name": "Steak frites",
             "description": "Bavette, rosemary fries, peppercorn butter",
             "price": 3200,
@@ -70,18 +70,18 @@
         ]
       },
       {
-        "id": "75b014ee-0536-45c1-bf7e-293bc6b8cb80",
+        "id": "409623fb-5fd1-4ae0-9ea6-045c4e25b5fc",
         "name": "A LITTLE SWEETNESS",
         "items": [
           {
-            "id": "744d6170-cafa-42b1-820c-902e94fbac98",
+            "id": "2f08e206-0c56-4291-8885-565343700bc1",
             "name": "Olive oil cake",
             "description": "Roasted apricot, crème fraîche",
             "price": 950,
             "tags": []
           },
           {
-            "id": "599f52c5-9083-4941-8792-70b784878b46",
+            "id": "f397c2f3-0701-41da-b853-b20b8ae12584",
             "name": "Dark chocolate crémeux",
             "description": "Sea salt, hazelnut, a spoon of espresso cream",
             "price": 1100,
@@ -92,7 +92,7 @@
     ]
   },
   "settings": {
-    "template": "midnight",
+    "template": "trattoria",
     "pageSize": "a4",
     "density": "balanced"
   }

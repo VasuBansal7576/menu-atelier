@@ -20,7 +20,7 @@ Official dependency documentation must be checked when integrated. Main sources 
 Run `npm start` from the project. Open the printed localhost URL. No API key is required for the core journey. A private Sites deployment gives the owner a grading link. Public repository and public demo video are separate hackathon requirements and are not replaced by deployment.
 
 ## Look and Feel
-Implements `prd.md > Look and Feel`. Use a neutral studio with a single task rail and a large document canvas. Keep template identifiers atelier, trattoria, botanical and midnight to preserve existing preferences. Their new display names and compositions are Maison, Mercato, Broadside and Edition. Use vendored static fonts and their OFL notices. The layout engine emits immutable pages with final text lines, font IDs, measured widths and positions in points. Preview and PDF consume those exact pages. Export does not reflow or transliterate source text. Coverage and fit errors reject a candidate before history or persistence. Respect reduced motion and readable focus indicators.
+Implements `prd.md > Look and Feel`. Use a paper-first studio with an anchored price editor and secondary details/settings dialogs. Keep template identifiers atelier, trattoria, botanical and midnight to preserve existing preference and backup contracts. Their current compositions are Herbarium, Osteria, Counter and Table cards. Use vendored static fonts and their OFL notices. The layout engine emits immutable pages with final text lines, font IDs, measured widths and positions in points. Preview and PDF consume those exact pages. Export does not reflow or transliterate source text. Coverage and fit errors reject a candidate before history or persistence. Respect reduced motion and readable focus indicators.
 
 ## Components
 
@@ -59,8 +59,18 @@ No learner uncertainty was stated, so none is invented. The main engineering unc
 
 ## Public source and demonstration
 
-The user approved public repository publication under VasuBansal7576. Source and planning files are at [https://github.com/VasuBansal7576/menu-atelier](https://github.com/VasuBansal7576/menu-atelier). The redesigned143.50-second actual browser demo is at `dist/grading/demo.mp4` in the repository. The owner-private website retains its current audience. A public YouTube or Vimeo upload and the final entrant submission remain separate steps.
+The user approved public repository publication under VasuBansal7576. Source and planning files are at [https://github.com/VasuBansal7576/menu-atelier](https://github.com/VasuBansal7576/menu-atelier). The actual browser demo is at `dist/grading/demo.mp4` in the repository. The owner-private website retains its current audience. A public YouTube or Vimeo upload and the final entrant submission remain separate steps.
 
 ## Design recovery on 2026-10-26
 
-The user rejected the original appearance. Two runnable alternatives and an independent cross-judge selected the single-rail editorial studio. The selected architecture preserves model/import/history and replaces typography, composition and the PDF adapter. Functional tests are regression evidence, not visual acceptance. A first real embedded-font PDF precedes expansion to all designs. Final verification includes actual source imports, rendered PDFs, source-price extraction, responsive editing and independent adversarial review.
+The user rejected the original appearance. The first two runnable alternatives selected a single-rail studio. The user rejected that result. The second recovery compared new physical print pilots, rejected both initial candidates, then refined a paper-first direction with an editor beside the actual printed price. The selected architecture preserves model/import/history and replaces typography, composition and the PDF adapter. Functional tests are regression evidence, not visual acceptance. A first real embedded-font PDF precedes expansion to all designs. Final verification includes actual source imports, rendered PDFs, source-price extraction, responsive editing and independent adversarial review.
+
+## Taste reset architecture boundary
+
+Keep schemaVersion1, integer prices, import review, history and the verified font/PDF geometry contract. The previously selected studio and all four visual templates failed user acceptance. Isolated pilots may add purposeful illustration, image or rotation support to the shared scene. The selected implementation must preserve the same graphic positions in SVG and PDF, preserve selectable text and disclose asset provenance. Revise the implementation plan before production edits after the pilot comparison.
+
+## Production taste reset
+
+The refined B pilot supplies the selected visual and editing basis. A composition registry owns physical formats, identity graphics and measured regions. Shared DishBlock records own text roles, glyph bounds, price gutters and pagination. Pages remain immutable. Each text price retains its item and section IDs and a role of price so the browser can position its editor using the actual SVG screen matrix. The UI keeps createHistory as the sole committed owner. A dish edit session holds a validated temporary draft, updates the preview, and commits once when finished. Escape cancels it. All navigation and export boundaries finish a valid session or block invalid input.
+
+Only original or properly licensed graphics enter the application. The generated ink illustration has a retained prompt and hash. SVG and PDF use the same asset, alpha and placement. Reference designers' copyrighted branding and photography remain research material. The official demonstration uses original fictional restaurant content.

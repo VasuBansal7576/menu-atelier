@@ -1,0 +1,18 @@
+{
+  "path": "tomato-vine-fork-original.png",
+  "width": 1774,
+  "height": 887,
+  "mode": "RGBA",
+  "alpha_min": 0,
+  "alpha_max": 255,
+  "fully_transparent_pixels": 962792,
+  "fully_opaque_pixels": 3558,
+  "total_pixels": 1573538,
+  "nontransparent_bbox": [
+    0,
+    18,
+    1758,
+    887
+  ],
+  "verification": "Parsed PNG scanlines and reconstructed PNG filters using Python standard library. No pixel edits."
+}

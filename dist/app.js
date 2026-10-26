@@ -19,147 +19,230 @@ catch(error) {
 startupControls.forEach(control=>control.disabled=false);
 document.body?.removeAttribute('aria-busy');
 
-const defaultSettings = { template: 'midnight', pageSize: 'a4', density: 'balanced' };
+const defaultSettings = { template: 'trattoria', pageSize: 'a4', density: 'balanced' };
 let initial = { menu: demoMenu(), settings: defaultSettings }, storageError = '', restoredDraft = false;
 try {
   const saved = localStorage.getItem('menu-atelier-v1');
   if(saved) { const data = JSON.parse(saved); const loaded = { menu: validateMenu(data.menu), settings: {template: templates[data.settings?.template] ? data.settings.template : defaultSettings.template,pageSize: data.settings?.pageSize === 'letter' ? 'letter' : 'a4',density: ['compact','balanced','spacious'].includes(data.settings?.density) ? data.settings.density : 'balanced'} };layoutMenu(loaded.menu,loaded.settings);initial=loaded;restoredDraft=true; }
 } catch(error) { storageError = `The saved draft could not be opened. Your browser backup is retained. ${error.message}`; }
 const history = createHistory(initial);
-let selected = '', selectedSection = '', candidate = null, categoryId = '', pages = [], examples = [], zoom = 1, toastTimer, activeTask = 'design', showGuides = true, lastCommitError = '', detailsHydrated = false;
-let importGeneration = 0;
+let selected = '', editSession = null, view = 'paper', candidate = null, categoryId = '', pages = [], examples = [], toastTimer, lastCommitError = '', importGeneration = 0;
 const collapsed = new Set();
-const state = () => history.value;
-const dishCount = menu => menu.sections.reduce((sum,s)=>sum+s.items.length,0);
-function toast(message) { $('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),4000); }
+const state = () => editSession?.draft || history.value;
+const dishCount = menu => menu.sections.reduce((sum, section) => sum + section.items.length, 0);
+const selectedRecord = () => state().menu.sections.flatMap(section => section.items.map(item => ({ section, item }))).find(record => record.item.id === selected);
+function toast(message) { $('#toast').textContent = message; $('#toast').classList.add('visible'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 4000); }
+function announce(message) { $('#workspace-status').textContent = message; }
 function persist() {
-  try { localStorage.setItem('menu-atelier-v1',JSON.stringify(state()));$('#save-status').textContent='Saved in this browser';$('#save-status').classList.remove('save-error'); }
-  catch { $('#save-status').textContent='Could not save · download a backup';$('#save-status').classList.add('save-error'); }
+  try { localStorage.setItem('menu-atelier-v1', JSON.stringify(history.value)); $('#save-status').textContent = 'Saved in this browser'; $('#save-status').classList.remove('save-error'); }
+  catch { $('#save-status').textContent = 'Could not save · download a backup'; $('#save-status').classList.add('save-error'); }
 }
-function showTask(task) {
-  activeTask=task;
-  document.querySelectorAll('[data-task]').forEach(button=>{const active=button.dataset.task===task;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
-  for(const name of ['design','content','settings'])$(`#task-${name}`).hidden=name!==task;
+function showView(nextView) {
+  view = nextView;
+  document.querySelectorAll('[data-view]').forEach(button => { const active = button.dataset.view === view; button.classList.toggle('active', active); button.setAttribute('aria-selected', String(active)); button.tabIndex = active ? 0 : -1; });
+  $('#canvas-area').hidden = view !== 'paper'; $('#inventory').hidden = view !== 'inventory'; $('#zoom-fit').disabled = view !== 'paper';
 }
-document.querySelectorAll('[data-task]').forEach(button=>button.onclick=()=>{showTask(button.dataset.task);if(button.dataset.task==='design')renderTemplates();});
-$('#jump-content').onclick=()=>showTask('content');
-function commit(mutator, options={}) {
-  const next=clone(state());mutator(next);
-  let nextPages;
-  try { next.menu=validateMenu(next.menu);nextPages=layoutMenu(next.menu,next.settings); } catch(error) { lastCommitError=error.message;$('#edit-error').textContent=error.message;$('#edit-error').hidden=false;toast(error.message);return false; }
-  lastCommitError='';$('#edit-error').hidden=true;if(history.commit(next)){persist();render({...options,pages:nextPages});}return true;
+function commit(mutator, options = {}) {
+  if (editSession && !finishEdit({ restoreFocus: false })) return false;
+  const next = clone(history.value); mutator(next);
+  try { next.menu = validateMenu(next.menu); const nextPages = layoutMenu(next.menu, next.settings); lastCommitError = ''; $('#edit-error').hidden = true; if (history.commit(next)) { persist(); render({ ...options, pages: nextPages }); } return true; }
+  catch (error) { lastCommitError = error.message; $('#edit-error').textContent = error.message; $('#edit-error').hidden = false; toast(error.message); return false; }
 }
-function render(options={}) {
-  const {menu,settings}=state();
-  $('#project-name').textContent=menu.name;$('#current-design').textContent=templates[settings.template].name;$('#document-label').textContent=templates[settings.template].name;$('#canvas-count').textContent=`${dishCount(menu)} dishes · ${menu.currency}`;$('#dish-count').textContent=`${dishCount(menu)} dishes`;
-  $('#undo').disabled=!history.canUndo;$('#redo').disabled=!history.canRedo;$('#mobile-undo').disabled=!history.canUndo;$('#mobile-redo').disabled=!history.canRedo;
-  if(!detailsHydrated||(document.activeElement!==$('#menu-name')&&$('#menu-name').validity.valid))$('#menu-name').value=menu.name;
-  if(!detailsHydrated||(document.activeElement!==$('#menu-subtitle')&&$('#menu-subtitle').validity.valid))$('#menu-subtitle').value=menu.subtitle;
-  detailsHydrated=true;
-  $('#menu-currency').value=menu.currency;$('#page-size').value=settings.pageSize;
-  document.querySelectorAll('[data-density]').forEach(button=>button.classList.toggle('active',button.dataset.density===settings.density));
-  pages=options.pages||layoutMenu(menu,settings);
-  $('#pages').innerHTML=pages.map((page,i)=>`<div class="paper-wrap">${renderSVG(page,{interactive:true,selected:showGuides?selected:''})}<span class="page-number">PAGE ${String(i+1).padStart(2,'0')}</span></div>`).join('');
-  $('#page-status').textContent=`${settings.pageSize==='letter'?'US Letter':'A4'} · ${pages.length} ${pages.length===1?'page':'pages'}`;
-  if(!options.skipList)renderSections();
-  if(options.editor)renderEditor();
-  if(!options.skipTemplates&&activeTask==='design')renderTemplates();
-  renderSource();
+function pageDescription(page) {
+  const mm = value => Math.round(value * 25.4 / 72);
+  return `${page.format?.name || (state().settings.pageSize === 'letter' ? 'US Letter' : 'A4')} · ${mm(page.width)} × ${mm(page.height)} mm`;
+}
+function render(options = {}) {
+  const { menu, settings } = state();
+  $('#project-name').textContent = menu.name; $('#current-design').textContent = templates[settings.template].name;
+  $('#content-tab').textContent = `All ${dishCount(menu)} dishes`;
+  $('#undo').disabled = !history.canUndo && !editSession; $('#redo').disabled = !history.canRedo || Boolean(editSession);
+  for (const [id, value] of [['menu-name', menu.name], ['menu-subtitle', menu.subtitle], ['menu-currency', menu.currency], ['page-size', settings.pageSize]]) if (document.activeElement !== $(`#${id}`)) $(`#${id}`).value = value;
+  document.querySelectorAll('[data-density]').forEach(button => { button.classList.toggle('active', button.dataset.density === settings.density); button.setAttribute('aria-pressed', String(button.dataset.density === settings.density)); });
+  pages = options.pages || layoutMenu(menu, settings);
+  $('#pages').innerHTML = pages.map((page, index) => `<div class="paper-wrap">${renderSVG(page, { interactive: true, selected })}<span class="page-number">${pages.length > 1 ? `Page ${index + 1} of ${pages.length}` : ''}</span></div>`).join('');
+  document.querySelectorAll('#pages [data-item]').forEach(hit => { const item = menu.sections.flatMap(section => section.items).find(item => item.id === hit.dataset.item); if (item) hit.setAttribute('aria-label', `Edit price for ${item.name}, ${formatPrice(item.price, menu.currency)}`); });
+  $('#actual-format').textContent = `Printed format · ${pageDescription(pages[0])}. The composition determines orientation and size.`;
+  $('#page-status').textContent = `${pageDescription(pages[0])} · ${pages.length} ${pages.length === 1 ? 'page' : 'pages'}`;
+  if (editSession && $('#selection-title')) { const record = selectedRecord(); if (record) { $('#selection-title').textContent = record.item.name; $('#dish-price').setAttribute('aria-label', `Price for ${record.item.name} in ${menu.currency}`); $('.editor-kicker').textContent = `${record.section.name} · ${menu.currency}`; } }
+  if (!options.skipList) renderSections();
+  if (options.editor) renderEditor();
+  renderSource(); fitPaper(); positionEditor();
 }
 function renderTemplates() {
-  const {menu,settings}=state();
-  $('#template-grid').innerHTML=Object.entries(templates).map(([key,t])=>{
-    let preview;
-    try{preview=renderSVG(layoutMenu(menu,{...settings,template:key})[0]);}
-    catch{return `<button class="template-card" disabled aria-label="${t.name} needs a shorter heading or footer"><span class="template-preview">Shorten the heading or footer to use this design.</span><span class="template-name">${t.name}</span></button>`;}
-    return `<button class="template-card ${settings.template===key?'selected':''}" data-template="${key}" aria-label="Choose ${t.name} design" aria-pressed="${settings.template===key}"><span class="template-preview">${preview}</span><span class="template-name">${t.name}</span><span class="template-mood">${escape(t.mood)}</span>${settings.template===key?'<span class="template-check">✓</span>':''}</button>`;
+  const { menu, settings } = state();
+  $('#template-grid').innerHTML = Object.entries(templates).map(([key, template]) => {
+    try { const scene = layoutMenu(menu, { ...settings, template: key })[0]; return `<button class="template-card ${settings.template === key ? 'selected' : ''}" data-template="${key}" aria-label="Choose ${escape(template.name)} design" aria-pressed="${settings.template === key}"><span class="template-preview">${renderSVG(scene)}</span><span class="template-name">${escape(template.name)} ${settings.template === key ? '✓' : ''}</span><span class="template-mood">${escape(pageDescription(scene))}</span></button>`; }
+    catch (error) { return `<button class="template-card" disabled><span class="template-preview unavailable">${escape(error.message)}</span><span class="template-name">${escape(template.name)}</span></button>`; }
   }).join('');
 }
 function renderSections() {
-  const {menu}=state();
-  $('#section-list').innerHTML=menu.sections.map(section=>`<section class="category"><div class="category-heading"><button class="section-toggle" data-toggle-section="${escape(section.id)}" aria-expanded="${!collapsed.has(section.id)}"><span>${collapsed.has(section.id)?'▸':'▾'}</span>${escape(section.name)}<span class="category-count">${section.items.length}</span></button><button class="category-edit" data-edit-section="${escape(section.id)}" aria-label="Edit ${escape(section.name)} category" title="Edit category">···</button></div>${collapsed.has(section.id)?'':section.items.map(item=>`<button class="dish-row ${selected===item.id?'active':''}" data-select="${escape(item.id)}" data-section="${escape(section.id)}"><span class="dish-name">${escape(item.name)}</span><span class="dish-price">${escape(formatPrice(item.price,menu.currency))}</span></button>`).join('')}${!section.items.length?`<button class="dish-row" data-new-in="${escape(section.id)}">+ Add your first dish</button>`:''}</section>`).join('') || '<div class="empty-menu">Your menu is empty.<span>Add a category, then your first dish.</span></div>';
+  const { menu } = state();
+  $('#section-list').innerHTML = menu.sections.map(section => `<section class="category"><div class="category-heading"><button class="section-toggle" data-toggle-section="${escape(section.id)}" aria-expanded="${!collapsed.has(section.id)}"><span>${collapsed.has(section.id) ? '▸' : '▾'}</span>${escape(section.name)}<span class="category-count">${section.items.length}</span></button><button class="category-edit" data-edit-section="${escape(section.id)}" aria-label="Edit ${escape(section.name)} category">···</button></div>${collapsed.has(section.id) ? '' : section.items.map(item => `<button class="dish-row ${selected === item.id ? 'active' : ''}" data-select="${escape(item.id)}"><span><strong>${escape(item.name)}</strong><small>${escape(item.description)}</small>${item.tags.length ? `<small>${item.tags.map(escape).join(' · ')}</small>` : ''}</span><span class="dish-price">${escape(formatPrice(item.price, menu.currency))}</span></button>`).join('')}${!section.items.length ? `<button class="dish-row" data-new-in="${escape(section.id)}">+ Add your first dish</button>` : ''}</section>`).join('') || '<p class="empty-menu">Add a category, then your first dish.</p>';
 }
 function renderSource() {
-  const source=state().menu.source;
-  $('#source-info').innerHTML=source?`<div class="source-info"><strong>From a real restaurant menu</strong>${escape(source.label)}${source.accessedAt?` · Retrieved ${escape(source.accessedAt)}`:''}<br>${source.url?`<a href="${escape(source.url)}" target="_blank" rel="noopener noreferrer">View original source ↗</a>`:''}<details><summary>About this excerpt</summary>${escape(source.note)}</details></div>`:'';
+  const source = state().menu.source;
+  const html = source ? `<div class="source-info"><strong>${escape(source.label)}</strong>${source.accessedAt ? ` · Retrieved ${escape(source.accessedAt)}` : ''}${source.url ? `<p><a href="${escape(source.url)}" target="_blank" rel="noopener noreferrer">View original source ↗</a></p>` : ''}<p>${escape(source.note)}</p></div>` : '';
+  $('#source-info').innerHTML = html; $('#settings-source').innerHTML = html;
+  $('#source-link').hidden = !source?.url;
+  if (source?.url) { $('#source-link').href = source.url; $('#source-link').textContent = /\.pdf(?:$|[?#])/i.test(source.url) ? 'Source PDF ↗' : 'Source ↗'; $('#source-link').title = source.note || source.label; }
 }
-function selectItem(id, sectionId, focus=false) {
-  if(!validPendingFields())return;
-  selected=id;selectedSection=sectionId;showTask('content');render({editor:true,skipTemplates:true});
-  $('#item-editor').scrollIntoView({block:'nearest'});
-  if(focus)$('#dish-name')?.focus();
+function priceAnchor() {
+  for (let index = 0; index < pages.length; index++) {
+    const price = pages[index].elements.find(element => element.itemId === selected && element.role === 'price');
+    const svg = $('#pages').children[index]?.querySelector('svg');
+    if (!price || !svg) continue;
+    const matrix = svg.getScreenCTM(); if (!matrix) return null;
+    const left = price.x - (price.align === 'right' ? price.advance : price.align === 'center' ? price.advance / 2 : 0);
+    const bounds = price.inkBounds || { left, right: left + price.advance, top: price.y - price.size, bottom: price.y + price.size * .25 };
+    const start = new DOMPoint(bounds.left, bounds.top).matrixTransform(matrix), end = new DOMPoint(bounds.right, bounds.bottom).matrixTransform(matrix);
+    return { left: start.x, right: end.x, top: start.y, bottom: end.y };
+  }
+  return null;
+}
+function positionEditor() {
+  const editor = $('#item-editor');
+  if (!editSession || editor.hidden) return;
+  if (matchMedia('(max-width:600px)').matches) { editor.removeAttribute('data-side'); return; }
+  const anchor = priceAnchor(); if (!anchor) return;
+  const margin = 12, gap = 16, { width, height } = editor.getBoundingClientRect();
+  const rightFits = anchor.right + gap + width <= innerWidth - margin;
+  const leftFits = anchor.left - gap - width >= margin;
+  const side = rightFits || !leftFits ? 'right' : 'left';
+  const left = side === 'right' ? anchor.right + gap : anchor.left - gap - width;
+  const toolbarBottom = $('.canvas-toolbar').getBoundingClientRect().bottom;
+  const top = Math.max(toolbarBottom + margin, Math.min(anchor.top - 34, innerHeight - height - margin));
+  editor.style.left = `${Math.max(margin, Math.min(left, innerWidth - width - margin))}px`; editor.style.top = `${top}px`; editor.dataset.side = side;
+  editor.style.setProperty('--anchor-offset', `${Math.max(16, Math.min(anchor.top + 7 - top, height - 24))}px`);
+}
+function selectItem(id, _sectionId, reveal = false) {
+  if (editSession && selected === id) { $('#dish-price').focus(); $('#dish-price').select(); return; }
+  if (!validPendingFields()) return;
+  selected = id; if (!selectedRecord()) { selected = ''; return; }
+  editSession = { itemId: id, draft: clone(history.value), saveStatus: $('#save-status').textContent };
+  showView('paper'); render({ editor: true }); document.body.classList.add('editor-open');
+  if (reveal || matchMedia('(max-width:600px)').matches) Array.from(document.querySelectorAll('#pages [data-item]')).find(hit => hit.dataset.item === id)?.scrollIntoView({ block: 'center', behavior: 'instant' });
+  positionEditor(); $('#dish-price').focus({ preventScroll: true }); $('#dish-price').select(); announce(`Editing ${selectedRecord().item.name}. Enter finishes. Escape cancels.`);
 }
 function renderEditor() {
-  const {menu}=state();const section=menu.sections.find(s=>s.id===selectedSection);const item=section?.items.find(x=>x.id===selected);
-  if(!item){selected='';$('#item-editor').innerHTML='';return;}
-  $('#item-editor').innerHTML=`<div class="item-editor"><div class="item-editor-head"><span>EDIT DISH</span><button id="close-editor" aria-label="Close dish editor">×</button></div><label>Dish name<input id="dish-name" maxlength="160" required value="${escape(item.name)}"></label><label>Description<textarea id="dish-description" maxlength="1200" rows="3">${escape(item.description)}</textarea></label><div class="field-row"><label>Price (${menu.currency})<input id="dish-price" inputmode="decimal" value="${priceInput(item.price,menu.currency)}" aria-describedby="price-error"></label><label>Category<select id="dish-section">${menu.sections.map(s=>`<option value="${escape(s.id)}" ${s.id===section.id?'selected':''}>${escape(s.name)}</option>`).join('')}</select></label></div><div id="price-error" class="field-error" role="status"></div><label>Dietary labels · only if verified<input id="dish-tags" maxlength="300" value="${escape(item.tags.join(', '))}" placeholder="vegetarian, vegan"></label><div class="item-editor-foot"><span>Changes appear as you type.</span><button id="delete-dish" class="delete-dish">Remove dish</button></div></div>`;
+  const record = selectedRecord(), editor = $('#item-editor');
+  if (!record || !editSession) { editor.hidden = true; editor.replaceChildren(); document.body.classList.remove('editor-open'); return; }
+  const { section, item } = record, { menu } = state(); editor.hidden = false;
+  editor.innerHTML = `<div class="editor-heading"><div><span class="editor-kicker">${escape(section.name)} · ${menu.currency}</span><h2 id="selection-title">${escape(item.name)}</h2></div><button id="close-editor" class="close-editor" aria-label="Finish price editing">×</button></div><form id="price-form" novalidate><label class="price-label" for="dish-price">Price <span>${menu.currency}</span></label><div class="price-entry" style="--currency-space:${currencies[menu.currency].length > 1 ? 48 : 34}px"><span aria-hidden="true">${currencies[menu.currency]}</span><input id="dish-price" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="${priceInput(item.price, menu.currency)}" aria-label="Price for ${escape(item.name)} in ${menu.currency}" aria-describedby="price-help price-error"><button type="submit" class="primary">Done ↵</button></div><p id="price-help">Changes appear on the paper as you type.</p><p id="price-error" class="field-error" role="alert"></p></form><button id="edit-details" class="details-toggle" aria-expanded="false" aria-controls="dish-details">Edit details</button><form id="dish-details" hidden novalidate><label>Dish name<input id="dish-name" maxlength="160" required value="${escape(item.name)}"></label><label>Description<textarea id="dish-description" maxlength="1200" rows="3">${escape(item.description)}</textarea></label><label>Category<select id="dish-section">${menu.sections.map(s => `<option value="${escape(s.id)}" ${s.id === section.id ? 'selected' : ''}>${escape(s.name)}</option>`).join('')}</select></label><label>Dietary labels · only if verified<input id="dish-tags" maxlength="410" value="${escape(item.tags.join(', '))}" placeholder="vegetarian, vegan"></label><p id="details-error" class="field-error" role="alert"></p><div class="details-actions"><button class="primary" type="submit">Done editing</button><button id="delete-dish" type="button" class="danger">Remove dish</button></div></form>`;
 }
-function updateItem(field,value) { return commit(next=>{const item=next.menu.sections.find(s=>s.id===selectedSection)?.items.find(i=>i.id===selected);if(item)item[field]=value;},{skipTemplates:true}); }
+function updateDraft(mutator) {
+  if (!editSession) return false;
+  const next = clone(editSession.draft); mutator(next);
+  try { next.menu = validateMenu(next.menu); const nextPages = layoutMenu(next.menu, next.settings); editSession.draft = next; lastCommitError = ''; $('#save-status').textContent = 'Editing · Enter to save'; render({ pages: nextPages, skipList: true }); return true; }
+  catch (error) { lastCommitError = error.message; return false; }
+}
+function updateItem(field, value) { return updateDraft(next => { next.menu.sections.flatMap(section => section.items).find(item => item.id === selected)[field] = value; }); }
 function editField(input, operation) {
-  input.setCustomValidity('');input.removeAttribute('aria-invalid');
-  if(operation()===false){input.setCustomValidity(lastCommitError);input.setAttribute('aria-invalid','true');return false;}
-  return true;
+  input.setCustomValidity(''); input.removeAttribute('aria-invalid');
+  if (operation() === false) { input.setCustomValidity(lastCommitError); input.setAttribute('aria-invalid', 'true'); return false; } return true;
+}
+function pendingInvalid() { return Array.from(document.querySelectorAll('#item-editor input, #item-editor textarea, #settings-dialog input, #settings-dialog textarea')).find(input => !input.validity.valid); }
+function finishEdit({ cancel = false, restoreFocus = true } = {}) {
+  if (!editSession) return true;
+  const invalid = pendingInvalid();
+  if (!cancel && invalid) { invalid.focus(); invalid.reportValidity(); toast('Finish the highlighted edit before continuing.'); return false; }
+  const id = selected;
+  if (!cancel && history.commit(editSession.draft)) persist();
+  else $('#save-status').textContent = editSession.saveStatus;
+  editSession = null; selected = ''; render({ editor: true });
+  if (restoreFocus) Array.from(document.querySelectorAll('#pages [data-item]')).find(hit => hit.dataset.item === id)?.focus({ preventScroll: true });
+  announce(cancel ? 'Edit cancelled. Previous dish restored.' : 'Menu updated. Select a printed price to edit.'); return true;
+}
+function validPendingFields() {
+  const invalid = pendingInvalid();
+  if (invalid) { if (invalid.closest('#settings-dialog') && !$('#settings-dialog').open) $('#settings-dialog').showModal(); invalid.focus(); invalid.reportValidity(); toast('Finish the highlighted edit before continuing.'); return false; }
+  return finishEdit({ restoreFocus: false });
 }
 function addDish(sectionId) {
-  if(!validPendingFields())return;
-  let id=uid(), newSection=sectionId || selectedSection || state().menu.sections[0]?.id;
-  const added=commit(next=>{if(!newSection){newSection=uid();next.menu.sections.push({id:newSection,name:'The menu',items:[]});}next.menu.sections.find(s=>s.id===newSection).items.push({id,name:'New dish',description:'',price:0,tags:[]});});
-  if(!added)return;collapsed.delete(newSection);selectItem(id,newSection,true);$('#dish-name')?.select();
+  if (!validPendingFields()) return;
+  const id = uid(); let target = sectionId || state().menu.sections[0]?.id;
+  if (!commit(next => { if (!target) { target = uid(); next.menu.sections.push({ id: target, name: 'The menu', items: [] }); } next.menu.sections.find(section => section.id === target).items.push({ id, name: 'New dish', description: '', price: 0, tags: [] }); })) return;
+  collapsed.delete(target); selectItem(id, target, true); $('#edit-details').click(); $('#dish-name').focus(); $('#dish-name').select();
 }
-$('#menu-name').addEventListener('input',event=>{const input=event.target;input.setCustomValidity(input.value.trim()?'':'Restaurant name is required.');if(input.value.trim())editField(input,()=>commit(next=>next.menu.name=input.value,{skipTemplates:true,skipList:true}));});
-$('#menu-subtitle').addEventListener('input',event=>editField(event.target,()=>commit(next=>next.menu.subtitle=event.target.value,{skipTemplates:true,skipList:true})));
-$('#menu-currency').addEventListener('change',event=>{if(!validPendingFields()){event.target.value=state().menu.currency;return;}const value=event.target.value;if(commit(next=>{const old=next.menu.currency;if((old==='JPY')!==(value==='JPY'))next.menu.sections.forEach(s=>s.items.forEach(i=>i.price=old==='JPY'?i.price*100:Math.round(i.price/100)));next.menu.currency=value;},{editor:true}))toast('Currency changed. Numeric amounts are preserved; no exchange rate is applied.');else event.target.value=state().menu.currency;});
-$('#item-editor').addEventListener('input',event=>{
-  const input=event.target,{id,value}=input;
-  if(id==='dish-name'){input.setCustomValidity(value.trim()?'':'Dish name is required.');if(value.trim())editField(input,()=>updateItem('name',value));}
-  if(id==='dish-description')editField(input,()=>updateItem('description',value));
-  if(id==='dish-tags'){const tags=value.split(',').map(x=>x.trim()).filter(Boolean);const valid=tags.length<=10&&tags.every(t=>t.length<=40);input.setCustomValidity(valid?'':'Use up to 10 labels, with at most 40 characters each.');if(valid)editField(input,()=>updateItem('tags',tags));}
-  if(id==='dish-price'){
-    try{const price=parsePrice(value,state().menu.currency);if(editField(input,()=>updateItem('price',price)))$('#price-error').textContent='';else $('#price-error').textContent=lastCommitError;}
-    catch(error){$('#price-error').textContent=error.message;input.setAttribute('aria-invalid','true');input.setCustomValidity(error.message);}
-  }
+$('#item-editor').addEventListener('input', event => {
+  const input = event.target, { id, value } = input;
+  let error = '';
+  if (id === 'dish-price') { try { const price = parsePrice(value, state().menu.currency); if (!editField(input, () => updateItem('price', price))) error = lastCommitError; } catch (caught) { error = caught.message; input.setCustomValidity(error); input.setAttribute('aria-invalid', 'true'); } $('#price-error').textContent = error; }
+  if (id === 'dish-name') { input.setCustomValidity(value.trim() ? '' : 'Dish name is required.'); if (value.trim()) editField(input, () => updateItem('name', value)); }
+  if (id === 'dish-description') editField(input, () => updateItem('description', value));
+  if (id === 'dish-tags') { const tags = value.split(',').map(tag => tag.trim()).filter(Boolean); input.setCustomValidity(tags.length <= 10 && tags.every(tag => tag.length <= 40) ? '' : 'Use up to 10 labels, with at most 40 characters each.'); if (input.validity.valid) editField(input, () => updateItem('tags', tags)); }
+  if (id !== 'dish-price') $('#details-error').textContent = input.validationMessage || lastCommitError;
+  positionEditor();
 });
-$('#item-editor').addEventListener('change',event=>{if(event.target.id==='dish-section'){if(!validPendingFields()){event.target.value=selectedSection;return;}const targetId=event.target.value;const moved=commit(next=>{const source=next.menu.sections.find(s=>s.id===selectedSection);const i=source.items.findIndex(x=>x.id===selected);const [item]=source.items.splice(i,1);next.menu.sections.find(s=>s.id===targetId).items.push(item);},{skipTemplates:true});if(moved){selectedSection=targetId;render({editor:true,skipTemplates:true});}else event.target.value=selectedSection;}});
-$('#item-editor').addEventListener('click',event=>{
-  if(event.target.closest('#close-editor')){if(!validPendingFields())return;selected='';selectedSection='';render({editor:true,skipTemplates:true});}
-  if(event.target.closest('#delete-dish')){if(!validPendingFields())return;const id=selected;if(commit(next=>{const section=next.menu.sections.find(s=>s.id===selectedSection);section.items=section.items.filter(i=>i.id!==id);},{editor:true}))toast('Dish removed. You can undo this.');}
+$('#item-editor').addEventListener('change', event => {
+  if (event.target.id !== 'dish-section') return;
+  const input = event.target, sourceId = selectedRecord().section.id;
+  if (pendingInvalid()) { input.value = sourceId; toast('Finish the highlighted edit before changing category.'); return; }
+  if (!updateDraft(next => { const source = next.menu.sections.find(section => section.id === sourceId); const index = source.items.findIndex(item => item.id === selected); next.menu.sections.find(section => section.id === input.value).items.push(source.items.splice(index, 1)[0]); })) { input.value = sourceId; $('#details-error').textContent = lastCommitError; }
 });
-$('#section-list').addEventListener('click',event=>{
-  const row=event.target.closest('[data-select]');if(row)selectItem(row.dataset.select,row.dataset.section,true);
-  const toggle=event.target.closest('[data-toggle-section]');if(toggle){const id=toggle.dataset.toggleSection;collapsed.has(id)?collapsed.delete(id):collapsed.add(id);renderSections();}
-  const edit=event.target.closest('[data-edit-section]');if(edit)openCategory(edit.dataset.editSection);
-  const add=event.target.closest('[data-new-in]');if(add)addDish(add.dataset.newIn);
+$('#item-editor').addEventListener('submit', event => { event.preventDefault(); finishEdit(); });
+$('#item-editor').addEventListener('click', event => {
+  if (event.target.closest('#close-editor')) finishEdit();
+  if (event.target.closest('#edit-details')) { const details = $('#dish-details'); details.hidden = !details.hidden; $('#edit-details').setAttribute('aria-expanded', String(!details.hidden)); $('#edit-details').textContent = details.hidden ? 'Edit details' : 'Hide details'; positionEditor(); if (!details.hidden) $('#dish-name').focus(); }
+  if (event.target.closest('#delete-dish')) { const id = selected; if (!validPendingFields()) return; if (commit(next => { next.menu.sections.forEach(section => section.items = section.items.filter(item => item.id !== id)); })) toast('Dish removed. You can undo this.'); }
 });
-$('#pages').addEventListener('click',event=>{const item=event.target.closest('[data-item]');if(item)selectItem(item.dataset.item,item.dataset.section,true);});
-$('#pages').addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){const item=event.target.closest('[data-item]');if(item){event.preventDefault();selectItem(item.dataset.item,item.dataset.section,true);}}});
-$('#add-dish').onclick=()=>addDish();
-function openCategory(id='') {if(!validPendingFields())return;categoryId=id;$('#category-name').value=state().menu.sections.find(s=>s.id===id)?.name||'';$('#delete-category').hidden=!id;$('#category-dialog-title').textContent=id?'Edit category':'New category';$('#category-error').hidden=true;$('#category-dialog').showModal();$('#category-name').focus();}
-$('#add-section').onclick=()=>openCategory();
-$('#save-category').onclick=()=>{const name=$('#category-name').value.trim();if(!name){$('#category-error').textContent='Give this category a name.';$('#category-error').hidden=false;return;}if(commit(next=>{if(categoryId)next.menu.sections.find(s=>s.id===categoryId).name=name;else next.menu.sections.push({id:uid(),name,items:[]});},{editor:true}))$('#category-dialog').close();else{$('#category-error').textContent=$('#toast').textContent;$('#category-error').hidden=false;}};
-$('#category-name').addEventListener('keydown',e=>{if(e.key==='Enter')$('#save-category').click();});
-$('#delete-category').onclick=()=>{if(commit(next=>next.menu.sections=next.menu.sections.filter(s=>s.id!==categoryId),{editor:true})){$('#category-dialog').close();toast('Category and its dishes removed. You can undo this.');}};
-$('#edit-footer').onclick=()=>{if(!validPendingFields())return;$('#menu-footer').value=state().menu.footer;$('#menu-footer').setCustomValidity('');$('#footer-dialog').showModal();};
-$('#menu-footer').addEventListener('input',event=>event.target.setCustomValidity(''));
-$('#save-footer').onclick=()=>{if(commit(next=>next.menu.footer=$('#menu-footer').value))$('#footer-dialog').close();else{$('#menu-footer').setCustomValidity($('#toast').textContent);$('#menu-footer').reportValidity();}};
-$('#template-grid').onclick=event=>{const button=event.target.closest('[data-template]');if(button&&validPendingFields())commit(next=>next.settings.template=button.dataset.template);};
-$('#page-size').onchange=event=>{if(!validPendingFields()||!commit(next=>next.settings.pageSize=event.target.value))event.target.value=state().settings.pageSize;};
-document.querySelectorAll('[data-density]').forEach(button=>button.onclick=()=>{if(validPendingFields())commit(next=>next.settings.density=button.dataset.density);});
-function travel(direction){if(history[direction]()){document.querySelectorAll('.content-panel input,.content-panel textarea').forEach(input=>{input.setCustomValidity('');input.removeAttribute('aria-invalid');});$('#edit-error').hidden=true;detailsHydrated=false;persist();render({editor:true});}}
-$('#undo').onclick=()=>travel('undo');$('#redo').onclick=()=>travel('redo');$('#mobile-undo').onclick=()=>travel('undo');$('#mobile-redo').onclick=()=>travel('redo');
-document.addEventListener('keydown',event=>{if(!(event.ctrlKey||event.metaKey)||event.key.toLowerCase()!=='z'||event.target.closest('input,textarea,select'))return;event.preventDefault();travel(event.shiftKey?'redo':'undo');});
-function setZoom(value){zoom=Math.max(.6,Math.min(1.8,value));$('#pages').style.setProperty('--scale',zoom);$('#zoom-label').textContent=zoom===1?'Fit':`${Math.round(zoom*100)}%`;}
-$('#zoom-in').onclick=()=>setZoom(zoom+.15);$('#zoom-out').onclick=()=>setZoom(zoom-.15);$('#zoom-fit').onclick=()=>setZoom(1);
-function validPendingFields(){
-  const invalid=$('.content-panel input:invalid,.content-panel textarea:invalid');
-  if(invalid&&!invalid.validity.valid){showTask(invalid.closest('#task-settings')?'settings':'content');invalid.focus();invalid.reportValidity();toast('Finish the highlighted edit before continuing.');return false;}
-  return true;
+$('#menu-name').addEventListener('input', event => { const input = event.target; input.setCustomValidity(input.value.trim() ? '' : 'Restaurant name is required.'); if (input.value.trim()) editField(input, () => commit(next => next.menu.name = input.value)); });
+$('#menu-subtitle').addEventListener('input', event => editField(event.target, () => commit(next => next.menu.subtitle = event.target.value)));
+$('#menu-currency').addEventListener('change', event => { if (!validPendingFields()) { event.target.value = state().menu.currency; return; } const value = event.target.value; if (commit(next => { const old = next.menu.currency; if ((old === 'JPY') !== (value === 'JPY')) next.menu.sections.forEach(section => section.items.forEach(item => item.price = old === 'JPY' ? item.price * 100 : Math.round(item.price / 100))); next.menu.currency = value; })) toast('Currency changed. Numeric amounts are preserved; no exchange rate is applied.'); else event.target.value = state().menu.currency; });
+$('#section-list').addEventListener('click', event => {
+  const row = event.target.closest('[data-select]'); if (row) selectItem(row.dataset.select, '', true);
+  const toggle = event.target.closest('[data-toggle-section]'); if (toggle) { const id = toggle.dataset.toggleSection; collapsed.has(id) ? collapsed.delete(id) : collapsed.add(id); renderSections(); }
+  const edit = event.target.closest('[data-edit-section]'); if (edit) openCategory(edit.dataset.editSection);
+  const add = event.target.closest('[data-new-in]'); if (add) addDish(add.dataset.newIn);
+});
+$('#pages').addEventListener('click', event => { const hit = event.target.closest('[data-item]'); if (hit) selectItem(hit.dataset.item, hit.dataset.section); });
+$('#pages').addEventListener('keydown', event => { const hit = event.target.closest('[data-item]'); if (hit && ['Enter', ' '].includes(event.key)) { event.preventDefault(); selectItem(hit.dataset.item, hit.dataset.section); } });
+$('#add-dish').onclick = () => addDish();
+function openCategory(id = '') { if (!validPendingFields()) return; categoryId = id; $('#category-name').value = state().menu.sections.find(section => section.id === id)?.name || ''; $('#delete-category').hidden = !id; $('#category-dialog-title').textContent = id ? 'Edit category' : 'New category'; $('#category-error').hidden = true; $('#category-dialog').showModal(); $('#category-name').focus(); }
+$('#add-section').onclick = () => openCategory();
+$('#save-category').onclick = () => { const name = $('#category-name').value.trim(); if (!name) { $('#category-error').textContent = 'Give this category a name.'; $('#category-error').hidden = false; return; } if (commit(next => { if (categoryId) next.menu.sections.find(section => section.id === categoryId).name = name; else next.menu.sections.push({ id: uid(), name, items: [] }); })) $('#category-dialog').close(); else { $('#category-error').textContent = lastCommitError; $('#category-error').hidden = false; } };
+$('#category-name').addEventListener('keydown', event => { if (event.key === 'Enter') $('#save-category').click(); });
+$('#delete-category').onclick = () => { if (commit(next => next.menu.sections = next.menu.sections.filter(section => section.id !== categoryId))) { $('#category-dialog').close(); toast('Category and its dishes removed. You can undo this.'); } };
+$('#edit-footer').onclick = () => { if (!validPendingFields()) return; $('#menu-footer').value = state().menu.footer; $('#menu-footer').setCustomValidity(''); $('#footer-dialog').showModal(); };
+$('#menu-footer').addEventListener('input', event => event.target.setCustomValidity(''));
+$('#save-footer').onclick = () => { if (commit(next => next.menu.footer = $('#menu-footer').value)) $('#footer-dialog').close(); else { $('#menu-footer').setCustomValidity(lastCommitError); $('#menu-footer').reportValidity(); } };
+$('#template-grid').onclick = event => { const button = event.target.closest('[data-template]'); if (button && validPendingFields() && commit(next => next.settings.template = button.dataset.template)) { $('#composition-dialog').close(); announce(`${templates[state().settings.template].name} selected.`); } };
+$('#page-size').onchange = event => { if (!validPendingFields() || !commit(next => next.settings.pageSize = event.target.value)) event.target.value = state().settings.pageSize; };
+document.querySelectorAll('[data-density]').forEach(button => button.onclick = () => { if (validPendingFields()) commit(next => next.settings.density = button.dataset.density); });
+function travel(direction) {
+  if (editSession && direction === 'undo') { finishEdit({ cancel: true }); return; }
+  if (editSession && !validPendingFields()) return;
+  if (history[direction]()) { document.querySelectorAll('#settings-dialog input, #settings-dialog textarea').forEach(input => { input.setCustomValidity(''); input.removeAttribute('aria-invalid'); }); $('#edit-error').hidden = true; persist(); render({ editor: true }); announce(direction === 'undo' ? 'Previous menu restored.' : 'Change restored.'); }
 }
-function validPendingEdits(){if(!validPendingFields())return false;const unsupported=unsupportedCharacters(state().menu);if(unsupported.length){toast(`The selected fonts cannot print these characters. Edit the highlighted content before exporting: ${unsupported.slice(0,8).join(' ')}`);return false;}return true;}
-$('#export-pdf').onclick=async()=>{if(!validPendingEdits())return;const button=$('#export-pdf'),exportPages=pages,exportTitle=state().menu.name,exportDesign=templates[state().settings.template].name;button.disabled=true;button.textContent='Preparing…';try{const doc=await createPDF(exportPages,exportTitle);doc.save(`${exportTitle.replace(/[^\p{L}\p{N} -]/gu,'').trim()||'Menu'} - ${exportDesign}.pdf`);toast(`${exportPages.length}-page PDF exported for ${exportTitle}.`);}catch(error){toast(`Export failed. ${error.message}`);}finally{button.disabled=false;button.innerHTML='Export PDF <span>↓</span>';}};
-$('#export-json').onclick=()=>{if(!validPendingFields())return;downloadBlob(new Blob([JSON.stringify(state(),null,2)],{type:'application/json'}),`${state().menu.name.replace(/[^a-z0-9-]/gi,'-')}-menu.json`);toast('Menu backup downloaded. Import it anytime.');};
-function closeDialog(dialog){if(dialog.id==='import-dialog')importGeneration++;dialog.close();}
+$('#undo').onclick = () => travel('undo'); $('#redo').onclick = () => travel('redo');
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && editSession) { event.preventDefault(); finishEdit({ cancel: true }); return; }
+  if (!(event.ctrlKey || event.metaKey) || event.key.toLowerCase() !== 'z' || event.target.closest('input,textarea,select')) return;
+  event.preventDefault(); travel(event.shiftKey ? 'redo' : 'undo');
+});
+document.querySelectorAll('[data-view]').forEach(button => button.onclick = () => { if (validPendingFields()) { showView(button.dataset.view); renderSections(); } });
+$('.tabs').addEventListener('keydown', event => { if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return; event.preventDefault(); const buttons = [...document.querySelectorAll('[data-view]')], current = buttons.indexOf(document.activeElement); const index = event.key === 'Home' ? 0 : event.key === 'End' ? buttons.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + buttons.length) % buttons.length; buttons[index].click(); buttons[index].focus(); });
+$('#open-compositions').onclick = () => { if (validPendingFields()) { renderTemplates(); $('#composition-dialog').showModal(); } };
+$('#open-settings').onclick = () => { if (validPendingFields()) $('#settings-dialog').showModal(); };
+$('#zoom-fit').onclick = () => { const fitted = $('#pages').classList.toggle('fitted'); $('#zoom-fit').textContent = fitted ? 'Reading size' : 'Fit page'; $('#zoom-fit').setAttribute('aria-pressed', String(fitted)); fitPaper(); positionEditor(); };
+function fitPaper() {
+  const area = $('#canvas-area'); if (!area.clientWidth || !pages.length) return;
+  const available = Math.max(220, area.clientWidth - (innerWidth < 600 ? 8 : 70));
+  const readingWidth = Math.min(660, available), ratio = pages[0].width / pages[0].height;
+  const fittedWidth = Math.min(readingWidth, Math.max(160, area.clientHeight - 60) * ratio);
+  $('#pages').style.setProperty('--paper-width', `${$('#pages').classList.contains('fitted') ? fittedWidth : readingWidth}px`);
+}
+window.addEventListener('resize', () => { fitPaper(); positionEditor(); });
+window.addEventListener('scroll', positionEditor, true);
+window.visualViewport?.addEventListener('resize', positionEditor); window.visualViewport?.addEventListener('scroll', positionEditor);
+function validPendingEdits() { if (!validPendingFields()) return false; const unsupported = unsupportedCharacters(state().menu); if (unsupported.length) { toast(`The selected fonts cannot print these characters. Edit the content before exporting: ${unsupported.slice(0, 8).join(' ')}`); return false; } return true; }
+$('#export-pdf').onclick = async () => { if (!validPendingEdits()) return; const button = $('#export-pdf'), exportPages = pages, exportTitle = state().menu.name, exportDesign = templates[state().settings.template].name; button.disabled = true; button.textContent = 'Preparing…'; try { const doc = await createPDF(exportPages, exportTitle); doc.save(`${exportTitle.replace(/[^\p{L}\p{N} -]/gu, '').trim() || 'Menu'} - ${exportDesign}.pdf`); toast(`${exportPages.length}-page PDF exported for ${exportTitle}.`); } catch (error) { toast(`Export failed. ${error.message}`); } finally { button.disabled = false; button.innerHTML = 'Export PDF <span>↗</span>'; } };
+$('#export-json').onclick = () => { if (!validPendingFields()) return; downloadBlob(new Blob([JSON.stringify(state(), null, 2)], { type: 'application/json' }), `${state().menu.name.replace(/[^a-z0-9-]/gi, '-')}-menu.json`); toast('Menu backup downloaded. Import it anytime.'); };
+function closeDialog(dialog){if(dialog.id==='settings-dialog'&&!validPendingFields())return;if(dialog.id==='import-dialog')importGeneration++;dialog.close();}
 document.querySelectorAll('.close-dialog').forEach(button=>button.onclick=()=>closeDialog(button.closest('dialog')));
 $('#import-dialog').addEventListener('cancel',()=>importGeneration++);
+$('#settings-dialog').addEventListener('cancel',event=>{if(!validPendingFields())event.preventDefault();});
+$('.brand').addEventListener('click',event=>{if(!validPendingFields())event.preventDefault();});
 document.querySelectorAll('dialog').forEach(dialog=>dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)closeDialog(dialog);}));
 function setImportStage(stage){$('#import-entry').hidden=stage!=='entry';$('#import-progress').hidden=stage!=='progress';$('#import-review').hidden=stage!=='review';$('#import-error').hidden=true;}
 function openImport(){if(!validPendingFields())return;importGeneration++;candidate=null;setImportStage('entry');$('#import-currency').value=state().menu.currency;$('#import-file').value='';$('#import-dialog').showModal();}
@@ -195,7 +278,7 @@ function renderReview(){
   $('#import-review').innerHTML=`<div class="review-heading"><h3>Review the import</h3><span>${escape(method)} · ${dishCount(menu)} dishes</span></div>${warnings.length?`<div class="review-notice">${warnings.map(escape).join('<br>')}</div>`:''}<div class="review-settings"><label>Restaurant name<input id="review-name" value="${escape(menu.name)}" maxlength="120"></label><label>Source currency<select id="review-currency">${Object.keys(currencies).map(c=>`<option ${c===menu.currency?'selected':''}>${c}</option>`).join('')}</select></label></div><div class="review-table-wrap"><table class="review-table"><thead><tr><th>Dish & category</th><th>Description</th><th>Price (${escape(menu.currency)})</th><th></th></tr></thead><tbody>${menu.sections.map(s=>`<tr class="review-section"><td colspan="4"><input data-review-section="${escape(s.id)}" value="${escape(s.name)}" maxlength="120" aria-label="Category name"></td></tr>${s.items.map(i=>`<tr><td><input data-review-name="${escape(i.id)}" value="${escape(i.name)}" maxlength="160" aria-label="Dish name"></td><td><input data-review-description="${escape(i.id)}" value="${escape(i.description)}" maxlength="1200" aria-label="Dish description"></td><td><input class="review-price ${i.price==null?'bad':''}" data-review-price="${escape(i.id)}" value="${i.price==null?'':priceInput(i.price,menu.currency)}" inputmode="decimal" aria-label="Price for ${escape(i.name)}" placeholder="Check"></td><td><button data-review-remove="${escape(i.id)}" class="review-remove" aria-label="Remove ${escape(i.name)} from import">×</button></td></tr>`).join('')}`).join('')}</tbody></table></div>${menu.source?`<p class="review-source">${escape(menu.source.note)}<br><a href="${escape(menu.source.url)}" target="_blank" rel="noopener">${escape(menu.source.label)} ↗</a></p>`:''}<p id="review-error" class="error-message" hidden></p><div class="dialog-footer"><button id="import-back" class="button secondary">← Back</button><button id="apply-import" class="button primary">Use this menu <span>→</span></button></div>`;
   $('#import-back').onclick=()=>setImportStage('entry');
   $('#apply-import').onclick=()=>{
-    try{if(!dishCount(menu))throw new Error('Keep at least one dish in your import.');const validated=validateMenu(menu);if(!validPendingFields())return;$('#menu-name').setCustomValidity('');if(!commit(next=>{next.menu=validated;if(candidate.settings)next.settings=candidate.settings;},{editor:true})){const error=$('#review-error');error.textContent=$('#toast').textContent;error.hidden=false;return;}selected='';selectedSection='';renderEditor();showTask('design');renderTemplates();closeDialog($('#import-dialog'));toast('Menu imported. Choose a design or click a dish to edit.');}
+    try{if(!dishCount(menu))throw new Error('Keep at least one dish in your import.');const validated=validateMenu(menu);if(!validPendingFields())return;$('#menu-name').setCustomValidity('');if(!commit(next=>{next.menu=validated;if(candidate.settings)next.settings=candidate.settings;},{editor:true})){const error=$('#review-error');error.textContent=$('#toast').textContent;error.hidden=false;return;}selected='';renderEditor();showView('paper');closeDialog($('#import-dialog'));toast('Menu imported. Choose a design or click a dish to edit.');}
     catch(error){$('#review-error').textContent=error.message;$('#review-error').hidden=false;}
   };
 }
@@ -210,22 +293,18 @@ $('#import-review').addEventListener('input',event=>{
 });
 $('#import-review').addEventListener('change',event=>{if(event.target.id==='review-currency'){const old=candidate.menu.currency,newCurrency=event.target.value;candidate.menu.sections.forEach(s=>s.items.forEach(i=>{if(i.price!==null&&(old==='JPY')!==(newCurrency==='JPY'))i.price=old==='JPY'?i.price*100:Math.round(i.price/100);}));candidate.menu.currency=newCurrency;renderReview();}});
 $('#import-review').addEventListener('click',event=>{const button=event.target.closest('[data-review-remove]');if(button){candidate.menu.sections.forEach(s=>s.items=s.items.filter(i=>i.id!==button.dataset.reviewRemove));renderReview();}});
-$('#open-examples').onclick=()=>{if(validPendingFields())$('#examples-dialog').showModal();};
-$('#design-examples').onclick=()=>{if(validPendingFields())$('#examples-dialog').showModal();};
-$('#content-examples').onclick=()=>{if(validPendingFields())$('#examples-dialog').showModal();};
-$('#jump-designs').onclick=()=>{showTask('design');renderTemplates();$('.content-panel').scrollIntoView({block:'start'});};
 $('#example-cards').addEventListener('click',event=>{const button=event.target.closest('[data-example]');if(button){const menu=examples.find(e=>e.id===button.dataset.example);$('#examples-dialog').close();$('#import-dialog').showModal();reviewCandidate({menu:clone(menu),warnings:['This is an unofficial excerpt. Review the source note and prices before using it.'],method:'Official source excerpt'});}});
 async function loadExamples(){try{examples=await fetch('./examples/index.json').then(r=>{if(!r.ok)throw new Error();return r.json();});$('#example-cards').innerHTML=examples.map((menu,i)=>`<article class="example-card"><span class="example-number">0${i+1}</span><h3>${escape(menu.name)}</h3><p>${escape(menu.subtitle)}<br>${dishCount(menu)} dishes · ${escape(menu.currency)}</p>${menu.id==='pizzeria-bianco'?'<small>April 2023 source snapshot</small>':''}<button class="button secondary" data-example="${escape(menu.id)}">Explore this menu →</button><div class="example-links"><a href="./examples/${escape(menu.id)}.txt" download>TXT ↓</a><a href="./examples/${escape(menu.id)}.json" download>JSON ↓</a><a href="${escape(menu.source.url)}" target="_blank" rel="noopener">Source ↗</a></div></article>`).join('');}catch{$('#example-cards').innerHTML='<p class="field-help">Examples could not load. You can still import your own menu.</p>';}}
 $('#new-demo').onclick=()=>{
   if(!validPendingFields())return;
   if(commit(next=>{next.menu=demoMenu();next.settings={...defaultSettings};},{editor:true})){
-    selected='';selectedSection='';renderEditor();showTask('design');renderTemplates();$('#examples-dialog').close();toast('Original demo restored. You can undo this.');
+    selected='';renderEditor();showView('paper');$('#examples-dialog').close();announce('Original demo restored. Select a printed price to edit.');toast('Original demo restored. You can undo this.');
   }
 };
-$('#toggle-guides').onclick=()=>{showGuides=!showGuides;$('#pages').classList.toggle('guides-hidden',!showGuides);$('#toggle-guides').setAttribute('aria-pressed',String(showGuides));$('#toggle-guides').textContent=showGuides?'Hide guides':'Show guides';};
-function fitPaper(){const area=$('#canvas-area');if(!area.clientWidth)return;const padding=area.clientWidth<640?44:80;$('#pages').style.setProperty('--paper-fit',`${Math.min(650,Math.max(230,area.clientWidth-padding))}px`);}
-if(typeof ResizeObserver!=='undefined')new ResizeObserver(fitPaper).observe($('#canvas-area'));
-render();fitPaper();loadExamples();
+
+$('#open-examples').onclick=()=>{if(validPendingFields())$('#examples-dialog').showModal();};
+if(typeof ResizeObserver!=='undefined')new ResizeObserver(()=>{fitPaper();positionEditor();}).observe($('#canvas-area'));
+showView('paper');render();loadExamples();
 $('#save-status').textContent=restoredDraft?'Saved in this browser':'Demo · changes autosave';
 if(storageError)toast(storageError);
-globalThis.menuAtelier={getMenu:()=>clone(state().menu),getSettings:()=>clone(state().settings),getPages:()=>clone(pages),createPDF:()=>createPDF(pages,state().menu.name)};
+globalThis.menuAtelier={getMenu:()=>clone(state().menu),getSettings:()=>clone(state().settings),getPages:()=>clone(pages),createPDF:()=>{if(!validPendingEdits())return Promise.reject(new Error('Finish the highlighted edit before exporting.'));return createPDF(pages,state().menu.name);}};

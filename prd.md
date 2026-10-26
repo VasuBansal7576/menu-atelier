@@ -17,10 +17,12 @@ Implements `scope.md > The Core Loop` and `scope.md > The Unique Kernel`.
 7. The draft survives a reload on the same browser.
 
 ## Screens and Layout
-One main studio with a compact toolbar, one task rail, and a large document canvas. The rail switches among design, content and document settings. Selecting a dish opens its fields in that rail. Import and export use focused dialogs. Phone navigation preserves access to every editing task. This revised arrangement is agent-selected under the autonomy grant after the user rejected the previous studio.
+A paper-first creative workspace keeps import, source, history and export easy to reach. Composition choices use current-menu visual previews in a compact picker. The full inventory has a separate view. Selecting a dish opens a compact price editor anchored to its printed amount. Name, description, tags and category edits are secondary details. Restaurant, paper and footer settings use focused dialogs. On a phone, the price editor becomes a focused bottom panel that names the selected dish. Controls remain available while the document scrolls.
 
 ## Look and Feel
-The previous warm olive studio failed user design acceptance. Recovery uses a quiet neutral publishing workspace, a larger paper canvas and readable controls. Four independent compositions use licensed local fonts. Maison is a wine-ink brasserie with balanced columns. Edition has bold sans typography and a category rail. Mercato uses expressive Italian display type, full-width category groups and paired dishes. Broadside uses condensed headlines and section bands. Composition must adapt to restaurant names, long dishes and dense menus. It must never hardcode a restaurant title split. Actual selectable PDFs use the same font bytes, measured line breaks and positions as the preview. Final appearance remains for the user to grade.
+The user rejected both prior visual releases. Functional tests and favorable agent reviews did not meet their design requirement. The current direction uses a coherent warm studio identity and deliberate restaurant compositions. Osteria is an asymmetric dining sheet with a purposeful original line-oven illustration and a strong main/supporting hierarchy. Herbarium combines an original ink illustration with an asymmetric name/art relationship and balanced readable categories. Counter is a landscape service sheet with a typographic category index. Table cards use an intentional smaller physical format. Each must adapt to actual source content with clear name/price association and readable descriptions.
+
+The refined Osteria pilot and direct-editing interaction were inspected before production expansion. Actual selectable PDFs share font bytes, measured line breaks, graphic placements and positions with the preview. The user's final visual grading remains pending.
 
 ## Features and Behavior
 
@@ -53,3 +55,7 @@ Cloud sync and real-time collaboration require account and access design and do 
 
 ## Open Questions
 Final visual grading remains with the user. Eligibility, personal submission reflections and public submission access cannot be inferred from the build.
+
+## Taste reset after the second rejection
+
+The user rejected the first redesign as well. The next direction must establish a restaurant identity through composition, typography and purposeful original graphics. A creative workspace must make the printed dish and its edit feel directly connected. Two isolated pilots will be compared against primary visual references. One actual restaurant PDF and its edit loop must be inspected before expanding the collection. The existing four-template count is an agent-selected implementation detail, not a user requirement. The core menu workflow and all source examples remain required.

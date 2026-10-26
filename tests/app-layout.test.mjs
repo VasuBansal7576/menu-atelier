@@ -5,11 +5,12 @@ import { demoMenu } from '../dist/model.js';
 function studioEnvironment(saved) {
   const nodes=new Map(),stored=new Map(saved?[['menu-atelier-v1',JSON.stringify(saved)]]:[]);let writes=0;
   const node=selector=>{
-    if(!nodes.has(selector))nodes.set(selector,{value:'',textContent:'',innerHTML:'',required:selector==='#menu-name',validationMessage:'',get validity(){return {valid:!this.validationMessage&&(!this.required||this.value.trim().length>0)};},listeners:{},classList:{add(){},remove(){},toggle(){}},style:{setProperty(){}},addEventListener(name,callback){this.listeners[name]=callback;},setCustomValidity(message){this.validationMessage=message;},reportValidity(){this.validityReported=true;},removeAttribute(){},showModal(){this.open=true;},close(){this.open=false;}});
+    if(!nodes.has(selector))nodes.set(selector,{value:'',textContent:'',innerHTML:'',required:selector==='#menu-name',validationMessage:'',get validity(){return {valid:!this.validationMessage&&(!this.required||this.value.trim().length>0)};},listeners:{},classList:{add(){},remove(){},toggle(){},contains(){return false;}},style:{setProperty(){}},addEventListener(name,callback){this.listeners[name]=callback;},setCustomValidity(message){this.validationMessage=message;},reportValidity(){this.validityReported=true;},removeAttribute(){},setAttribute(){},replaceChildren(){},closest(){return null;},select(){},focus(){},getBoundingClientRect(){return {bottom:150};},showModal(){this.open=true;},close(){this.open=false;}});
     return nodes.get(selector);
   };
-  const previous=Object.fromEntries(['document','localStorage','fetch','setTimeout','clearTimeout','menuAtelier'].map(key=>[key,Object.getOwnPropertyDescriptor(globalThis,key)]));
-  globalThis.document={querySelector:node,querySelectorAll:selector=>selector==='.content-panel input,.content-panel textarea'?[...nodes.values()]:[],addEventListener(){}};
+  const previous=Object.fromEntries(['document','localStorage','fetch','setTimeout','clearTimeout','menuAtelier','window','innerWidth','matchMedia'].map(key=>[key,Object.getOwnPropertyDescriptor(globalThis,key)]));
+  globalThis.document={body:{classList:{add(){},remove(){}},setAttribute(){},removeAttribute(){}},querySelector:node,querySelectorAll:selector=>selector.includes('#settings-dialog input')?[...nodes.entries()].filter(([key])=>['#menu-name','#menu-subtitle',...(selector.includes('#item-editor')?['#dish-price','#dish-name','#dish-description','#dish-tags']:[])].includes(key)).map(([,value])=>value):[],listeners:{},addEventListener(name,callback){this.listeners[name]=callback;}};
+  globalThis.matchMedia=()=>({matches:true});globalThis.window={addEventListener(){}};globalThis.innerWidth=1440;
   globalThis.localStorage={getItem:key=>stored.get(key)||null,setItem(key,value){writes++;stored.set(key,value);}};
   globalThis.fetch=async()=>({ok:true,json:async()=>[]});globalThis.setTimeout=()=>0;globalThis.clearTimeout=()=>{};
   return {node,stored,get writes(){return writes;},restore(){for(const [key,descriptor] of Object.entries(previous)){if(descriptor===undefined)delete globalThis[key];else Object.defineProperty(globalThis,key,descriptor);}}};
@@ -86,5 +87,26 @@ test('a file read captures source currency and cancellation invalidates its comp
     env.node('#import-dialog').listeners.cancel();const before=env.node('#import-review').innerHTML;
     resolveCancelled('Cancelled menu\n## Mains\nDish 5.00');await old;
     assert.equal(env.node('#import-review').innerHTML,before);
+  } finally {env.restore();}
+});
+
+test('dish draft updates live, completes as one history action, and invalid values block import and export',async()=>{
+  const env=studioEnvironment();
+  try {
+    await import(`../dist/app.js?price-session=${Date.now()}`);
+    const item=globalThis.menuAtelier.getMenu().sections[0].items[0],original=item.price;
+    env.node('#pages').listeners.click({target:{closest:()=>({dataset:{item:item.id}})}});
+    const input=env.node('#dish-price');input.id='dish-price';input.value='13.50';
+    env.node('#item-editor').listeners.input({target:input});
+    assert.equal(globalThis.menuAtelier.getMenu().sections[0].items[0].price,1350);assert.equal(env.writes,0);
+    input.value='14.50';env.node('#item-editor').listeners.input({target:input});
+    env.node('#item-editor').listeners.submit({preventDefault(){}});assert.equal(env.writes,1);
+    env.node('#undo').onclick();assert.equal(globalThis.menuAtelier.getMenu().sections[0].items[0].price,original);
+    env.node('#redo').onclick();assert.equal(globalThis.menuAtelier.getMenu().sections[0].items[0].price,1450);
+    env.node('#pages').listeners.click({target:{closest:()=>({dataset:{item:item.id}})}});
+    input.value='24.999';env.node('#item-editor').listeners.input({target:input});
+    assert.equal(input.validity.valid,false);const writes=env.writes;env.node('#open-import').onclick();assert.notEqual(env.node('#import-dialog').open,true);
+    await assert.rejects(globalThis.menuAtelier.createPDF(),/highlighted edit/);assert.equal(env.writes,writes);
+    document.listeners.keydown({key:'Escape',preventDefault(){}});assert.equal(globalThis.menuAtelier.getMenu().sections[0].items[0].price,1450);
   } finally {env.restore();}
 });

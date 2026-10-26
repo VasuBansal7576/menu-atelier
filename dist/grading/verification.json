@@ -1,101 +1,128 @@
 {
   "pdfs": 12,
+  "pages": 15,
+  "gallery_curated_default": true,
+  "gallery_all_exports_available": true,
   "checks": [
     {
-      "file": "dishoom-atelier.pdf",
-      "pages": 1,
-      "dishes": 10,
-      "source_names_and_prices": true,
-      "all_fonts_embedded": true,
-      "bytes": 346885
-    },
-    {
-      "file": "dishoom-midnight.pdf",
-      "pages": 1,
-      "dishes": 10,
-      "source_names_and_prices": true,
-      "all_fonts_embedded": true,
-      "bytes": 186861
-    },
-    {
       "file": "dishoom-trattoria.pdf",
+      "format": "A4",
       "pages": 1,
       "dishes": 10,
+      "all_page_rasters_and_links": true,
       "source_names_and_prices": true,
       "all_fonts_embedded": true,
-      "bytes": 189691
+      "bytes": 235570
+    },
+    {
+      "file": "dishoom-atelier.pdf",
+      "format": "A4",
+      "pages": 1,
+      "dishes": 10,
+      "all_page_rasters_and_links": true,
+      "source_names_and_prices": true,
+      "all_fonts_embedded": true,
+      "bytes": 1389743
     },
     {
       "file": "dishoom-botanical.pdf",
+      "format": "A4 landscape",
       "pages": 1,
       "dishes": 10,
+      "all_page_rasters_and_links": true,
       "source_names_and_prices": true,
       "all_fonts_embedded": true,
-      "bytes": 173179
+      "bytes": 186896
     },
     {
-      "file": "balthazar-atelier.pdf",
-      "pages": 1,
+      "file": "dishoom-midnight.pdf",
+      "format": "A5",
+      "pages": 2,
       "dishes": 10,
+      "all_page_rasters_and_links": true,
       "source_names_and_prices": true,
       "all_fonts_embedded": true,
-      "bytes": 346511
-    },
-    {
-      "file": "balthazar-midnight.pdf",
-      "pages": 1,
-      "dishes": 10,
-      "source_names_and_prices": true,
-      "all_fonts_embedded": true,
-      "bytes": 186515
+      "bytes": 232180
     },
     {
       "file": "balthazar-trattoria.pdf",
+      "format": "A4",
       "pages": 1,
       "dishes": 10,
+      "all_page_rasters_and_links": true,
       "source_names_and_prices": true,
       "all_fonts_embedded": true,
-      "bytes": 189282
+      "bytes": 235017
+    },
+    {
+      "file": "balthazar-atelier.pdf",
+      "format": "A4",
+      "pages": 1,
+      "dishes": 10,
+      "all_page_rasters_and_links": true,
+      "source_names_and_prices": true,
+      "all_fonts_embedded": true,
+      "bytes": 1389354
     },
     {
       "file": "balthazar-botanical.pdf",
+      "format": "A4 landscape",
       "pages": 1,
       "dishes": 10,
+      "all_page_rasters_and_links": true,
       "source_names_and_prices": true,
       "all_fonts_embedded": true,
-      "bytes": 172741
+      "bytes": 186328
     },
     {
-      "file": "pizzeria-bianco-atelier.pdf",
-      "pages": 1,
+      "file": "balthazar-midnight.pdf",
+      "format": "A5",
+      "pages": 2,
       "dishes": 10,
+      "all_page_rasters_and_links": true,
       "source_names_and_prices": true,
       "all_fonts_embedded": true,
-      "bytes": 346444
-    },
-    {
-      "file": "pizzeria-bianco-midnight.pdf",
-      "pages": 1,
-      "dishes": 10,
-      "source_names_and_prices": true,
-      "all_fonts_embedded": true,
-      "bytes": 186474
+      "bytes": 231808
     },
     {
       "file": "pizzeria-bianco-trattoria.pdf",
+      "format": "A4",
       "pages": 1,
       "dishes": 10,
+      "all_page_rasters_and_links": true,
       "source_names_and_prices": true,
       "all_fonts_embedded": true,
-      "bytes": 189245
+      "bytes": 234897
+    },
+    {
+      "file": "pizzeria-bianco-atelier.pdf",
+      "format": "A4",
+      "pages": 1,
+      "dishes": 10,
+      "all_page_rasters_and_links": true,
+      "source_names_and_prices": true,
+      "all_fonts_embedded": true,
+      "bytes": 1389281
     },
     {
       "file": "pizzeria-bianco-botanical.pdf",
+      "format": "A4 landscape",
       "pages": 1,
       "dishes": 10,
+      "all_page_rasters_and_links": true,
       "source_names_and_prices": true,
       "all_fonts_embedded": true,
-      "bytes": 172688
+      "bytes": 186437
+    },
+    {
+      "file": "pizzeria-bianco-midnight.pdf",
+      "format": "A5",
+      "pages": 2,
+      "dishes": 10,
+      "all_page_rasters_and_links": true,
+      "source_names_and_prices": true,
+      "all_fonts_embedded": true,
+      "bytes": 231718
     }
   ]
 }
